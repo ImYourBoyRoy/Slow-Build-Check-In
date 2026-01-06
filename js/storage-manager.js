@@ -9,6 +9,9 @@
  */
 
 const StorageManager = {
+    // Storage version for future migrations
+    STORAGE_VERSION: 1,
+
     KEYS: {
         RESPONSES: 'slowbuild_responses',
         PROGRESS: 'slowbuild_progress',
@@ -16,7 +19,8 @@ const StorageManager = {
         PARTICIPANTS: 'slowbuild_participants',
         PARTICIPANT_NAME: 'slowbuild_participant_name',
         MODE: 'slowbuild_mode',
-        SKIPPED: 'slowbuild_skipped'
+        SKIPPED: 'slowbuild_skipped',
+        COMPLETED_MODES: 'slowbuild_completed_modes'
     },
 
     /**
@@ -226,14 +230,183 @@ const StorageManager = {
      */
     exportAll() {
         return {
+            version: this.STORAGE_VERSION,
             responses: this.loadResponses(),
             progress: this.loadProgress(),
             skipped: this.loadSkipped(),
-            participants: this.loadParticipants(),
+            participantName: this.loadParticipantName(),
             mode: this.loadMode(),
             theme: this.loadTheme(),
             exportedAt: new Date().toISOString()
         };
+    },
+
+    /**
+     * Import data from a previously exported object.
+     * Merges with existing responses by default.
+     * @param {Object} data - Exported data object.
+     * @param {boolean} replace - If true, replace all data instead of merging.
+     * @returns {Object} Result with success status and message.
+     */
+    importAll(data, replace = false) {
+        try {
+            // Validate data structure
+            if (!data || typeof data !== 'object') {
+                return { success: false, message: 'Invalid data format' };
+            }
+
+            // Handle responses
+            if (data.responses && typeof data.responses === 'object') {
+                if (replace) {
+                    this.saveResponses(data.responses);
+                } else {
+                    // Merge: existing responses + imported (imported wins conflicts)
+                    const existing = this.loadResponses();
+                    const merged = { ...existing, ...data.responses };
+                    this.saveResponses(merged);
+                }
+            }
+
+            // Handle skipped questions
+            if (Array.isArray(data.skipped)) {
+                if (replace) {
+                    this.saveSkipped(data.skipped);
+                } else {
+                    const existing = this.loadSkipped();
+                    const merged = [...new Set([...existing, ...data.skipped])];
+                    this.saveSkipped(merged);
+                }
+            }
+
+            // Restore participant name if provided
+            if (data.participantName) {
+                this.saveParticipantName(data.participantName);
+            }
+
+            // Restore mode if provided
+            if (data.mode) {
+                this.saveMode(data.mode);
+            }
+
+            // Optionally restore theme
+            if (data.theme) {
+                this.saveTheme(data.theme);
+            }
+
+            // Mark completion if data indicates it
+            if (data.completedModes) {
+                this.saveCompletedModes(data.completedModes);
+            }
+
+            return {
+                success: true,
+                message: `Imported ${Object.keys(data.responses || {}).length} responses`,
+                responsesCount: Object.keys(data.responses || {}).length
+            };
+        } catch (e) {
+            console.error('Failed to import data:', e);
+            return { success: false, message: 'Import failed: ' + e.message };
+        }
+    },
+
+    /**
+     * Parse text export format back into responses object.
+     * @param {string} text - Exported text content.
+     * @returns {Object} Parsed data object or null if invalid.
+     */
+    parseTextImport(text) {
+        try {
+            const responses = {};
+            let participantName = 'Participant';
+
+            // Extract participant name
+            const nameMatch = text.match(/Completed by:\s*(.+)/i);
+            if (nameMatch) {
+                participantName = nameMatch[1].trim();
+            }
+
+            // Parse question/answer pairs
+            // Format: Q1: Title\n   "prompt"\n   ➤ Answer
+            const questionPattern = /Q(\d+):\s*(.+?)\n\s+"(.+?)"\n\s*➤\s*(.+?)(?=\n\nQ\d+:|$)/gs;
+            let match;
+
+            while ((match = questionPattern.exec(text)) !== null) {
+                const [, num, title, prompt, answer] = match;
+                const questionId = `q${num.padStart(2, '0')}`;
+
+                if (answer.trim() !== '[Skipped]' && answer.trim() !== '[Not answered]') {
+                    responses[questionId] = {
+                        text: answer.trim(),
+                        importedFromText: true
+                    };
+                }
+            }
+
+            return {
+                responses,
+                participantName,
+                importedAt: new Date().toISOString()
+            };
+        } catch (e) {
+            console.error('Failed to parse text import:', e);
+            return null;
+        }
+    },
+
+    /**
+     * Get timestamp of last save.
+     * @returns {number|null} Timestamp in milliseconds or null.
+     */
+    getSaveTimestamp() {
+        const progress = this.loadProgress();
+        return progress?.timestamp || null;
+    },
+
+    /**
+     * Check if user has completed a specific mode.
+     * @param {string} mode - 'lite' or 'full'.
+     * @returns {boolean} True if mode was completed.
+     */
+    hasCompletedMode(mode) {
+        const completed = this.loadCompletedModes();
+        return completed.includes(mode);
+    },
+
+    /**
+     * Mark a mode as completed.
+     * @param {string} mode - 'lite' or 'full'.
+     */
+    markModeCompleted(mode) {
+        const completed = this.loadCompletedModes();
+        if (!completed.includes(mode)) {
+            completed.push(mode);
+            this.saveCompletedModes(completed);
+        }
+    },
+
+    /**
+     * Load completed modes list.
+     * @returns {Array<string>} Array of completed mode names.
+     */
+    loadCompletedModes() {
+        try {
+            const saved = localStorage.getItem(this.KEYS.COMPLETED_MODES);
+            return saved ? JSON.parse(saved) : [];
+        } catch (e) {
+            return [];
+        }
+    },
+
+    /**
+     * Save completed modes list.
+     * @param {Array<string>} modes - Array of completed mode names.
+     */
+    saveCompletedModes(modes) {
+        try {
+            localStorage.setItem(this.KEYS.COMPLETED_MODES, JSON.stringify(modes));
+        } catch (e) {
+            console.error('Failed to save completed modes:', e);
+        }
     }
 };
 

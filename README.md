@@ -36,12 +36,14 @@ This tool helps couples in the **intentional early dating phase** (3+ dates, mut
 ## 🚀 Quick Start
 
 ### Standalone (No Server Required)
+
 ```bash
 # Just open in any browser
 open index.html
 ```
 
 ### Local Development Server
+
 ```bash
 # Python
 python -m http.server 8080
@@ -83,32 +85,53 @@ Click the theme icon in the nav to cycle through themes with a smooth bloom tran
 ## ✨ Features
 
 ### 📋 Two Modes
+
 - **Lite Mode**: 18 core questions (~45 minutes)
 - **Full Mode**: 38 questions across 10 sections
+- **Switch anytime**: Dropdown in nav bar to switch Lite ↔ Full (preserves all answers)
 
 ### ⏭ Skip & Return
+
 - Skip any question with one click
 - Badge shows how many are skipped
 - Jump to skipped questions anytime
+- **Yellow progress bar segments** indicate skipped questions
 
 ### 📊 Review Mode
+
 - See all questions at a glance
 - Visual indicators: ✓ answered, ⏭ skipped, ○ unanswered
 - Click any card to jump back and edit
 
-### 💾 Auto-Save
+### 💾 Auto-Save & Long-Term Persistence
+
 - Progress saved to localStorage automatically
 - Resume where you left off after closing browser
-- Option to start fresh or continue
+- **Persists for weeks** until you click "Start Over" or clear browser data
+- Works across Chrome, Firefox, Safari, Edge
+
+### 📥 Import Previous Responses
+
+- Import from previously exported JSON or TXT files
+- Merges with existing answers (imported wins conflicts)
+- Great for continuing on a different device
 
 ### 📤 Export Options
+
 - **Text file**: Beautifully formatted for reading/sharing
-- **JSON file**: Machine-readable for AI reflection prompts
+- **JSON file**: Machine-readable, can be re-imported later
 - **Clipboard**: Quick copy for pasting elsewhere
+- **View Raw**: Mobile-friendly fallback for copy operations
 
 ### 🤖 AI Reflection Prompts
+
 - **Individual**: Copy your responses + a reflection prompt
 - **Couple's**: Share results, then combine for joint AI reflection
+
+### 🔄 Start Over
+
+- Clears ALL answered questions and local cache
+- Shows clear warning before permanently deleting responses
 
 ---
 
@@ -130,43 +153,43 @@ Click the theme icon in the nav to cycle through themes with a smooth bloom tran
 <details>
 <summary><strong>Section 2: How We Stay Connected</strong></summary>
 
-6. **Check-in cadence** — How often and in what format?
-7. **Overwhelm pattern** — What do I do when unsure? How to respond?
-8. **What safety means** — When do I feel safe with you?
+1. **Check-in cadence** — How often and in what format?
+2. **Overwhelm pattern** — What do I do when unsure? How to respond?
+3. **What safety means** — When do I feel safe with you?
 
 </details>
 
 <details>
 <summary><strong>Section 3: How We Care For Each Other</strong></summary>
 
-9. **Support when stressed** — What helps me most from you?
-10. **How to share the past** — Transparency level for past relationships
+1. **Support when stressed** — What helps me most from you?
+2. **How to share the past** — Transparency level for past relationships
 
 </details>
 
 <details>
 <summary><strong>Section 4: Affection That Feels Good</strong></summary>
 
-11. **Affection that feels best right now** — What's comfortable for my nervous system?
-12. **Approach for a kiss** — Best way to initiate, what words land well
-13. **Overwhelm signs and best response** — How to know if I'm overwhelmed
+1. **Affection that feels best right now** — What's comfortable for my nervous system?
+2. **Approach for a kiss** — Best way to initiate, what words land well
+3. **Overwhelm signs and best response** — How to know if I'm overwhelmed
 
 </details>
 
 <details>
 <summary><strong>Section 5: In Public and In Private</strong></summary>
 
-14. **Group settings preference** — How we act around friends
-15. **Initiative and leadership** — Who plans/initiates what?
-16. **Chosen without pressure** — What helps me feel wanted, not pushed?
+1. **Group settings preference** — How we act around friends
+2. **Initiative and leadership** — Who plans/initiates what?
+3. **Chosen without pressure** — What helps me feel wanted, not pushed?
 
 </details>
 
 <details>
 <summary><strong>Section 6: What We're Building</strong></summary>
 
-17. **A fear I'm willing to name** — A dating fear I'm ready to share
-18. **How we treat this connection** — One sentence to describe our approach
+1. **A fear I'm willing to name** — A dating fear I'm ready to share
+2. **How we treat this connection** — One sentence to describe our approach
 
 </details>
 
@@ -177,44 +200,44 @@ Click the theme icon in the nav to cycle through themes with a smooth bloom tran
 <details>
 <summary><strong>Section 7: What We Believe and Value</strong></summary>
 
-19. **Top values (choose up to 5)** — What matters most in a relationship?
-20. **Faith and church alignment** — How does faith show up for us?
-21. **Physical boundaries and standards** — How explicit should we be?
-22. **What "defining the relationship" means to me** — Exclusivity, labels, routines?
-23. **Future talk pacing** — How much marriage/kids/life talk feels good?
-24. **Roles and leadership expectations** — Shared, complementary, or one leads?
+1. **Top values (choose up to 5)** — What matters most in a relationship?
+2. **Faith and church alignment** — How does faith show up for us?
+3. **Physical boundaries and standards** — How explicit should we be?
+4. **What "defining the relationship" means to me** — Exclusivity, labels, routines?
+5. **Future talk pacing** — How much marriage/kids/life talk feels good?
+6. **Roles and leadership expectations** — Shared, complementary, or one leads?
 
 </details>
 
 <details>
 <summary><strong>Section 8: Repair and Reconnection</strong></summary>
 
-25. **My conflict style under stress** — How I react when hurt
-26. **What helps me de-escalate** — Fastest way to calm down
-27. **Apology and repair language** — What makes an apology meaningful?
-28. **Not-okay conflict behaviors** — Boundaries for disagreements
-29. **Heavy topics boundaries** — Pace for discussing trauma/past
-30. **Preferred repair ritual** — How we reconnect after hard moments
+1. **My conflict style under stress** — How I react when hurt
+2. **What helps me de-escalate** — Fastest way to calm down
+3. **Apology and repair language** — What makes an apology meaningful?
+4. **Not-okay conflict behaviors** — Boundaries for disagreements
+5. **Heavy topics boundaries** — Pace for discussing trauma/past
+6. **Preferred repair ritual** — How we reconnect after hard moments
 
 </details>
 
 <details>
 <summary><strong>Section 9: Rhythm and Real Life</strong></summary>
 
-31. **Ideal cadence for seeing each other** — How often right now?
-32. **Communication channel preferences** — Text, calls, in-person?
-33. **Privacy and sharing boundaries** — Friends, social media?
-34. **Pace of integration** — Introducing friends/family when?
+1. **Ideal cadence for seeing each other** — How often right now?
+2. **Communication channel preferences** — Text, calls, in-person?
+3. **Privacy and sharing boundaries** — Friends, social media?
+4. **Pace of integration** — Introducing friends/family when?
 
 </details>
 
 <details>
 <summary><strong>Section 10: Feeling Secure Together</strong></summary>
 
-35. **Jealousy triggers (if any)** — What triggers insecurity?
-36. **What reassurance works best** — How to help when I'm anxious
-37. **Exclusivity boundary preference** — Open, focused, or exclusive?
-38. **Boundaries with other connections** — Dating apps, friendships, etc.
+1. **Jealousy triggers (if any)** — What triggers insecurity?
+2. **What reassurance works best** — How to help when I'm anxious
+3. **Exclusivity boundary preference** — Open, focused, or exclusive?
+4. **Boundaries with other connections** — Dating apps, friendships, etc.
 
 </details>
 
@@ -297,6 +320,7 @@ Edit `data/questions.json`. The system supports **4 question types**:
   "tags": { "included_in_manifests": ["lite", "full"] }
 }
 ```
+
 </details>
 
 <details>
@@ -321,6 +345,7 @@ Edit `data/questions.json`. The system supports **4 question types**:
   "tags": { "included_in_manifests": ["lite", "full"] }
 }
 ```
+
 </details>
 
 <details>
@@ -343,6 +368,7 @@ Edit `data/questions.json`. The system supports **4 question types**:
   "tags": { "included_in_manifests": ["lite", "full"] }
 }
 ```
+
 </details>
 
 <details>
@@ -387,11 +413,13 @@ Edit `data/questions.json`. The system supports **4 question types**:
   "tags": { "included_in_manifests": ["lite", "full"] }
 }
 ```
+
 </details>
 
 ### Adding to Lite vs Full Mode
 
 In `questions.json`, each question has a `tags.included_in_manifests` array:
+
 - `["lite", "full"]` — Appears in both modes
 - `["full"]` — Only in Full mode
 

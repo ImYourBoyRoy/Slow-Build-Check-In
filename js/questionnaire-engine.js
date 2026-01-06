@@ -339,6 +339,84 @@ const QuestionnaireEngine = {
 
         const section = DataLoader.getSectionForQuestion(current.id);
         return section ? section.title : '';
+    },
+
+    /**
+     * Initialize with mode switch (Lite ↔ Full).
+     * Keeps existing responses and goes to last answered question.
+     * @param {string} newMode - The new mode ('full' or 'lite').
+     * @returns {Object} Result with success status and target question index.
+     */
+    async initWithUpgrade(newMode = 'full') {
+        // Store the previous mode and questions answered
+        const previousMode = this.mode;
+        const previousAnswers = { ...this.responses };
+        const previousSkipped = [...this.skipped];
+
+        // Get the new question set
+        this.mode = newMode;
+        this.questions = DataLoader.getQuestions(newMode);
+
+        // Preserve existing responses
+        this.responses = previousAnswers;
+        this.skipped = previousSkipped.filter(id =>
+            this.questions.some(q => q.id === id)
+        );
+
+        // Find the last answered question in the new mode's question set
+        let lastAnsweredIndex = 0;
+        for (let i = this.questions.length - 1; i >= 0; i--) {
+            const status = this.getQuestionStatus(this.questions[i].id);
+            if (status === 'answered') {
+                lastAnsweredIndex = i;
+                break;
+            }
+        }
+
+        this.currentIndex = lastAnsweredIndex;
+        StorageManager.saveMode(newMode);
+        StorageManager.saveProgress(this.currentIndex);
+
+        return {
+            success: true,
+            previousMode,
+            newMode,
+            targetQuestionIndex: lastAnsweredIndex,
+            existingAnswers: Object.keys(previousAnswers).length,
+            newQuestions: this.questions.length
+        };
+    },
+
+    /**
+     * Get IDs of all answered questions.
+     * @returns {Array<string>} Array of answered question IDs.
+     */
+    getAnsweredQuestionIds() {
+        return Object.keys(this.responses);
+    },
+
+    /**
+     * Check if user can upgrade from Lite to Full.
+     * @returns {boolean} True if in Lite mode and Full has more questions.
+     */
+    canUpgradeToFull() {
+        if (this.mode !== 'lite') return false;
+
+        const fullQuestions = DataLoader.getQuestions('full');
+        const liteQuestions = DataLoader.getQuestions('lite');
+
+        // Always allow upgrade if Full has more questions
+        return fullQuestions.length > liteQuestions.length;
+    },
+
+    /**
+     * Get count of additional questions available in Full mode.
+     * @returns {number} Number of additional questions.
+     */
+    getAdditionalFullQuestionCount() {
+        const fullQuestions = DataLoader.getQuestions('full');
+        const liteQuestions = DataLoader.getQuestions('lite');
+        return fullQuestions.length - liteQuestions.length;
     }
 };
 

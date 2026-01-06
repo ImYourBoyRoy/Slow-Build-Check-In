@@ -49,6 +49,10 @@
                     <span class="nav-title">Slow Build Check-In</span>
                 </div>
                 <div class="nav-actions">
+                    <select id="mode-switcher" class="mode-switcher" title="Switch Mode">
+                        <option value="lite">Lite</option>
+                        <option value="full">Full</option>
+                    </select>
                     <button id="btn-nav-restart" class="btn btn-ghost btn-sm nav-restart" type="button"
                         title="Start Over">
                         🔄 Start Over
@@ -137,6 +141,12 @@
                         Begin Check-In
                         <span aria-hidden="true">→</span>
                     </button>
+                    <div style="margin-top: var(--space-4);">
+                        <button id="btn-import" class="btn btn-ghost">
+                            📥 Import Previous Responses
+                        </button>
+                        <input type="file" id="import-file" accept=".json,.txt" style="display: none;">
+                    </div>
                 </div>
             </section>
 
@@ -157,6 +167,8 @@
                     </div>
                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
                         aria-valuemax="100">
+                        <div id="progress-fill-skipped" class="progress-fill progress-fill-skipped" style="width: 0%">
+                        </div>
                         <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
@@ -276,6 +288,18 @@
                             </button>
                             <button id="btn-view-couple-prompt" class="btn btn-ghost">
                                 👁 View Raw
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Continue to Full Mode (shown for Lite completions) -->
+                    <div id="upgrade-section" class="export-section" style="display: none;">
+                        <h2 class="export-title">🚀 Ready for More?</h2>
+                        <p class="export-hint">You've completed the Lite version. Continue with <span
+                                id="additional-count">20</span> more questions for deeper insights.</p>
+                        <div class="export-buttons">
+                            <button id="btn-upgrade-full" class="btn btn-primary">
+                                📈 Continue to Full Mode
                             </button>
                         </div>
                     </div>

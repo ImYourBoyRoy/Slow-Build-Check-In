@@ -53,6 +53,13 @@ const App = {
             // Show welcome
             this.showView('welcome');
 
+            // Initialize mode switcher to saved mode
+            const savedMode = StorageManager.loadMode();
+            const modeSwitcher = document.getElementById('mode-switcher');
+            if (modeSwitcher) {
+                modeSwitcher.value = savedMode;
+            }
+
         } catch (error) {
             console.error('Failed to initialize app:', error);
             this.showError('Failed to load questionnaire. Please refresh the page.');
@@ -120,6 +127,15 @@ const App = {
         document.getElementById('btn-resume')?.addEventListener('click', () => this.resumeProgress());
         document.getElementById('btn-start-fresh')?.addEventListener('click', () => this.startFresh());
 
+        // Import button and file input
+        document.getElementById('btn-import')?.addEventListener('click', () => {
+            document.getElementById('import-file')?.click();
+        });
+        document.getElementById('import-file')?.addEventListener('change', (e) => this.handleImport(e));
+
+        // Upgrade to Full mode button
+        document.getElementById('btn-upgrade-full')?.addEventListener('click', () => this.upgradeToFullMode());
+
         // Participant name input
         document.getElementById('participant-name')?.addEventListener('input', (e) => {
             this.participantName = e.target.value;
@@ -144,6 +160,11 @@ const App = {
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
+
+        // Mode switcher in nav
+        document.getElementById('mode-switcher')?.addEventListener('change', (e) => {
+            this.switchMode(e.target.value);
+        });
     },
 
     /**
@@ -262,13 +283,22 @@ const App = {
      */
     updateProgress() {
         const progressFill = document.getElementById('progress-fill');
+        const progressFillSkipped = document.getElementById('progress-fill-skipped');
         const progressText = document.getElementById('progress-text');
         const skippedBadge = document.getElementById('skipped-badge');
 
         const stats = QuestionnaireEngine.getStats();
+        const answeredPercent = (stats.answered / stats.total) * 100;
+        const skippedPercent = (stats.skipped / stats.total) * 100;
 
         if (progressFill) {
-            progressFill.style.width = `${stats.progress}%`;
+            progressFill.style.width = `${answeredPercent}%`;
+        }
+
+        // Skipped fill shows after the answered portion
+        if (progressFillSkipped) {
+            progressFillSkipped.style.width = `${skippedPercent}%`;
+            progressFillSkipped.style.left = `${answeredPercent}%`;
         }
 
         if (progressText) {
@@ -423,10 +453,16 @@ const App = {
 
         this.currentView = viewName;
 
-        // Show/hide nav restart button (hide on welcome view)
+        // Show/hide nav elements (hide on welcome view)
         const navRestart = document.getElementById('btn-nav-restart');
+        const modeSwitcher = document.getElementById('mode-switcher');
+        const showNavControls = viewName !== 'welcome';
+
         if (navRestart) {
-            navRestart.classList.toggle('visible', viewName !== 'welcome');
+            navRestart.classList.toggle('visible', showNavControls);
+        }
+        if (modeSwitcher) {
+            modeSwitcher.style.display = showNavControls ? 'block' : 'none';
         }
 
         // Special handling for review view
@@ -485,6 +521,23 @@ const App = {
           </div>
         ` : ''}
       `;
+        }
+
+        // Show upgrade section for Lite completions
+        const upgradeSection = document.getElementById('upgrade-section');
+        if (upgradeSection) {
+            const canUpgrade = QuestionnaireEngine.canUpgradeToFull();
+            const additionalCount = QuestionnaireEngine.getAdditionalFullQuestionCount();
+
+            if (canUpgrade && additionalCount > 0) {
+                upgradeSection.style.display = 'block';
+                const countEl = document.getElementById('additional-count');
+                if (countEl) {
+                    countEl.textContent = additionalCount;
+                }
+            } else {
+                upgradeSection.style.display = 'none';
+            }
         }
     },
 
@@ -596,12 +649,49 @@ const App = {
     },
 
     /**
-     * Restart the questionnaire.
+     * Restart the questionnaire - clears all local data.
      */
     restart() {
-        if (confirm('Are you sure you want to start over? All your answers will be cleared.')) {
+        const confirmed = confirm(
+            '⚠️ This will clear ALL answered questions and local cache.\n\n' +
+            'Your responses will be permanently deleted.\n\n' +
+            'Proceed?'
+        );
+
+        if (confirmed) {
             QuestionnaireEngine.reset();
             this.showView('welcome');
+        }
+    },
+
+    /**
+     * Switch between Lite and Full mode, preserving all answers.
+     * @param {string} newMode - 'lite' or 'full'
+     */
+    async switchMode(newMode) {
+        const currentMode = QuestionnaireEngine.mode;
+        if (newMode === currentMode) return;
+
+        // Use the upgrade method which preserves answers
+        const result = await QuestionnaireEngine.initWithUpgrade(newMode);
+
+        if (result.success) {
+            // Update UI
+            this.renderCurrentQuestion();
+            this.updateProgress();
+            this.updateModeDisplay();
+
+            console.log(`Switched from ${result.previousMode} to ${result.newMode}. ${result.existingAnswers} answers preserved.`);
+        }
+    },
+
+    /**
+     * Update the mode display in the UI.
+     */
+    updateModeDisplay() {
+        const modeSwitcher = document.getElementById('mode-switcher');
+        if (modeSwitcher) {
+            modeSwitcher.value = QuestionnaireEngine.mode;
         }
     },
 
@@ -636,6 +726,76 @@ const App = {
     startFresh() {
         StorageManager.clearAll();
         document.getElementById('resume-prompt').style.display = 'none';
+    },
+
+    /**
+     * Handle file import from JSON or TXT.
+     * @param {Event} e - File input change event.
+     */
+    async handleImport(e) {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        try {
+            const text = await file.text();
+            let data;
+
+            // Try JSON first
+            if (file.name.endsWith('.json')) {
+                data = JSON.parse(text);
+            } else {
+                // Try to parse as text export format
+                data = StorageManager.parseTextImport(text);
+                if (!data) {
+                    throw new Error('Could not parse text file format');
+                }
+            }
+
+            // Import the data (merge with existing)
+            const result = StorageManager.importAll(data, false);
+
+            if (result.success) {
+                // Show success feedback
+                alert(`✅ Import successful!\n\n${result.message}\n\nYour progress has been restored.`);
+
+                // Show resume prompt since we now have data
+                this.showResumePrompt();
+            } else {
+                alert(`❌ Import failed: ${result.message}`);
+            }
+        } catch (err) {
+            console.error('Import error:', err);
+            alert(`❌ Import failed: ${err.message}\n\nPlease make sure the file is a valid JSON or TXT export.`);
+        }
+
+        // Reset file input so same file can be selected again
+        e.target.value = '';
+    },
+
+    /**
+     * Upgrade from Lite mode to Full mode, keeping existing answers.
+     */
+    async upgradeToFullMode() {
+        try {
+            // Mark current mode as completed
+            StorageManager.markModeCompleted('lite');
+
+            // Perform the upgrade
+            const result = await QuestionnaireEngine.initWithUpgrade('full');
+
+            if (result.success) {
+                // Show questionnaire with first new question
+                this.showView('questionnaire');
+                this.renderCurrentQuestion();
+                this.updateProgress();
+
+                // Brief notification
+                console.log(`Upgraded to Full mode. Starting at question ${result.firstNewQuestionIndex + 1} with ${result.existingAnswers} existing answers.`);
+            }
+        } catch (err) {
+            console.error('Upgrade error:', err);
+            alert(`Failed to upgrade to Full mode: ${err.message}`);
+        }
     },
 
     /**
