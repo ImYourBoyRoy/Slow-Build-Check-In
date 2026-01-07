@@ -333,7 +333,10 @@ const App = {
 
         // Handle based on input type
         if (target.type === 'radio') {
-            response.selected_value = target.value;
+            // Determine the target key: use field attribute for compound questions,
+            // otherwise use 'selected_value' for standalone single-select
+            const fieldKey = field || 'selected_value';
+            response[fieldKey] = target.value;
 
             // Show/hide other input if applicable
             const otherWrapper = target.closest('.question-options')?.querySelector('.other-input-wrapper');
