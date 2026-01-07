@@ -342,28 +342,35 @@ const App = {
             }
         }
         else if (target.type === 'checkbox') {
-            if (!response.selected_values) {
-                response.selected_values = [];
+            // Determine the target key: use field attribute for compound questions,
+            // otherwise use 'selected_values' for standalone multi-select
+            const fieldKey = field || 'selected_values';
+
+            // Initialize the array if needed
+            if (!response[fieldKey]) {
+                response[fieldKey] = [];
             }
 
             if (target.checked) {
-                if (!response.selected_values.includes(target.value)) {
-                    response.selected_values.push(target.value);
+                if (!response[fieldKey].includes(target.value)) {
+                    response[fieldKey].push(target.value);
                 }
             } else {
-                response.selected_values = response.selected_values.filter(v => v !== target.value);
+                response[fieldKey] = response[fieldKey].filter(v => v !== target.value);
             }
 
-            // Update count display
-            const countEl = document.querySelector('.selection-count .count-text');
-            if (countEl) {
-                countEl.textContent = `${response.selected_values.length} selected`;
+            // Update count display (only for standalone multi-select)
+            if (!field) {
+                const countEl = document.querySelector('.selection-count .count-text');
+                if (countEl) {
+                    countEl.textContent = `${response[fieldKey].length} selected`;
+                }
             }
 
             // Show/hide other input
             const otherWrapper = target.closest('.question-options')?.querySelector('.other-input-wrapper');
             if (otherWrapper) {
-                otherWrapper.classList.toggle('visible', response.selected_values.includes('other'));
+                otherWrapper.classList.toggle('visible', response[fieldKey].includes('other'));
             }
         }
         else if (target.classList.contains('textarea') || target.type === 'text' || target.type === 'number') {
