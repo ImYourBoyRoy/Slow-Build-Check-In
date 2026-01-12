@@ -757,10 +757,10 @@ const App = {
 
         // Reset page title and nav branding for dashboard
         if (viewName === 'dashboard') {
-            document.title = 'Slow Build Check-In | Relationship Tools';
+            document.title = 'Check-In Tools | Relationship Questionnaires';
             const navTitle = document.querySelector('.nav-title');
             const navLogo = document.querySelector('.nav-logo');
-            if (navTitle) navTitle.textContent = 'Slow Build Check-In';
+            if (navTitle) navTitle.textContent = 'Check-In Tools';
             if (navLogo) navLogo.textContent = '💜';
         }
 
