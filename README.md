@@ -2,7 +2,7 @@
 
 > *A warm toolkit for healthy relationship building — from pre-dating preparation through intentional partnership.*
 
-![HeartReady Demo](assets/screenshots/demo.webp)
+![HeartReady Demo](assets/screenshots/dashboard_light.webp)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Phases-2-9B89A9?style=for-the-badge" alt="2 Phases">
