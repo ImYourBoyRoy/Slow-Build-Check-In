@@ -648,7 +648,7 @@
 /* ========================================
    Loading State
    ======================================== */
-#loader {
+#loader-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -659,6 +659,19 @@
     align-items: center;
     justify-content: center;
     z-index: var(--z-modal);
+}
+
+#loader-container.hidden {
+    display: none;
+}
+
+#loader {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .loader-content {

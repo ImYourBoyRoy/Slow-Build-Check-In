@@ -54,10 +54,24 @@ const AppDashboard = {
         // Check for resume banner
         this.updateDashboardResumeBanner();
 
+        // Check for install banner (PWA)
+        this.updateInstallBanner();
+
         // Setup dashboard button in nav
         document.getElementById('btn-dashboard')?.addEventListener('click', () => {
             this.showView('dashboard');
             this.renderDashboard();
+        });
+
+        // Setup install button
+        document.getElementById('btn-install-app')?.addEventListener('click', async () => {
+            if (typeof PWAInstall !== 'undefined' && PWAInstall.canInstall()) {
+                const result = await PWAInstall.triggerInstall();
+                if (result.outcome === 'accepted') {
+                    this.showToast('App installed successfully! 🎉', 'success');
+                }
+                this.updateInstallBanner();
+            }
         });
 
         // Setup dashboard resume/fresh buttons
@@ -267,6 +281,22 @@ const AppDashboard = {
                 </div>
             </div>
         `;
+    },
+
+    /**
+     * Update the install banner on dashboard.
+     * Shows when PWA can be installed.
+     */
+    updateInstallBanner() {
+        const banner = document.getElementById('dashboard-install-banner');
+        if (!banner) return;
+
+        // Check if PWA install is available
+        if (typeof PWAInstall !== 'undefined' && PWAInstall.canInstall()) {
+            banner.classList.remove('hidden');
+        } else {
+            banner.classList.add('hidden');
+        }
     },
 
     /**
