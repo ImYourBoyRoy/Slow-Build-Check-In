@@ -11,6 +11,7 @@
 
 const DataLoader = {
   data: null,
+  manifest: null,
   prompts: null,
   phases: null,
   currentPhase: null,
@@ -86,15 +87,17 @@ const DataLoader = {
   async load() {
     try {
       const basePath = this.currentPhase?.data_path || 'data';
-      const [questionsRes, promptsRes] = await Promise.all([
+      const [manifestRes, questionsRes, promptsRes] = await Promise.all([
+        fetch(`./${basePath}/manifest.json`),
         fetch(`./${basePath}/questions.json`),
         fetch(`./${basePath}/prompts.json`)
       ]);
 
-      if (!questionsRes.ok || !promptsRes.ok) {
+      if (!manifestRes.ok || !questionsRes.ok || !promptsRes.ok) {
         throw new Error('Failed to load questionnaire data');
       }
 
+      this.manifest = await manifestRes.json();
       this.data = await questionsRes.json();
       this.prompts = await promptsRes.json();
 
@@ -107,10 +110,10 @@ const DataLoader = {
 
   /**
    * Get the artifact metadata (title, subtitle, purpose, etc.).
-   * @returns {Object} Artifact metadata.
+   * @returns {Object} Artifact metadata from manifest.json.
    */
   getArtifact() {
-    return this.data?.artifact || {};
+    return this.manifest?.artifact || {};
   },
 
   /**
@@ -195,10 +198,18 @@ const DataLoader = {
 
   /**
    * Get intro instructions and keep-in-mind items.
-   * @returns {Object} Intro data with instructions and keep_in_mind.
+   * @returns {Object} Intro data from manifest.json.
    */
   getIntro() {
-    return this.data?.intro || {};
+    return this.manifest?.intro || {};
+  },
+
+  /**
+   * Get privacy preface for AI prompts.
+   * @returns {Object} Privacy preface from manifest.json.
+   */
+  getPrivacyPreface() {
+    return this.manifest?.privacy_preface || {};
   },
 
   /**

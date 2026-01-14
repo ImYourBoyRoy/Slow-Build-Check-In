@@ -1,44 +1,4 @@
 {
-  "schema_version": "1.3.0",
-  "artifact": {
-    "id": "phase_0_pre_dating_readiness",
-    "title": "Pre-Dating Readiness",
-    "subtitle": "Clarify your emotional, mental, and spiritual readiness before re-entering the dating pool.",
-    "language": "en-US",
-    "stage": {
-      "code": "phase_0",
-      "label": "Pre-Dating",
-      "eligibility": [
-        "You are considering starting (or restarting) dating.",
-        "You want an honest readiness check and a concrete self-work plan first."
-      ]
-    },
-    "purpose": [
-      "Identify readiness blockers (emotional closure, stability, integrity, life logistics).",
-      "Surface dating patterns and what to change before dating.",
-      "Translate insights into a practical preparation plan (skills, supports, boundaries)."
-    ]
-  },
-  "intro": {
-    "instructions": {
-      "title": "Instructions",
-      "items": [
-        "This is not a test and not a contract. It is a mirror.",
-        "Answer what feels true right now, not what you wish were true.",
-        "If a question feels too personal, choose “Prefer not to say” or skip it.",
-        "If you feel flooded, pause and do something grounding (walk, breathe, pray, cold water, journaling).",
-        "If you are currently unsafe or in crisis, stop here and get support immediately (local emergency services or 988 in the U.S.)."
-      ]
-    },
-    "keep_in_mind": {
-      "title": "Keep in Mind",
-      "items": [
-        "Readiness is not perfection. It is stability + integrity + capacity to be mutually responsible.",
-        "Faith/spirituality and psychology can support each other: clarity, accountability, repair, and forgiveness are strengths, not shame triggers.",
-        "Answers can change. You can retake this after a few weeks of deliberate work."
-      ]
-    }
-  },
   "sections": [
     {
       "id": "s1",
@@ -337,7 +297,9 @@
         "notes": "",
         "other_text": ""
       },
-      "examples": [],
+      "examples": [
+        "Reasons ranked: 1) I desire marriage/family, 2) I feel emotionally ready, 3) I want companionship. Urgency: 5. Confidence: 7."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -391,7 +353,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Stable/neutral - I feel okay most days, with occasional dips."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -433,7 +397,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Moderate - my schedule is full but manageable."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -478,7 +444,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Mostly, with occasional strain - I can usually show up but need to be intentional about it."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -520,7 +488,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "No."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -570,7 +540,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Occasional and responsible."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -616,7 +588,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Mostly, with some struggle - I'm working on this area but not perfect."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -629,13 +603,99 @@
       "section_id": "s1",
       "order": 9,
       "title": "Top 3 reasons you might not be ready",
-      "prompt": "List the top 3 things that could make dating confusing, heavy, or unkind to you or to another person right now.",
-      "type": "free_text",
+      "prompt": "Select and rank the top 3 things that could make dating confusing, heavy, or unkind to you or to another person right now. Drag to reorder by importance (top = most significant).",
+      "type": "compound",
+      "fields": [
+        {
+          "key": "reasons_ranked",
+          "label": "Select and rank your top 3 (top = most significant)",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "ex_thoughts",
+              "label": "Still thinking about my ex frequently"
+            },
+            {
+              "value": "schedule_chaos",
+              "label": "Schedule is chaotic/unpredictable"
+            },
+            {
+              "value": "defensive",
+              "label": "I get defensive when corrected"
+            },
+            {
+              "value": "emotional_instability",
+              "label": "Emotional instability (mood swings, anxiety, depression)"
+            },
+            {
+              "value": "unhealed_trauma",
+              "label": "Unhealed trauma affecting relationships"
+            },
+            {
+              "value": "financial_stress",
+              "label": "Financial stress or instability"
+            },
+            {
+              "value": "addiction_struggle",
+              "label": "Active addiction or compulsive behavior"
+            },
+            {
+              "value": "trust_issues",
+              "label": "Trust issues (giving or receiving)"
+            },
+            {
+              "value": "communication_skills",
+              "label": "Poor communication skills"
+            },
+            {
+              "value": "boundary_issues",
+              "label": "Trouble setting or respecting boundaries"
+            },
+            {
+              "value": "loneliness_driven",
+              "label": "Dating from loneliness rather than readiness"
+            },
+            {
+              "value": "anger_issues",
+              "label": "Anger or conflict escalation patterns"
+            },
+            {
+              "value": "codependency",
+              "label": "Codependent tendencies"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "min_selected": 1,
+            "max_selected": 3
+          }
+        },
+        {
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "reasons_ranked",
+            "includes": "other"
+          }
+        },
+        {
+          "key": "notes",
+          "label": "Any context you want to add",
+          "type": "free_text",
+          "placeholder": "Optional: explain why these are your top concerns..."
+        }
+      ],
       "answer_schema": {
-        "text": ""
+        "reasons_ranked": [],
+        "other_text": "",
+        "notes": ""
       },
       "examples": [
-        "1) I still think about my ex daily. 2) My schedule is chaos. 3) I get defensive when corrected."
+        "Top 3: 1) Still thinking about ex, 2) Schedule chaos, 3) Get defensive when corrected"
       ],
       "tags": {
         "included_in_manifests": [
@@ -695,7 +755,9 @@
         "avg_relationship_months": 0,
         "major_relationship_count": 0
       },
-      "examples": [],
+      "examples": [
+        "Months since last major: 8. Last major length: 24 months. Longest relationship: 36 months."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -741,7 +803,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Never married."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -803,7 +867,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Mostly, with some unfinished pieces."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -853,7 +919,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "A few times per month."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -915,7 +983,9 @@
         "boundary_quality": "",
         "explanation": ""
       },
-      "examples": [],
+      "examples": [
+        "Friendly occasional contact only."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -961,7 +1031,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Some text/calls, gradually decreasing."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -1007,7 +1079,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "No comparison trap - I see them as a different chapter."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -1065,7 +1139,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "I've named my patterns and am actively working on them."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1082,7 +1158,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Solid - I can name what happened and what I'd do differently."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1099,7 +1177,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Yes, with help - therapy, support group, or mentor."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1140,7 +1220,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "No - clean break on all platforms."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -1186,7 +1268,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Multiple - therapist, close friends, family."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1239,7 +1323,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "3,5 - 3-5 reliable people. Most important: close friend who knows my story."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -1306,7 +1392,9 @@
         "ranking": [],
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Overeating, withdrawal from social activities."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1346,7 +1434,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Usually, within a few hours."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1387,7 +1477,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "1-2 times this month, briefly."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1436,7 +1528,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Yes, I have tools: breathing, journaling, calling a friend."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -1504,7 +1598,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Mostly, with awareness - I know I can slip when triggered but I'm working on it."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -1550,7 +1646,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Secure-leaning: I can be close without losing myself."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1595,7 +1693,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Mostly secure - I sometimes worry but can self-regulate."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -1658,7 +1758,9 @@
         "ranking": [],
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Address it soon/directly, talk through it calmly."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -1703,7 +1805,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Accept responsibility, apologize genuinely, make amends."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1744,7 +1848,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Gentle feedback lands better - both direct and kind."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1756,13 +1862,94 @@
       "section_id": "s4",
       "order": 34,
       "title": "Patterns you repeat",
-      "prompt": "What pattern do you most want to stop repeating in relationships?",
-      "type": "free_text",
+      "prompt": "Select and rank the patterns you most want to stop repeating in relationships. Drag to reorder by priority (top = most important to change).",
+      "type": "compound",
+      "fields": [
+        {
+          "key": "patterns_ranked",
+          "label": "Select and rank patterns to work on (top = highest priority)",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "unavailable_partners",
+              "label": "Choosing emotionally unavailable partners"
+            },
+            {
+              "value": "over_giving",
+              "label": "Over-giving / people-pleasing to earn love"
+            },
+            {
+              "value": "moving_too_fast",
+              "label": "Moving too fast emotionally or physically"
+            },
+            {
+              "value": "ignoring_red_flags",
+              "label": "Ignoring red flags or gut feelings"
+            },
+            {
+              "value": "avoidance",
+              "label": "Avoiding conflict or hard conversations"
+            },
+            {
+              "value": "jealousy_control",
+              "label": "Jealousy or controlling behavior"
+            },
+            {
+              "value": "losing_self",
+              "label": "Losing myself in the relationship"
+            },
+            {
+              "value": "shutting_down",
+              "label": "Shutting down when hurt instead of talking"
+            },
+            {
+              "value": "rescuer_role",
+              "label": "Playing the rescuer / fixer"
+            },
+            {
+              "value": "sabotage",
+              "label": "Self-sabotage when things get good"
+            },
+            {
+              "value": "staying_too_long",
+              "label": "Staying too long in bad situations"
+            },
+            {
+              "value": "leaving_too_fast",
+              "label": "Leaving at first difficulty"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 5
+          }
+        },
+        {
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "patterns_ranked",
+            "includes": "other"
+          }
+        },
+        {
+          "key": "notes",
+          "label": "Context about your top pattern",
+          "type": "free_text",
+          "placeholder": "Optional: what does this pattern look like for you specifically?"
+        }
+      ],
       "answer_schema": {
-        "text": ""
+        "patterns_ranked": [],
+        "other_text": "",
+        "notes": ""
       },
       "examples": [
-        "I pick emotionally unavailable partners and try to earn love."
+        "Top patterns: 1) Choosing unavailable partners, 2) Over-giving, 3) Ignoring red flags"
       ],
       "tags": {
         "included_in_manifests": [
@@ -1809,7 +1996,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Both - I value independence but also deep partnership."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -1830,7 +2019,9 @@
         "lds_temple_recommend": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Practice - I want to grow. Core values: faith, family, integrity."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2018,7 +2209,9 @@
         "commitments": "",
         "support": ""
       },
-      "examples": [],
+      "examples": [
+        "Somewhat involved - occasional church attendance or personal practice."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2083,7 +2276,9 @@
         "covenant_commitment": "",
         "timeline": ""
       },
-      "examples": [],
+      "examples": [
+        "Yes - faith/values alignment is important to me."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2240,7 +2435,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Yes, I can date someone with different views if they respect mine."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2253,64 +2450,87 @@
       "section_id": "s5",
       "order": 40,
       "title": "Non-negotiables (values)",
-      "prompt": "Select up to 5 non-negotiables for a future relationship.",
-      "type": "multi_select",
-      "options": [
+      "prompt": "Select and rank up to 5 non-negotiables for a future relationship. Drag to reorder by priority (top = most important).",
+      "type": "compound",
+      "fields": [
         {
-          "value": "faith_alignment",
-          "label": "Shared faith/spiritual direction"
+          "key": "values_ranked",
+          "label": "Select and rank your non-negotiables (top = highest priority)",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "faith_alignment",
+              "label": "Shared faith/spiritual direction"
+            },
+            {
+              "value": "sexual_integrity",
+              "label": "Sexual integrity / boundaries"
+            },
+            {
+              "value": "kindness_respect",
+              "label": "Kindness and respect"
+            },
+            {
+              "value": "emotional_maturity",
+              "label": "Emotional maturity"
+            },
+            {
+              "value": "desire_family",
+              "label": "Desire for family/parenting alignment"
+            },
+            {
+              "value": "financial_responsibility",
+              "label": "Financial responsibility"
+            },
+            {
+              "value": "health_lifestyle",
+              "label": "Health/lifestyle alignment"
+            },
+            {
+              "value": "communication_skill",
+              "label": "Communication and repair"
+            },
+            {
+              "value": "service_orientation",
+              "label": "Service/community orientation"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 5
+          }
         },
         {
-          "value": "sexual_integrity",
-          "label": "Sexual integrity / boundaries"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "values_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "kindness_respect",
-          "label": "Kindness and respect"
-        },
-        {
-          "value": "emotional_maturity",
-          "label": "Emotional maturity"
-        },
-        {
-          "value": "desire_family",
-          "label": "Desire for family/parenting alignment"
-        },
-        {
-          "value": "financial_responsibility",
-          "label": "Financial responsibility"
-        },
-        {
-          "value": "health_lifestyle",
-          "label": "Health/lifestyle alignment"
-        },
-        {
-          "value": "communication_skill",
-          "label": "Communication and repair"
-        },
-        {
-          "value": "service_orientation",
-          "label": "Service/community orientation"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Any context about your priorities",
+          "type": "free_text",
+          "placeholder": "Optional: why are these your top priorities?"
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "values_ranked": [],
         "other_text": "",
-        "ranking": [],
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Top 5: 1) Shared faith, 2) Emotional maturity, 3) Kindness and respect, 4) Communication, 5) Financial responsibility"
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 5
       }
     },
     "q41": {
@@ -2323,7 +2543,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "I've ignored misaligned values for chemistry. Working on holding my standards."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2369,7 +2591,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Long-term: I'm looking for something that could lead to commitment."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -2473,7 +2697,9 @@
         "exclusivity_trigger": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Slow pace, get to know each other: I want to build trust before deepening."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -2518,7 +2744,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Exclusive once committed."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2564,7 +2792,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "By date 3-5: basic life story, values, deal-breakers. Full vulnerability comes later."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2610,7 +2840,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Weekly or bi-weekly: enough to build momentum without overwhelm."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -2707,7 +2939,9 @@
         "supports": [],
         "one_change": ""
       },
-      "examples": [],
+      "examples": [
+        "1-2 months: enough time to see patterns and consistency."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -2756,7 +2990,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Hugs, hand-holding, light touch: affection should grow with trust."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2802,7 +3038,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "5-10 hours per week."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -2863,7 +3101,9 @@
         "coparent_state": "",
         "impact": ""
       },
-      "examples": [],
+      "examples": [
+        "Evenings free: 3-4 nights per week. Weekends: mostly available."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -2908,7 +3148,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Moderate flexibility: can adjust with notice."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -2949,7 +3191,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "No dependents at home."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -2987,7 +3231,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Within 30 minutes: close enough for easy dates."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3028,7 +3274,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Stable and manageable: not a barrier to dating."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3045,7 +3293,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Stable housing: living independently."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3086,7 +3336,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Therapy and personal reflection."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3143,7 +3395,9 @@
         "best_style": "",
         "triggers": ""
       },
-      "examples": [],
+      "examples": [
+        "Ask someone who saw me: a trusted friend or mentor."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3155,72 +3409,95 @@
       "section_id": "s8",
       "order": 58,
       "title": "Top growth areas",
-      "prompt": "Choose up to 5 areas you want to strengthen before/while dating.",
-      "type": "multi_select",
-      "options": [
+      "prompt": "Select and rank (up to 5) the areas you want to strengthen before/while dating. Drag to reorder by priority (top = highest priority).",
+      "type": "compound",
+      "fields": [
         {
-          "value": "closure",
-          "label": "Closure from past relationship"
+          "key": "growth_areas_ranked",
+          "label": "Select and rank your growth priorities (top = highest priority)",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "closure",
+              "label": "Closure from past relationship"
+            },
+            {
+              "value": "emotional_regulation",
+              "label": "Emotional regulation"
+            },
+            {
+              "value": "attachment",
+              "label": "Attachment security"
+            },
+            {
+              "value": "communication",
+              "label": "Communication skills"
+            },
+            {
+              "value": "conflict_repair",
+              "label": "Conflict + repair"
+            },
+            {
+              "value": "boundaries",
+              "label": "Boundaries"
+            },
+            {
+              "value": "integrity_sexuality",
+              "label": "Sexual integrity"
+            },
+            {
+              "value": "self_worth",
+              "label": "Self-worth / confidence"
+            },
+            {
+              "value": "social_skills",
+              "label": "Social/dating skills"
+            },
+            {
+              "value": "life_stability",
+              "label": "Life stability (sleep, schedule, finances)"
+            },
+            {
+              "value": "spiritual_practice",
+              "label": "Spiritual practice"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 5
+          }
         },
         {
-          "value": "emotional_regulation",
-          "label": "Emotional regulation"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "growth_areas_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "attachment",
-          "label": "Attachment security"
-        },
-        {
-          "value": "communication",
-          "label": "Communication skills"
-        },
-        {
-          "value": "conflict_repair",
-          "label": "Conflict + repair"
-        },
-        {
-          "value": "boundaries",
-          "label": "Boundaries"
-        },
-        {
-          "value": "integrity_sexuality",
-          "label": "Sexual integrity"
-        },
-        {
-          "value": "self_worth",
-          "label": "Self-worth / confidence"
-        },
-        {
-          "value": "social_skills",
-          "label": "Social/dating skills"
-        },
-        {
-          "value": "life_stability",
-          "label": "Life stability (sleep, schedule, finances)"
-        },
-        {
-          "value": "spiritual_practice",
-          "label": "Spiritual practice"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Why these are your top priorities",
+          "type": "free_text",
+          "placeholder": "Optional: what's driving these growth priorities?"
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "growth_areas_ranked": [],
         "other_text": "",
-        "ranking": [],
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Top 5: 1) Emotional regulation, 2) Communication skills, 3) Boundaries, 4) Closure, 5) Self-worth"
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 5
       }
     },
     "q59": {
@@ -3233,7 +3510,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Week 1: Start journaling about patterns. Week 2: Reach out to one close friend. Week 3-4: Set one boundary I've been avoiding."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3250,7 +3529,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Self-honesty, healthy conflict skills, knowing my worth."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -3300,7 +3581,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Ended it myself: I initiated the breakup."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3341,7 +3624,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Mostly relieved with some sadness."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -3387,7 +3672,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "3 months ago - I'm past the acute phase."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -3437,7 +3724,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Moderate - not major but still processing."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3454,7 +3743,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Not diagnosed or unsure."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3495,7 +3786,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Name the emotion but not always regulate it quickly."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3540,7 +3833,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "I sometimes freeze or avoid confrontation."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3581,7 +3876,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Unspoken expectations - when they aren't clear, I make assumptions."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3598,7 +3895,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Honest but avoidant - I'll be truthful but might delay hard conversations."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3668,7 +3967,9 @@
         "ranking": [],
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Prayer, Scripture reading."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3712,7 +4013,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Very important - I want to share this with a partner."
+      ],
       "tags": {
         "included_in_manifests": [
           "lite",
@@ -3730,7 +4033,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Same faith tradition: we share the same beliefs."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3771,7 +4076,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Very flexible: I can move quickly or slowly depending on connection."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3812,7 +4119,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Talk about it openly before becoming physical."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3878,7 +4187,9 @@
         "ranking": [],
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "More communication early, clearer boundaries."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3922,7 +4233,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Yes, but with conditions: distance or schedule constraints."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3963,7 +4276,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Need to feel emotionally safe and sure before introducing family."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -3980,7 +4295,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Unsure - it depends on how things develop."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -4021,7 +4338,9 @@
         "other_text": "",
         "notes": ""
       },
-      "examples": [],
+      "examples": [
+        "Direct and honest: tell me what you see, even if it's hard."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -4038,7 +4357,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "High commitment: I'll do the work, I want to grow."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -4055,7 +4376,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "Read a book on attachment, practice active listening this month."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"
@@ -4072,7 +4395,9 @@
       "answer_schema": {
         "text": ""
       },
-      "examples": [],
+      "examples": [
+        "I'm ready when: I can be honest about my patterns, I have support, I'm not running from something."
+      ],
       "tags": {
         "included_in_manifests": [
           "full"

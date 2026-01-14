@@ -1958,7 +1958,9 @@ const App = {
                         responsesToValidate[qId] = data.response;
                     }
                     if (data.status === 'skipped') {
-                        QuestionnaireEngine.skipped.add(qId);
+                        if (!QuestionnaireEngine.skipped.includes(qId)) {
+                            QuestionnaireEngine.skipped.push(qId);
+                        }
                     }
                 });
             } else if (file.format === 'txt') {
@@ -1987,7 +1989,7 @@ const App = {
 
             // Save to storage
             StorageManager.saveProgress(QuestionnaireEngine.responses, QuestionnaireEngine.currentIndex);
-            StorageManager.saveSkipped(Array.from(QuestionnaireEngine.skipped));
+            StorageManager.saveSkipped(QuestionnaireEngine.skipped);
             StorageManager.saveMode(mode);
 
             // Close modal
@@ -2082,11 +2084,16 @@ const App = {
      */
     async getPhaseMetadata(phase) {
         try {
-            // Fetch questions.json for this phase to get counts and artifact info
-            const response = await fetch(`${phase.data_path}/questions.json`);
-            if (!response.ok) throw new Error('Failed to load');
+            // Fetch manifest.json and questions.json for this phase
+            const [manifestRes, questionsRes] = await Promise.all([
+                fetch(`${phase.data_path}/manifest.json`),
+                fetch(`${phase.data_path}/questions.json`)
+            ]);
 
-            const data = await response.json();
+            if (!manifestRes.ok || !questionsRes.ok) throw new Error('Failed to load');
+
+            const manifest = await manifestRes.json();
+            const data = await questionsRes.json();
 
             // Count questions by mode
             let liteCount = 0;
@@ -2101,8 +2108,8 @@ const App = {
             }
 
             return {
-                artifact: data.artifact || {},
-                intro: data.intro || {},
+                artifact: manifest.artifact || {},
+                intro: manifest.intro || {},
                 sections: data.sections || [],
                 liteCount,
                 fullCount
@@ -2251,7 +2258,7 @@ const App = {
                 if (progress) {
                     QuestionnaireEngine.responses = progress.responses || {};
                     QuestionnaireEngine.currentIndex = progress.currentIndex || 0;
-                    QuestionnaireEngine.skipped = new Set(StorageManager.loadSkipped() || []);
+                    QuestionnaireEngine.skipped = StorageManager.loadSkipped() || [];
                 }
 
                 // Update mode switcher

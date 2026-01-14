@@ -1,15 +1,4 @@
 {
-    "schema_version": "1.2.0",
-    "artifact": {
-        "id": "REPLACE_prompts_id",
-        "title": "REPLACE_Prompts Title",
-        "language": "en-US",
-        "applies_to": "REPLACE_matching_questions_artifact_id"
-    },
-    "privacy_preface": {
-        "title": "Optional Privacy Preface",
-        "text": "If we use a model to reflect on our answers, we only paste what we both agree is okay to share. We can remove details. We can keep it fully local. We can also skip AI entirely. The goal is insight and kindness, not analysis for its own sake."
-    },
     "prompts": {
         "individual_reflection_lite": {
             "id": "p_individual_lite_v1",

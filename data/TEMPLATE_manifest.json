@@ -1,0 +1,49 @@
+{
+    "schema_version": "1.3.0",
+    "artifact": {
+        "id": "REPLACE_phase_id",
+        "title": "REPLACE_Title",
+        "subtitle": "REPLACE_Subtitle shown on welcome screen",
+        "language": "en-US",
+        "stage": {
+            "code": "REPLACE_phase_code",
+            "label": "REPLACE_Stage Label",
+            "eligibility": [
+                "REPLACE: Who should use this phase",
+                "REPLACE: Another eligibility criterion"
+            ]
+        },
+        "purpose": [
+            "REPLACE: Goal 1",
+            "REPLACE: Goal 2"
+        ]
+    },
+    "intro": {
+        "instructions": {
+            "title": "Instructions",
+            "items": [
+                "This is not a test, not a contract.",
+                "Answer what feels true right now.",
+                "It is okay to skip any question.",
+                "If you feel flooded or tense, pause and do something grounding."
+            ]
+        },
+        "keep_in_mind": {
+            "title": "Keep in Mind",
+            "items": [
+                "The goal is clarity and kindness.",
+                "Answers can change. Nothing here is permanent."
+            ]
+        }
+    },
+    "prompts_artifact": {
+        "id": "REPLACE_prompts_id",
+        "title": "REPLACE_Prompts Title",
+        "language": "en-US",
+        "applies_to": "REPLACE_matching_artifact_id"
+    },
+    "privacy_preface": {
+        "title": "Optional Privacy Preface",
+        "text": "If we use a model to reflect on our answers, we only paste what we both agree is okay to share. We can remove details. We can keep it fully local. We can also skip AI entirely. The goal is insight and kindness, not analysis for its own sake."
+    }
+}

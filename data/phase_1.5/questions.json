@@ -1,50 +1,4 @@
 {
-  "schema_version": "1.3.0",
-  "artifact": {
-    "id": "phase1_5_intentional_early_dating",
-    "title": "Slow Build Check-In",
-    "subtitle": "Building a foundation for a long-term relationship through self discovery and with your partner",
-    "language": "en-US",
-    "stage": {
-      "code": "phase1_5",
-      "label": "Intentional Early Dating",
-      "eligibility": [
-        "Mutual interest is explicit.",
-        "You want to move slow and protect trust.",
-        "You want light structure (pacing, check-ins, consent) without defining long-term commitments."
-      ]
-    },
-    "purpose": [
-      "Reduce mind-reading and increase kindness",
-      "Support healthy pacing without pressure",
-      "Protect trust around affection and escalation",
-      "Improve communication and comfort in social settings"
-    ]
-  },
-  "intro": {
-    "instructions": {
-      "title": "Instructions",
-      "items": [
-        "This is not a test, not a contract, and not a 'define us' talk.",
-        "Answer what feels true right now, not what you think 'should' be true.",
-        "It is okay to choose multiple options, rank them, or say 'it depends.'",
-        "It is okay to skip any question.",
-        "Safe-to-pause: if either of you feels flooded or tense, pause immediately and do something grounding, then return later if desired.",
-        "Use a time box and stop when it ends. Then do something light and enjoyable."
-      ]
-    },
-    "keep_in_mind": {
-      "title": "Keep in Mind",
-      "items": [
-        "The goal is less mind-reading and more kindness.",
-        "Clarity should feel calming, not pressuring.",
-        "Going slow can be wisdom, not low interest.",
-        "Physical affection should feel safe, chosen, and easy to pause.",
-        "Past pressure around intimacy matters. Protect trust by moving with consent and attunement.",
-        "Answers can change. Nothing here is permanent."
-      ]
-    }
-  },
   "sections": [
     {
       "id": "s1",
@@ -192,6 +146,9 @@
           "lite",
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 5
       }
     },
     "q02": {
@@ -236,6 +193,9 @@
           "lite",
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 5
       }
     },
     "q03": {
@@ -807,6 +767,9 @@
           "lite",
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 5
       }
     },
     "q12": {
@@ -1129,68 +1092,90 @@
       "section_id": "s7",
       "order": 19,
       "title": "Top values (choose up to 5)",
-      "prompt": "Values that feel most important to me in a relationship right now (choose up to 5). If you want, rank your top 2:",
-      "type": "multi_select",
-      "options": [
+      "prompt": "Select and rank the values that feel most important to you in a relationship right now (up to 5). Drag to reorder by priority (top = most important).",
+      "type": "compound",
+      "fields": [
         {
-          "value": "faith",
-          "label": "Faith"
+          "key": "values_ranked",
+          "label": "Select and rank your top values (top = most important)",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "faith",
+              "label": "Faith"
+            },
+            {
+              "value": "family",
+              "label": "Family"
+            },
+            {
+              "value": "growth",
+              "label": "Growth / learning"
+            },
+            {
+              "value": "service",
+              "label": "Service"
+            },
+            {
+              "value": "stability",
+              "label": "Stability"
+            },
+            {
+              "value": "adventure",
+              "label": "Adventure"
+            },
+            {
+              "value": "humor",
+              "label": "Humor"
+            },
+            {
+              "value": "emotional_safety",
+              "label": "Emotional safety"
+            },
+            {
+              "value": "integrity",
+              "label": "Integrity"
+            },
+            {
+              "value": "play",
+              "label": "Play / fun"
+            },
+            {
+              "value": "respect",
+              "label": "Respect"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 5
+          }
         },
         {
-          "value": "family",
-          "label": "Family"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "values_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "growth",
-          "label": "Growth / learning"
-        },
-        {
-          "value": "service",
-          "label": "Service"
-        },
-        {
-          "value": "stability",
-          "label": "Stability"
-        },
-        {
-          "value": "adventure",
-          "label": "Adventure"
-        },
-        {
-          "value": "humor",
-          "label": "Humor"
-        },
-        {
-          "value": "emotional_safety",
-          "label": "Emotional safety"
-        },
-        {
-          "value": "integrity",
-          "label": "Integrity"
-        },
-        {
-          "value": "play",
-          "label": "Play / fun"
-        },
-        {
-          "value": "respect",
-          "label": "Respect"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Why these values matter most right now",
+          "type": "free_text",
+          "placeholder": "Optional: share context about your priorities..."
         }
       ],
-      "validation": {
-        "max_selected": 5
-      },
       "answer_schema": {
-        "selected_values": [],
-        "top_two_ranking": [],
+        "values_ranked": [],
+        "other_text": "",
         "notes": ""
       },
       "examples": [
-        "Top values: Respect, Growth, Faith, Play, Emotional safety. Top 2: Respect, Emotional safety."
+        "Top 5: 1) Respect, 2) Emotional safety, 3) Growth, 4) Faith, 5) Play"
       ],
       "tags": {
         "included_in_manifests": [
@@ -1244,6 +1229,9 @@
         "included_in_manifests": [
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 4
       }
     },
     "q21": {
@@ -1331,6 +1319,9 @@
         "included_in_manifests": [
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 5
       }
     },
     "q23": {
@@ -1470,6 +1461,9 @@
         "included_in_manifests": [
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 3
       }
     },
     "q26": {
@@ -1522,6 +1516,9 @@
         "included_in_manifests": [
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 5
       }
     },
     "q27": {
@@ -1529,46 +1526,67 @@
       "section_id": "s8",
       "order": 27,
       "title": "Apology and repair language",
-      "prompt": "The most meaningful apology to me usually includes (choose any):",
-      "type": "multi_select",
-      "options": [
+      "prompt": "Select and rank what makes an apology most meaningful to you. Drag to reorder by importance (top = most important).",
+      "type": "compound",
+      "fields": [
         {
-          "value": "acknowledgment",
-          "label": "Clear acknowledgment of impact"
+          "key": "apology_preferences_ranked",
+          "label": "Select and rank (top = most important)",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "acknowledgment",
+              "label": "Clear acknowledgment of impact"
+            },
+            {
+              "value": "ownership",
+              "label": "Ownership without excuses"
+            },
+            {
+              "value": "reassurance",
+              "label": "Reassurance of care/commitment"
+            },
+            {
+              "value": "plan",
+              "label": "A plan to do better next time"
+            },
+            {
+              "value": "action",
+              "label": "A corrective action (small behavior change)"
+            },
+            {
+              "value": "time",
+              "label": "Time and patience"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ]
         },
         {
-          "value": "ownership",
-          "label": "Ownership without excuses"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "apology_preferences_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "reassurance",
-          "label": "Reassurance of care/commitment"
-        },
-        {
-          "value": "plan",
-          "label": "A plan to do better next time"
-        },
-        {
-          "value": "action",
-          "label": "A corrective action (small behavior change)"
-        },
-        {
-          "value": "time",
-          "label": "Time and patience"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "What makes an apology feel genuine to you?",
+          "type": "free_text",
+          "placeholder": "Optional: share what an ideal repair looks like..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "apology_preferences_ranked": [],
         "other_text": "",
         "notes": ""
       },
       "examples": [
-        "Acknowledgment + ownership + plan.",
-        "Ownership + corrective action."
+        "Top priorities: 1) Ownership, 2) Acknowledgment, 3) Plan"
       ],
       "tags": {
         "included_in_manifests": [
@@ -1650,38 +1668,67 @@
       "section_id": "s8",
       "order": 29,
       "title": "Heavy topics boundaries",
-      "prompt": "When discussing heavy topics (past, trauma, sensitive history), the best pace is:",
-      "type": "single_select",
-      "options": [
+      "prompt": "When discussing heavy topics (past, trauma, sensitive history), select and rank your preferences. Drag to reorder by importance (top = most important).",
+      "type": "compound",
+      "fields": [
         {
-          "value": "slow_with_checkins",
-          "label": "Slow with frequent check-ins"
+          "key": "boundaries_ranked",
+          "label": "Select and rank (top = most important)",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "slow_with_checkins",
+              "label": "Slow with frequent check-ins"
+            },
+            {
+              "value": "structured_window",
+              "label": "Structured window (time box), then stop"
+            },
+            {
+              "value": "only_when_stable",
+              "label": "Only when we're both stable/rested"
+            },
+            {
+              "value": "as_needed",
+              "label": "As needed, but pause at first overwhelm"
+            },
+            {
+              "value": "prep_time",
+              "label": "I need heads-up before heavy topics"
+            },
+            {
+              "value": "debrief_after",
+              "label": "Debrief/reconnect after hard conversations"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ]
         },
         {
-          "value": "structured_window",
-          "label": "Structured window (time box), then stop"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "boundaries_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "only_when_stable",
-          "label": "Only when we're both stable/rested"
-        },
-        {
-          "value": "as_needed",
-          "label": "As needed, but we pause at first overwhelm"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "What helps you stay regulated during hard conversations?",
+          "type": "free_text",
+          "placeholder": "Optional: share what works for you..."
         }
       ],
       "answer_schema": {
-        "selected_value": "",
+        "boundaries_ranked": [],
         "other_text": "",
         "notes": ""
       },
       "examples": [
-        "Structured window, then stop.",
-        "Slow with check-ins."
+        "Top: 1) Slow with check-ins, 2) Debrief after, 3) Only when stable"
       ],
       "tags": {
         "included_in_manifests": [
@@ -1739,6 +1786,9 @@
         "included_in_manifests": [
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 4
       }
     },
     "q31": {
@@ -2170,42 +2220,63 @@
       "section_id": "s10",
       "order": 36,
       "title": "What reassurance works best",
-      "prompt": "If I'm feeling insecure, reassurance that helps most is (choose any):",
-      "type": "multi_select",
-      "options": [
+      "prompt": "Select and rank what helps most when you're feeling insecure. Drag to reorder by importance (top = helps most).",
+      "type": "compound",
+      "fields": [
         {
-          "value": "clear_words",
-          "label": "Clear words (“I like you, I'm here”)"
+          "key": "reassurance_ranked",
+          "label": "Select and rank (top = helps most)",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "clear_words",
+              "label": "Clear words (\"I like you, I'm here\")"
+            },
+            {
+              "value": "plans",
+              "label": "Concrete plans/time together"
+            },
+            {
+              "value": "gentle_touch",
+              "label": "Gentle touch/affection (if safe)"
+            },
+            {
+              "value": "transparency",
+              "label": "Transparency (what's going on, no ambiguity)"
+            },
+            {
+              "value": "space_then_return",
+              "label": "Space, then re-connection"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ]
         },
         {
-          "value": "plans",
-          "label": "Concrete plans/time together"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "reassurance_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "gentle_touch",
-          "label": "Gentle touch/affection (if safe)"
-        },
-        {
-          "value": "transparency",
-          "label": "Transparency (what's going on, no ambiguity)"
-        },
-        {
-          "value": "space_then_return",
-          "label": "Space, then re-connection"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Context about what helps vs. what doesn't",
+          "type": "free_text",
+          "placeholder": "Optional: share more about what works for you..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "reassurance_ranked": [],
         "other_text": "",
         "notes": ""
       },
       "examples": [
-        "Concrete plans + clear words.",
-        "Transparency + gentle touch."
+        "Top: 1) Concrete plans, 2) Clear words, 3) Transparency"
       ],
       "tags": {
         "included_in_manifests": [
@@ -2303,6 +2374,9 @@
         "included_in_manifests": [
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 5
       }
     }
   },

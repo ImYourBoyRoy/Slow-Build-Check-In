@@ -2,17 +2,37 @@
 
 ## For AI Models & Human Authors
 
-Use this reference to create new `questions.json` and `prompts.json` files for any phase.
+Use this reference to create new `manifest.json`, `questions.json`, and `prompts.json` files for any phase.
 
 ---
 
-## questions.json Structure
+## Phase File Structure
+
+Each phase folder contains three files:
+
+```text
+data/phase_x/
+├── manifest.json   # Metadata: schema_version, artifact, intro, prompts_artifact, privacy_preface
+├── questions.json  # Content: sections, questions, manifests, ui_hints
+└── prompts.json    # AI prompts: prompts object only
+```
+
+### manifest.json Structure
 
 ```json
 {
   "schema_version": "1.3.0",
-  "artifact": { /* Phase metadata */ },
-  "intro": { /* Instructions and guidance */ },
+  "artifact": { /* Phase metadata: id, title, subtitle, stage, purpose */ },
+  "intro": { /* Instructions and keep_in_mind items */ },
+  "prompts_artifact": { /* Prompts file metadata: id, title, applies_to */ },
+  "privacy_preface": { /* Privacy notice for AI prompt usage */ }
+}
+```
+
+### questions.json Structure
+
+```json
+{
   "sections": [ /* Question groupings */ ],
   "questions": { /* All questions by ID */ },
   "ui_hints": { /* Optional UI configuration */ },
@@ -21,9 +41,17 @@ Use this reference to create new `questions.json` and `prompts.json` files for a
 }
 ```
 
+### prompts.json Structure
+
+```json
+{
+  "prompts": { /* AI prompt templates by type */ }
+}
+```
+
 ---
 
-## Top-Level Fields
+## manifest.json Fields
 
 ### artifact (required)
 
@@ -56,6 +84,30 @@ Use this reference to create new `questions.json` and `prompts.json` files for a
   }
 }
 ```
+
+### prompts_artifact (required)
+
+```json
+{
+  "id": "phase_prompts_id",
+  "title": "Prompts Title",
+  "language": "en-US",
+  "applies_to": "matching_artifact_id"
+}
+```
+
+### privacy_preface (required)
+
+```json
+{
+  "title": "Privacy Preface Title",
+  "text": "Privacy guidance text shown before AI prompt usage"
+}
+```
+
+---
+
+## questions.json Fields
 
 ### sections (required)
 
@@ -272,21 +324,15 @@ Allows users to select multiple options and drag-to-reorder by priority. Output 
 
 ---
 
-## prompts.json Structure
+## prompts.json Details
+
+> **Note**: The brief structure overview is in the [Phase File Structure](#phase-file-structure) section above.
+> Metadata (`schema_version`, `artifact`, `privacy_preface`) has been moved to `manifest.json`.
+
+The `prompts.json` file now contains only the `prompts` object:
 
 ```json
 {
-  "schema_version": "1.2.0",
-  "artifact": {
-    "id": "unique_prompts_id",
-    "title": "Prompts Title",
-    "language": "en-US",
-    "applies_to": "matching_questions_artifact_id"
-  },
-  "privacy_preface": {
-    "title": "Privacy Preface Title",
-    "text": "Privacy guidance text"
-  },
   "prompts": {
     "individual_reflection_lite": { /* Prompt template */ },
     "individual_reflection_full": { /* Prompt template */ },
