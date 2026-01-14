@@ -17,28 +17,9 @@
         </div>
     </div>
 
-    <!-- Introduction -->
-    <div class="intro-card">
-        <div class="intro-section">
-            <h2 class="intro-title">📋 Instructions</h2>
-            <ul class="intro-list">
-                <li>This is not a test, not a contract, and not a "define us" talk.</li>
-                <li>Answer what feels true right now, not what you think "should" be true.</li>
-                <li>It's okay to choose multiple options, rank them, or say "it depends."</li>
-                <li>It's okay to skip any question and come back later.</li>
-                <li>If you feel flooded or tense, pause immediately and do something grounding.</li>
-            </ul>
-        </div>
-
-        <div class="intro-section">
-            <h2 class="intro-title">💡 Keep in Mind</h2>
-            <ul class="intro-list">
-                <li>The goal is less mind-reading and more kindness.</li>
-                <li>Clarity should feel calming, not pressuring.</li>
-                <li>Going slow can be wisdom, not low interest.</li>
-                <li>Answers can change. Nothing here is permanent.</li>
-            </ul>
-        </div>
+    <!-- Introduction - Dynamically populated from manifest.json -->
+    <div id="welcome-intro-container" class="intro-card">
+        <!-- Instructions and Keep in Mind sections will be rendered here -->
     </div>
 
     <!-- Mode Selection -->
@@ -72,7 +53,7 @@
             Begin Check-In
             <span aria-hidden="true">→</span>
         </button>
-        <div style="margin-top: var(--space-4);">
+        <div class="import-button-wrapper">
             <button id="btn-import-welcome" class="btn btn-ghost">
                 📥 Have saved results? Import for AI Prompt
             </button>

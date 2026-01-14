@@ -42,26 +42,35 @@
 /* ==================== Questionnaire Cards Grid ==================== */
 .questionnaire-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
 .questionnaire-card {
-    background: var(--color-bg-card);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 1.75rem;
+    background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-elevated) 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl, 20px);
+    padding: 2rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     /* Flexbox for consistent alignment */
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    min-height: 420px;
+    /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    /* Premium shadow */
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.08),
+        0 1px 3px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+/* Decorative gradient accent line at top */
 .questionnaire-card::before {
     content: '';
     position: absolute;
@@ -69,24 +78,52 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    background: linear-gradient(90deg,
+            var(--color-primary) 0%,
+            var(--color-secondary) 50%,
+            var(--color-primary) 100%);
+    background-size: 200% 100%;
+    opacity: 0.6;
+    transition: opacity 0.4s ease, background-position 0.8s ease;
+}
+
+/* Decorative glow effect */
+.questionnaire-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%,
+            rgba(var(--color-primary-rgb, 168, 85, 247), 0.04) 0%,
+            transparent 50%);
+    pointer-events: none;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
 .questionnaire-card:hover {
-    border-color: var(--color-primary);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    border-color: rgba(var(--color-primary-rgb, 168, 85, 247), 0.4);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 8px 20px rgba(var(--color-primary-rgb, 168, 85, 247), 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .questionnaire-card:hover::before {
+    opacity: 1;
+    background-position: 100% 0;
+}
+
+.questionnaire-card:hover::after {
     opacity: 1;
 }
 
 .questionnaire-card:focus-visible {
     outline: 3px solid var(--color-primary);
-    outline-offset: 2px;
+    outline-offset: 4px;
 }
 
 /* Card Header */
@@ -166,16 +203,20 @@
 
 /* Eligibility/Purpose List */
 .card-details {
-    margin-top: 1rem;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background: rgba(var(--color-primary-rgb, 168, 85, 247), 0.03);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(var(--color-primary-rgb, 168, 85, 247), 0.08);
 }
 
 .card-details-title {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-text-light);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-primary);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
 }
 
 .card-list {
@@ -186,10 +227,11 @@
 
 .card-list li {
     font-size: 0.85rem;
-    color: var(--color-text-muted);
-    padding: 0.35rem 0;
-    padding-left: 1.25rem;
+    color: var(--color-text);
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
     position: relative;
+    line-height: 1.45;
 }
 
 .card-list li::before {
@@ -197,10 +239,11 @@
     position: absolute;
     left: 0;
     color: var(--color-primary);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
-/* Start Buttons */
+/* Start Buttons (legacy) */
 .card-action {
     margin-top: auto;
     padding-top: 1.5rem;
@@ -211,6 +254,105 @@
 .card-action .btn {
     flex: 1;
     justify-content: center;
+}
+
+/* Footer Stats (subtle question counts) */
+.card-footer-stats {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(var(--color-primary-rgb, 168, 85, 247), 0.15);
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.stat-subtle {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    opacity: 0.85;
+}
+
+/* ==================== Card Footer (Redesigned) ==================== */
+.card-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(var(--color-primary-rgb, 168, 85, 247), 0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Question Count Badges */
+.card-question-counts {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.question-count-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: rgba(var(--color-primary-rgb, 168, 85, 247), 0.08);
+    border-radius: var(--radius-md);
+    min-width: 50px;
+}
+
+.count-number {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.count-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.count-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(var(--color-primary-rgb, 168, 85, 247), 0.15);
+}
+
+/* Call to Action */
+.card-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb, 168, 85, 247), 0.25);
+}
+
+.cta-text {
+    white-space: nowrap;
+}
+
+.cta-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.questionnaire-card:hover .card-cta {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(var(--color-primary-rgb, 168, 85, 247), 0.35);
+}
+
+.questionnaire-card:hover .cta-arrow {
+    transform: translateX(3px);
 }
 
 /* ==================== Instructions Section ==================== */

@@ -246,6 +246,10 @@
     padding: var(--space-6) 0;
 }
 
+.import-button-wrapper {
+    margin-top: var(--space-4);
+}
+
 /* ========================================
    Questionnaire View
    ======================================== */

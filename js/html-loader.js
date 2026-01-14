@@ -19,6 +19,9 @@ const HTMLLoader = {
     // Base path for HTML partials
     basePath: 'html/',
 
+    // Initialization guard
+    _initialized: false,
+
     // Component definitions: [filename, containerSelector]
     components: {
         'loader': ['components/loader.html', '#loader-container'],
@@ -127,6 +130,17 @@ const HTMLLoader = {
      * @param {Function} callback - Function to call when all components are loaded
      */
     init(callback) {
+        // Guard against multiple initializations
+        if (this._initialized) {
+            console.warn('HTMLLoader.init() called multiple times - ignoring');
+            // Still call the callback if provided (App.init handles its own guard)
+            if (typeof callback === 'function') {
+                callback();
+            }
+            return;
+        }
+        this._initialized = true;
+
         this.load()
             .then(() => {
                 if (typeof callback === 'function') {
