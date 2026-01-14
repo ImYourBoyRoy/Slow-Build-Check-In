@@ -452,6 +452,11 @@
     gap: 1rem;
 }
 
+/* Hidden state - controlled by JS toggling this class */
+.resume-banner.hidden {
+    display: none;
+}
+
 .resume-banner-content {
     display: flex;
     align-items: center;

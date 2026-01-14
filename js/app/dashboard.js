@@ -297,13 +297,13 @@ const AppDashboard = {
         }
 
         if (hasProgress && progressPhase) {
-            banner.style.display = 'flex';
+            banner.classList.remove('hidden');
             const nameEl = document.getElementById('resume-phase-name');
             if (nameEl) {
                 nameEl.textContent = `progress in ${progressPhase.short_title}`;
             }
         } else {
-            banner.style.display = 'none';
+            banner.classList.add('hidden');
         }
     },
 

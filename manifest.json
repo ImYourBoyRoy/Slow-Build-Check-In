@@ -2,7 +2,7 @@
     "name": "HeartReady",
     "short_name": "HeartReady",
     "description": "A warm toolkit for healthy relationship building — from pre-dating preparation through intentional partnership.",
-    "start_url": "/",
+    "start_url": "./",
     "display": "standalone",
     "background_color": "#F8F4FB",
     "theme_color": "#7C6B9E",
