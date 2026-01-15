@@ -58,6 +58,13 @@ const URLRouter = {
         const first = parts[0] || null;
         const second = parts[1] || null;
 
+        // Redirect #/dashboard to root (clean URL)
+        if (first === 'dashboard') {
+            // Clear hash and return dashboard
+            window.history.replaceState(null, '', window.location.pathname);
+            return { phase: null, view: 'dashboard', questionId: null };
+        }
+
         // Check if first part is a standalone view (e.g., #/about)
         if (first && this.standaloneViews.includes(first)) {
             return { phase: null, view: first, questionId: null };
