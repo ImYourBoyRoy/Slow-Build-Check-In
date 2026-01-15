@@ -21,7 +21,7 @@ const ThemeManager = {
     },
 
     /**
-     * Initialize theme manager, loading saved preference or defaulting to light.
+     * Initialize theme manager, loading saved preference or defaulting to system preference.
      */
     init() {
         // Try to load saved theme
@@ -30,8 +30,9 @@ const ThemeManager = {
         if (savedTheme && this.themes.includes(savedTheme)) {
             this.setTheme(savedTheme, false); // Don't animate on initial load
         } else {
-            // Default to the soft light theme (feminine-first default)
-            this.setTheme('light', false);
+            // Default to system preference (dark mode detection)
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            this.setTheme(prefersDark ? 'dark' : 'light', false);
         }
 
         // Listen for system preference changes (only affects users who haven't chosen a theme)

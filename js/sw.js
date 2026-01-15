@@ -12,7 +12,7 @@
  * - Network requests made in background to update cache
  */
 
-const CACHE_NAME = 'readyforus-v2.1.0';
+const CACHE_NAME = 'readyforus-v2.2.0';
 
 // Assets to cache on install (paths relative to site root)
 const STATIC_ASSETS = [
@@ -29,6 +29,7 @@ const STATIC_ASSETS = [
     '../css/dashboard.css',
     '../css/toast.css',
     '../css/comparison.css',
+    '../css/about.css',
     '../css/themes/light.css',
     '../css/themes/dark.css',
     '../css/themes/warm.css',
@@ -59,6 +60,7 @@ const STATIC_ASSETS = [
     './app/progress.js',
     './app/ranked-select.js',
     './app/dashboard.js',
+    './app/nav-menu.js',
     './app/import-modal.js',
     './app/init.js',
     './debug-overlay.js',

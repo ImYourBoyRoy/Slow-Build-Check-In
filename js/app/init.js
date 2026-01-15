@@ -56,6 +56,9 @@ const AppInit = {
             // Set up event listeners
             this.setupEventListeners();
 
+            // Initialize navigation dropdown menu
+            this.initNavMenu();
+
             // Update mode options with dynamic counts
             this.updateModeOptions();
 

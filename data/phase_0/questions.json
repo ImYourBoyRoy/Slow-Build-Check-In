@@ -171,7 +171,11 @@
         "notes": ""
       },
       "examples": [
-        "cautiously_ready"
+        "Not ready (e.g., I don't feel the capacity for a relationship right now).",
+        "Mostly not ready (e.g., I want to date, but have other major priorities first).",
+        "Cautiously ready (e.g., I'm open to meeting people but taking it slow).",
+        "Ready (e.g., I feel stable and excited to connect).",
+        "Unsure (e.g., I swing between wanting connection and wanting space)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -298,7 +302,10 @@
         "other_text": ""
       },
       "examples": [
-        "Reasons ranked: 1) I desire marriage/family, 2) I feel emotionally ready, 3) I want companionship. Urgency: 5. Confidence: 7."
+        "Most ready (e.g., I feel emotionally available).",
+        "Least ready (e.g., My schedule is very full).",
+        "Confidence: High (I trust myself).",
+        "Urgency: Low (I'm not in a rush)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -354,7 +361,11 @@
         "notes": ""
       },
       "examples": [
-        "Stable/neutral - I feel okay most days, with occasional dips."
+        "Stable/positive (e.g., generally happy and balanced).",
+        "Stable/neutral (e.g., okay, just going through the routine).",
+        "Variable (e.g., lots of ups and downs recently).",
+        "Low (e.g., feeling down or drained often).",
+        "Anxious (e.g., feeling worried or on edge)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -398,7 +409,10 @@
         "notes": ""
       },
       "examples": [
-        "Moderate - my schedule is full but manageable."
+        "Light (e.g., life feels manageable).",
+        "Moderate (e.g., busy but I'm handling it).",
+        "Heavy (e.g., under significant pressure right now).",
+        "Overwhelmed (e.g., feeling buried by obligations)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -445,7 +459,10 @@
         "notes": ""
       },
       "examples": [
-        "Mostly, with occasional strain - I can usually show up but need to be intentional about it."
+        "Yes, consistently (e.g., I follow through on what I say).",
+        "Mostly (e.g., I usually come through, with occasional slips).",
+        "Inconsistent (e.g., I struggle to keep commitments).",
+        "No (e.g., I can't take on responsibility for another right now)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -489,7 +506,9 @@
         "notes": ""
       },
       "examples": [
-        "No."
+        "No (e.g., feeling safe).",
+        "Passive (e.g., occasional dark thoughts but no intent).",
+        "Active (Please prioritize your safety and seek professional support)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -541,7 +560,10 @@
         "notes": ""
       },
       "examples": [
-        "Occasional and responsible."
+        "None (e.g., I don't use substances).",
+        "Occasional/Responsible (e.g., social use that doesn't impact my life).",
+        "Sometimes problematic (e.g., I sometimes overdo it).",
+        "In recovery (e.g., I am sober/clean)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -589,7 +611,10 @@
         "notes": ""
       },
       "examples": [
-        "Mostly, with some struggle - I'm working on this area but not perfect."
+        "Yes (e.g., my behavior aligns with my values).",
+        "Mostly (e.g., minor struggles but mostly aligned).",
+        "No (e.g., I feel out of control or misaligned).",
+        "Working on it (e.g., taking steps to improve)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -695,7 +720,8 @@
         "notes": ""
       },
       "examples": [
-        "Top 3: 1) Still thinking about ex, 2) Schedule chaos, 3) Get defensive when corrected"
+        "Top Reasons: 1) Still healing, 2) Career focus, 3) Financial stress.",
+        "Top Reasons: 1) Fear of vulnerability, 2) Enjoying single life, 3) Health issues."
       ],
       "tags": {
         "included_in_manifests": [
@@ -753,10 +779,12 @@
         "last_major_length_months": 0,
         "longest_relationship_months": 0,
         "avg_relationship_months": 0,
-        "major_relationship_count": 0
+        "major_relationship_count": 0,
+        "notes": ""
       },
       "examples": [
-        "Months since last major: 8. Last major length: 24 months. Longest relationship: 36 months."
+        "Last relationship: 2 years ago. Duration: 1 year. Ended: Mutual decision.",
+        "Last relationship: 6 months ago. Duration: 3 months. Ended: I ended it."
       ],
       "tags": {
         "included_in_manifests": [
@@ -804,7 +832,11 @@
         "notes": ""
       },
       "examples": [
-        "Never married."
+        "Never married.",
+        "Divorced (finalized).",
+        "Divorced (in progress).",
+        "Widowed.",
+        "Separated."
       ],
       "tags": {
         "included_in_manifests": [
@@ -868,7 +900,11 @@
         "notes": ""
       },
       "examples": [
-        "Mostly, with some unfinished pieces."
+        "Neutral (e.g., I don't think about them much).",
+        "Warm (e.g., we wish each other well).",
+        "Sad (e.g., I still feel grief).",
+        "Angry (e.g., I still feel hurt/upset).",
+        "Mixed (e.g., some good days, some hard days)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -920,7 +956,11 @@
         "notes": ""
       },
       "examples": [
-        "A few times per month."
+        "No contact (e.g., we don't speak).",
+        "Rare/Logistical (e.g., only discuss necessary business).",
+        "Co-parenting (e.g., communication focused on kids).",
+        "Friendly (e.g., we catch up occasionally).",
+        "Frequent (e.g., we are still close friends)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -981,10 +1021,14 @@
       ],
       "answer_schema": {
         "boundary_quality": "",
-        "explanation": ""
+        "explanation": "",
+        "notes": ""
       },
       "examples": [
-        "Friendly occasional contact only."
+        "Clean (e.g., boundaries are clear and respected).",
+        "Mostly clean (e.g., occasional blurriness but mostly okay).",
+        "Messy (e.g., lines are often crossed).",
+        "Complex (e.g., emotional ties linger)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1032,7 +1076,10 @@
         "notes": ""
       },
       "examples": [
-        "Some text/calls, gradually decreasing."
+        "No (e.g., nothing left to resolve).",
+        "Minor (e.g., some small loose ends).",
+        "Moderate (e.g., some emotional entanglements remain).",
+        "Major (e.g., still living together or financially tied)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1080,7 +1127,9 @@
         "notes": ""
       },
       "examples": [
-        "No comparison trap - I see them as a different chapter."
+        "Yes (e.g., I feel safe).",
+        "Mostly (e.g., usually safe, some unease).",
+        "No (Please prioritize your safety)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1140,7 +1189,11 @@
         "notes": ""
       },
       "examples": [
-        "I've named my patterns and am actively working on them."
+        "Mutual drift (e.g., we grew apart).",
+        "Conflict (e.g., too much fighting).",
+        "Avoidance (e.g., one or both withdrew).",
+        "Betrayal (e.g., trust was broken).",
+        "External factors (e.g., distance, timing)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1156,10 +1209,13 @@
       "prompt": "Name 2-5 lessons you want to carry forward (skills, boundaries, patterns to avoid).",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Solid - I can name what happened and what I'd do differently."
+        "I learned that I need to speak up sooner.",
+        "I learned that shared values are critical.",
+        "I learned to trust my intuition."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1175,10 +1231,13 @@
       "prompt": "Be honest. If you don't know, guess what they would say.",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Yes, with help - therapy, support group, or mentor."
+        "They might say I work too much.",
+        "They might say I struggle to open up.",
+        "They might say I can be critical."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1221,7 +1280,10 @@
         "notes": ""
       },
       "examples": [
-        "No - clean break on all platforms."
+        "In therapy (e.g., currently attending).",
+        "Open (e.g., willing to go if needed).",
+        "Maybe (e.g., undecided).",
+        "Not open (e.g., prefer to handle things myself)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1269,7 +1331,10 @@
         "notes": ""
       },
       "examples": [
-        "Multiple - therapist, close friends, family."
+        "Not applicable.",
+        "Stable (e.g., managed well).",
+        "Adjusting (e.g., currently finding the right balance).",
+        "Unstable (e.g., struggling with consistency)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1324,7 +1389,11 @@
         "notes": ""
       },
       "examples": [
-        "3,5 - 3-5 reliable people. Most important: close friend who knows my story."
+        "Self-regulate (e.g., take a pause, breathe).",
+        "Need space (e.g., take a walk, then return).",
+        "Ruminate (e.g., replay thoughts).",
+        "Shut down (e.g., go quiet).",
+        "Pursue (e.g., want to fix it immediately)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1393,7 +1462,11 @@
         "notes": ""
       },
       "examples": [
-        "Overeating, withdrawal from social activities."
+        "Stonewalling (e.g., shutting down conversation).",
+        "Defensiveness (e.g., explaining away fault).",
+        "Criticism (e.g., focusing on faults).",
+        "People-pleasing (e.g., agreeing to keep peace).",
+        "Withdrawing (e.g., physically leaving)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1435,7 +1508,9 @@
         "notes": ""
       },
       "examples": [
-        "Usually, within a few hours."
+        "Consistent (e.g., regular sleep schedule).",
+        "Somewhat inconsistent (e.g., varies weekends vs weekdays).",
+        "Poor (e.g., frequent waking or trouble sleeping)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1478,7 +1553,9 @@
         "notes": ""
       },
       "examples": [
-        "1-2 times this month, briefly."
+        "No (e.g., never occurred).",
+        "Yes, once (e.g., isolated incident).",
+        "Yes, multiple times (e.g., has happened before)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1529,7 +1606,11 @@
         "notes": ""
       },
       "examples": [
-        "Yes, I have tools: breathing, journaling, calling a friend."
+        "No (e.g., not an issue).",
+        "Mild impact (e.g., rare occurrence).",
+        "Moderate impact (e.g., happens occasionally).",
+        "Severe impact (e.g., feels out of control).",
+        "In recovery (e.g., active in a program)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1546,12 +1627,12 @@
       "prompt": "Name the 1-3 people (or supports) you would lean on if dating triggered anxiety, old wounds, or temptation.",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Faith leader/mentor",
-        "Therapist",
-        "1 trusted friend"
+        "Examples: Therapist, Best friend, Mentor, Sibilng.",
+        "Examples: Support group leader, Parent, Trusted colleague."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1599,7 +1680,11 @@
         "notes": ""
       },
       "examples": [
-        "Mostly, with awareness - I know I can slip when triggered but I'm working on it."
+        "Lean in (e.g., move closer).",
+        "Slow down (e.g., manage the pace).",
+        "Pull back (e.g., need distance).",
+        "Test (e.g., check if they are serious).",
+        "Overgive (e.g., try to earn their affection)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1647,7 +1732,10 @@
         "notes": ""
       },
       "examples": [
-        "Secure-leaning: I can be close without losing myself."
+        "Secure (e.g., comfortable with intimacy and independence).",
+        "Anxious (e.g., worry about connection).",
+        "Avoidant (e.g., value extreme independence).",
+        "Fearful/Mixed (e.g., want closeness but fear it)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1694,7 +1782,10 @@
         "notes": ""
       },
       "examples": [
-        "Mostly secure - I sometimes worry but can self-regulate."
+        "Same day (e.g., resolve before sleeping).",
+        "1-2 days (e.g., need a little time).",
+        "Week (e.g., takes a while to reconnect).",
+        "Rarely (e.g., we often don't resolve it)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1759,7 +1850,11 @@
         "notes": ""
       },
       "examples": [
-        "Address it soon/directly, talk through it calmly."
+        "Soft startup (e.g., gentle approach).",
+        "Listen/Reflect (e.g., hearing them out).",
+        "Argue to win (e.g., focusing on accuracy).",
+        "Withdraw (e.g., stepping back).",
+        "Repair attempts (e.g., humor or apology)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1806,7 +1901,10 @@
         "notes": ""
       },
       "examples": [
-        "Accept responsibility, apologize genuinely, make amends."
+        "Stay honest (e.g., speak truth despite fear).",
+        "Manage image (e.g., trying to look 'good').",
+        "Overpromise (e.g., agreeing to too much).",
+        "Detach (e.g., acting like I don't care)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1849,7 +1947,10 @@
         "notes": ""
       },
       "examples": [
-        "Gentle feedback lands better - both direct and kind."
+        "Strong (e.g., clear and consistent).",
+        "Okay (e.g., I can do it but it's hard).",
+        "Weak (e.g., I often give in).",
+        "Unsure (e.g., not sure where my lines are)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1949,7 +2050,8 @@
         "notes": ""
       },
       "examples": [
-        "Top patterns: 1) Choosing unavailable partners, 2) Over-giving, 3) Ignoring red flags"
+        "Top Patterns: 1) Over-giving, 2) Ignoring flags, 3) Moving fast.",
+        "Top Patterns: 1) Avoidance, 2) Shutting down, 3) Leaving early."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1997,7 +2099,10 @@
         "notes": ""
       },
       "examples": [
-        "Both - I value independence but also deep partnership."
+        "Neutral (e.g., assume they are busy).",
+        "Mild worry (e.g., notice it but stay calm).",
+        "Rejection (e.g., assume they lost interest).",
+        "Text more (e.g., try to get a response)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2020,7 +2125,9 @@
         "notes": ""
       },
       "examples": [
-        "Practice - I want to grow. Core values: faith, family, integrity."
+        "Importance: Central. Tradition: Christian. Community: Active.",
+        "Importance: Important. Tradition: LDS. Community: Occasional.",
+        "Importance: Minimal. Tradition: Spiritual/None."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2207,10 +2314,13 @@
       "answer_schema": {
         "clarity": "",
         "commitments": "",
-        "support": ""
+        "support": "",
+        "notes": ""
       },
       "examples": [
-        "Somewhat involved - occasional church attendance or personal practice."
+        "Clarity: Aligned (e.g., reliable follow-through).",
+        "Clarity: Struggling (e.g., hard to maintain).",
+        "Clarity: Unclear (e.g., still deciding)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2274,10 +2384,13 @@
       "answer_schema": {
         "goal": "",
         "covenant_commitment": "",
-        "timeline": ""
+        "timeline": "",
+        "notes": ""
       },
       "examples": [
-        "Yes - faith/values alignment is important to me."
+        "Goal: Marriage. Timeline: 1-2 years.",
+        "Goal: Partnership. Timeline: Open.",
+        "Goal: Exploring. Timeline: No rush."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2436,7 +2549,10 @@
         "notes": ""
       },
       "examples": [
-        "Yes, I can date someone with different views if they respect mine."
+        "Aligned (e.g., actions match values).",
+        "Mostly aligned (e.g., generally consistent).",
+        "Misaligned (e.g., struggle to live values).",
+        "Repairing (e.g., working to get back on track)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2525,7 +2641,8 @@
         "notes": ""
       },
       "examples": [
-        "Top 5: 1) Shared faith, 2) Emotional maturity, 3) Kindness and respect, 4) Communication, 5) Financial responsibility"
+        "Top 5: 1) Faith, 2) Kindness, 3) Communication, 4) Finances, 5) Family.",
+        "Top 5: 1) Integrity, 2) Humor, 3) Stability, 4) Chemistry, 5) Growth."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2541,10 +2658,13 @@
       "prompt": "Name 1-3 dealbreakers you have ignored in the past (and why).",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "I've ignored misaligned values for chemistry. Working on holding my standards."
+        "Ignored values mismatch because chemistry was strong.",
+        "Ignored financial chaos because they were fun.",
+        "Ignored lack of ambition because they were kind."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2592,7 +2712,10 @@
         "notes": ""
       },
       "examples": [
-        "Long-term: I'm looking for something that could lead to commitment."
+        "Preparation (e.g., focusing on self).",
+        "Light/Social (e.g., meeting people casually).",
+        "Intentional (e.g., dating with purpose).",
+        "Serious (e.g., looking for commitment)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2698,7 +2821,9 @@
         "notes": ""
       },
       "examples": [
-        "Slow pace, get to know each other: I want to build trust before deepening."
+        "Early: Date one person. Max: 1.",
+        "Early: Date a few casually. Max: 3.",
+        "Early: Open-ended."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2745,7 +2870,10 @@
         "notes": ""
       },
       "examples": [
-        "Exclusive once committed."
+        "Low-key (e.g., walk, coffee).",
+        "Activity (e.g., hike, game, event).",
+        "Dinner (e.g., sit-down meal).",
+        "Group (e.g., with friends)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2793,7 +2921,10 @@
         "notes": ""
       },
       "examples": [
-        "By date 3-5: basic life story, values, deal-breakers. Full vulnerability comes later."
+        "Light (e.g., occasional texts).",
+        "Daily (e.g., once a day check-in).",
+        "Frequent (e.g., ongoing conversation).",
+        "Minimal (e.g., mostly logistics)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2841,7 +2972,9 @@
         "notes": ""
       },
       "examples": [
-        "Weekly or bi-weekly: enough to build momentum without overwhelm."
+        "Conservative (e.g., minimal touch early on).",
+        "Moderate (e.g., some affection, clear limits).",
+        "Affectionate (e.g., touch is important)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2937,10 +3070,13 @@
       "answer_schema": {
         "risk_level": "",
         "supports": [],
-        "one_change": ""
+        "one_change": "",
+        "notes": ""
       },
       "examples": [
-        "1-2 months: enough time to see patterns and consistency."
+        "Risk: Medium. Support: Date structure.",
+        "Risk: High. Support: Accountability partner.",
+        "Risk: Low. Support: None needed."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2991,7 +3127,11 @@
         "notes": ""
       },
       "examples": [
-        "Hugs, hand-holding, light touch: affection should grow with trust."
+        "Kindness/Character.",
+        "Confidence/Strength.",
+        "Chemistry/Attraction.",
+        "Faith/Values.",
+        "Stability/Provision."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3039,7 +3179,10 @@
         "notes": ""
       },
       "examples": [
-        "5-10 hours per week."
+        "No.",
+        "Yes (Primary custody).",
+        "Yes (Shared custody).",
+        "Yes (Adult children)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3099,10 +3242,14 @@
       ],
       "answer_schema": {
         "coparent_state": "",
-        "impact": ""
+        "impact": "",
+        "notes": ""
       },
       "examples": [
-        "Evenings free: 3-4 nights per week. Weekends: mostly available."
+        "State: Healthy. Impact: minimal.",
+        "State: Tense. Impact: requires scheduling flexibility.",
+        "State: High conflict. Impact: significant stress.",
+        "State: N/A."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3149,7 +3296,10 @@
         "notes": ""
       },
       "examples": [
-        "Moderate flexibility: can adjust with notice."
+        "0 times/week (e.g., currently busy).",
+        "1 time/week (e.g., weekends only).",
+        "2-3 times/week.",
+        "4+ times/week (e.g., flexible schedule)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3192,7 +3342,9 @@
         "notes": ""
       },
       "examples": [
-        "No dependents at home."
+        "Stable (e.g., bills paid, some savings).",
+        "Some stress (e.g., tight but manageable).",
+        "Unstable (e.g., significant financial pressure)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3232,7 +3384,9 @@
         "notes": ""
       },
       "examples": [
-        "Within 30 minutes: close enough for easy dates."
+        "Predictable (e.g., standard hours).",
+        "Somewhat predictable (e.g., shifts vary but known).",
+        "Chaotic (e.g., frequent changes/travel)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3275,7 +3429,9 @@
         "notes": ""
       },
       "examples": [
-        "Stable and manageable: not a barrier to dating."
+        "No (e.g., good health).",
+        "Yes, managed (e.g., chronic condition that is under control).",
+        "Yes, unmanaged (e.g., health is a major challenge right now)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3291,10 +3447,13 @@
       "prompt": "List any hard constraints (distance, relocation, work shifts, kids schedules, legal constraints).",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Stable housing: living independently."
+        "Constraints: 50/50 custody schedule.",
+        "Constraints: Cannot relocate due to work.",
+        "Constraints: Night shift work schedule."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3337,7 +3496,10 @@
         "notes": ""
       },
       "examples": [
-        "Therapy and personal reflection."
+        "Act (e.g., make a plan to address it).",
+        "Think (e.g., reflect on it but wait to act).",
+        "Defend (e.g., feel the need to explain it).",
+        "Avoid (e.g., try not to focus on it)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3393,10 +3555,13 @@
       ],
       "answer_schema": {
         "best_style": "",
-        "triggers": ""
+        "triggers": "",
+        "notes": ""
       },
       "examples": [
-        "Ask someone who saw me: a trusted friend or mentor."
+        "Style: Direct. Trigger: condescension.",
+        "Style: Gentle. Trigger: public criticism.",
+        "Style: Written. Trigger: feeling rushed."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3492,7 +3657,8 @@
         "notes": ""
       },
       "examples": [
-        "Top 5: 1) Emotional regulation, 2) Communication skills, 3) Boundaries, 4) Closure, 5) Self-worth"
+        "Top 5: 1) Emotional regulation, 2) Boundaries, 3) Communication, 4) Self-worth, 5) Life stability.",
+        "Top 5: 1) Spiritual practice, 2) Conflict repair, 3) Health, 4) Social skills, 5) Closure."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3508,10 +3674,12 @@
       "prompt": "Write a 4-week plan: 1-3 actions you will take, with dates. Make it specific.",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Week 1: Start journaling about patterns. Week 2: Reach out to one close friend. Week 3-4: Set one boundary I've been avoiding."
+        "Plan: Read one book on attachment, Journal weekly.",
+        "Plan: Join a social group, Discuss goals with a mentor."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3527,10 +3695,14 @@
       "prompt": "If you share this with a therapist or AI coach, what context do you want them to know to avoid misreading you?",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Self-honesty, healthy conflict skills, knowing my worth."
+        "I need time to open up.",
+        "I value directness.",
+        "I am sensitive to criticism.",
+        "I process things internally first."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3582,7 +3754,10 @@
         "notes": ""
       },
       "examples": [
-        "Ended it myself: I initiated the breakup."
+        "Serial monogamy (e.g., jumping from one to next).",
+        "Long gaps (e.g., years between partners).",
+        "Situationships (e.g., undefined connections).",
+        "Avoidance (e.g., rarely dating)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3625,7 +3800,10 @@
         "notes": ""
       },
       "examples": [
-        "Mostly relieved with some sadness."
+        "Slowly (e.g., takes time to build feelings).",
+        "Moderately (e.g., steady pace).",
+        "Fast (e.g., attach quickly).",
+        "Varies (e.g., depends on the person)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3673,7 +3851,10 @@
         "notes": ""
       },
       "examples": [
-        "3 months ago - I'm past the acute phase."
+        "Not at all (e.g., feeling stable).",
+        "Mildly (e.g., occasional bad days).",
+        "Moderately (e.g., affects daily life sometimes).",
+        "Severely (e.g., significant struggle right now)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3725,7 +3906,10 @@
         "notes": ""
       },
       "examples": [
-        "Moderate - not major but still processing."
+        "No (e.g., no known trauma).",
+        "Yes, addressed (e.g., processed in therapy).",
+        "Yes, partially (e.g., working on it).",
+        "Yes, unaddressed (e.g., haven't started processing)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3741,10 +3925,12 @@
       "prompt": "List 1-5 relationship triggers and what reliably helps you regulate.",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Not diagnosed or unsure."
+        "Triggers: Yelling, Silence. Soothing: Walking away, Music.",
+        "Triggers: Criticism, Lateness. Soothing: Reassurance, Space."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3787,7 +3973,10 @@
         "notes": ""
       },
       "examples": [
-        "Name the emotion but not always regulate it quickly."
+        "Direct (e.g., state needs clearly).",
+        "Indirect (e.g., hint or imply).",
+        "Avoidant (e.g., stay silent to keep peace).",
+        "Overexplain (e.g., talk a lot to clarify)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3834,7 +4023,10 @@
         "notes": ""
       },
       "examples": [
-        "I sometimes freeze or avoid confrontation."
+        "Rare (e.g., generally trust).",
+        "Sometimes (e.g., occasional insecurity).",
+        "Often (e.g., frequent worry).",
+        "Problematic (e.g., affects behavior)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3877,7 +4069,10 @@
         "notes": ""
       },
       "examples": [
-        "Unspoken expectations - when they aren't clear, I make assumptions."
+        "Very comfortable (e.g., can ask easily).",
+        "Somewhat comfortable (e.g., depends on topic).",
+        "Hard (e.g., struggle to ask).",
+        "Very hard (e.g., usually don't ask)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3893,10 +4088,12 @@
       "prompt": "When you apologize, what do you tend to do well, and what do you tend to miss?",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Honest but avoidant - I'll be truthful but might delay hard conversations."
+        "Well: Owning it. Miss: Changing behavior.",
+        "Well: Empathy. Miss: Getting defensive."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3968,7 +4165,9 @@
         "notes": ""
       },
       "examples": [
-        "Prayer, Scripture reading."
+        "Practices: Prayer, Meditation.",
+        "Practices: Nature, Journaling.",
+        "Practices: Worship, Service."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4014,7 +4213,10 @@
         "notes": ""
       },
       "examples": [
-        "Very important - I want to share this with a partner."
+        "Strict abstinence (e.g., waiting for marriage).",
+        "Abstinence w/ gray (e.g., some affection ok).",
+        "Discerning (e.g., still deciding).",
+        "Open (e.g., physical connection is key)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4031,10 +4233,12 @@
       "prompt": "List any faith-related dealbreakers (or write 'none').",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Same faith tradition: we share the same beliefs."
+        "Dealbreakers: Different faith, Hostility to religion.",
+        "Dealbreakers: None (open to all)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4077,7 +4281,10 @@
         "notes": ""
       },
       "examples": [
-        "Very flexible: I can move quickly or slowly depending on connection."
+        "Agree (e.g., go along with it).",
+        "Slow down (e.g., ask for time).",
+        "Walk away (e.g., feel pressured).",
+        "Confused (e.g., unsure what to do)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4120,7 +4327,10 @@
         "notes": ""
       },
       "examples": [
-        "Talk about it openly before becoming physical."
+        "Hold boundary (e.g., say no).",
+        "Cave (e.g., give in).",
+        "Freeze (e.g., go silent).",
+        "End it (e.g., leave the situation)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4188,7 +4398,11 @@
         "notes": ""
       },
       "examples": [
-        "More communication early, clearer boundaries."
+        "Slower pace.",
+        "Clearer intentions.",
+        "Stronger boundaries.",
+        "Better filters.",
+        "Healthier communication."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4234,7 +4448,9 @@
         "notes": ""
       },
       "examples": [
-        "Yes, but with conditions: distance or schedule constraints."
+        "No (e.g., established here).",
+        "Maybe (e.g., regional move).",
+        "Yes (e.g., open to anywhere)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4247,7 +4463,7 @@
       "section_id": "s7",
       "order": 77,
       "title": "Debt and obligations",
-      "prompt": "Debt/obligations are:",
+      "prompt": "Your current Debt/Financial obligations are:",
       "type": "single_select",
       "options": [
         {
@@ -4277,7 +4493,9 @@
         "notes": ""
       },
       "examples": [
-        "Need to feel emotionally safe and sure before introducing family."
+        "Low (e.g., manageable payments).",
+        "Moderate (e.g., some debt but paying it).",
+        "High (e.g., significant financial stress)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4293,10 +4511,13 @@
       "prompt": "Describe your normal weekly rhythm (work, church, kids, gym, downtime) and where dating fits.",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Unsure - it depends on how things develop."
+        "Rhythm: Work M-F, Free weekends.",
+        "Rhythm: Shift work, free mornings.",
+        "Rhythm: Kids week on/off, varying availability."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4339,7 +4560,10 @@
         "notes": ""
       },
       "examples": [
-        "Direct and honest: tell me what you see, even if it's hard."
+        "Very willing (e.g., prefer directness).",
+        "Willing (e.g., will do it if needed).",
+        "Reluctant (e.g., prefer to wait).",
+        "Avoid (e.g., skip hard topics)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4355,10 +4579,12 @@
       "prompt": "List 5 green flags about you that you bring to a relationship (character, skills, stability, faith, service).",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "High commitment: I'll do the work, I want to grow."
+        "Green flags: Loyal, Stable, Kind, Honest.",
+        "Green flags: Growth-oriented, Generous, Self-aware."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4374,10 +4600,12 @@
       "prompt": "List 1-5 red flags you need to be honest about (patterns, temptations, avoidance, anger, secrecy).",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "Read a book on attachment, practice active listening this month."
+        "Red flags: Avoidant, Short temper.",
+        "Red flags: Jealousy, Passive-aggressive."
       ],
       "tags": {
         "included_in_manifests": [
@@ -4393,10 +4621,12 @@
       "prompt": "Write 3 rules that define what 'ready' means for you (behavior-based, measurable).",
       "type": "free_text",
       "answer_schema": {
-        "text": ""
+        "text": "",
+        "notes": ""
       },
       "examples": [
-        "I'm ready when: I can be honest about my patterns, I have support, I'm not running from something."
+        "Rules: Honest about feelings, Support system in place, Not rushing.",
+        "Rules: Past relationship fully closed, Emotional availability."
       ],
       "tags": {
         "included_in_manifests": [
