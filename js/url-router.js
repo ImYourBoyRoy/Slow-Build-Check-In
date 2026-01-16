@@ -188,6 +188,7 @@ const URLRouter = {
             StorageManager.setPhase(route.phase);
             await DataLoader.load();
             App.updateModeOptions();
+            App.updateModeDisplay();
         }
 
         // Navigate to the requested view

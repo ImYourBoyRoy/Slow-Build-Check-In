@@ -144,6 +144,7 @@ const AppProgress = {
                 this.showView('questionnaire');
                 this.renderCurrentQuestion();
                 this.updateProgress();
+                this.updateModeDisplay();
 
                 // Brief notification
                 console.log(`Upgraded to Full mode. Starting at question ${result.firstNewQuestionIndex + 1} with ${result.existingAnswers} existing answers.`);

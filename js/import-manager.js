@@ -50,10 +50,15 @@ const ImportManager = {
             // Build formatted responses for AI prompt
             const formattedResponses = this.formatJSONResponses(data.responses);
 
+            // Extract artifact ID for validation
+            const artifactId = data.meta?.artifact?.id || null;
+
             return {
                 name,
                 mode,
                 questionCount,
+                artifactId,
+                stats: data.stats || {},
                 responses: data.responses,
                 formattedText: formattedResponses,
                 fileName,

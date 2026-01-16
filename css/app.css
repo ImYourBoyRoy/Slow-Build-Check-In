@@ -381,6 +381,50 @@
 }
 
 /* ========================================
+   AI Guide (Complete View)
+   ======================================== */
+.ai-guide-card {
+    border: 1px solid var(--color-primary-light);
+    background: linear-gradient(135deg, var(--color-bg-card) 0%, rgba(124, 107, 158, 0.05) 100%);
+    margin-bottom: var(--space-6);
+}
+
+.ai-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+}
+
+.ai-step {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+}
+
+.ai-step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.ai-step-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    line-height: var(--line-height-normal);
+}
+
+
+/* ========================================
    Welcome View
    ======================================== */
 .welcome-header {
@@ -805,7 +849,7 @@
    ======================================== */
 .complete-content {
     text-align: center;
-    max-width: 500px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -824,6 +868,9 @@
     font-size: var(--font-size-base);
     color: var(--color-text-muted);
     margin-bottom: var(--space-8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #complete-stats {
@@ -853,12 +900,40 @@
     color: var(--color-warning);
 }
 
+/* Complete Grid Layout for Desktop */
+.complete-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .complete-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+
+    /* Make the general export section span full width */
+    .export-section:first-child {
+        grid-column: 1 / -1;
+    }
+
+    /* Make the AI guide span full width or be distinct */
+    .ai-guide-card {
+        grid-column: 1 / -1;
+    }
+}
+
 .export-section {
     background: var(--color-bg-card);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
-    margin-bottom: var(--space-6);
+    /* margin-bottom removed to work with grid gap */
     box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .export-title {
@@ -871,6 +946,8 @@
     gap: var(--space-3);
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: auto;
+    /* Push buttons to bottom if using flex column */
 }
 
 .export-hint {
@@ -885,6 +962,7 @@
     gap: var(--space-4);
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: var(--space-8);
 }
 
 /* ========================================

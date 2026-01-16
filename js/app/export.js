@@ -39,8 +39,9 @@ const AppExport = {
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const dateStr = `${months[date.getMonth()]}-${String(date.getDate()).padStart(2, '0')}`;
 
-        // Build filename: phase1_5-lite_5-of-18_Jan-08.json
-        return `${phaseName}-${mode}_${stats.answered}-of-${stats.total}_${dateStr}.json`;
+        // Build filename: readyforus-Roy-lite.json or readyforus-Friend-lite.json
+        const name = this.getParticipantName().replace(/[^a-z0-9]/gi, '_');
+        return `readyforus-${name}-${mode}.json`;
     },
 
     /**
@@ -146,17 +147,27 @@ const AppExport = {
      * Get current participant name (from input or saved).
      */
     getParticipantName() {
-        // Try to get from input first (in case user is on welcome view)
+        // 1. Try input (Welcome View)
         const nameInput = document.getElementById('participant-name');
         if (nameInput && nameInput.value.trim()) {
             return nameInput.value.trim();
         }
-        // Then try in-memory value
+
+        // 2. Try App-level property
         if (this.participantName) {
             return this.participantName;
         }
-        // Finally load from storage
-        return StorageManager.loadParticipantName();
+
+        // 3. Try Questionnaire Engine (Source of Truth)
+        if (typeof QuestionnaireEngine !== 'undefined' && QuestionnaireEngine.participantName) {
+            return QuestionnaireEngine.participantName;
+        }
+
+        // 4. Try Storage
+        const stored = StorageManager.loadParticipantName();
+        if (stored) return stored;
+
+        return 'Friend'; // Fallback so filename isn't broken
     },
 
     /**
@@ -175,6 +186,298 @@ const AppExport = {
                 btn.innerHTML = originalText;
                 btn.classList.remove('success', 'error');
             }, 2000);
+        }
+    },
+
+    /**
+     * Initialize the Complete View (called when view is shown).
+     * Binds events and updates stats.
+     */
+    initCompleteView() {
+        this.updateCompleteStats();
+        this.bindCompleteViewEvents();
+    },
+
+    /**
+     * Update the stats display on Complete page.
+     */
+    updateCompleteStats() {
+        // Global Stats
+        const statsEl = document.getElementById('complete-stats-text');
+        const stats = QuestionnaireEngine.getStats();
+
+        if (statsEl) {
+            statsEl.textContent = `${stats.answered} / ${stats.total} Questions Answered`;
+        }
+
+        // Partner 1 (You) Stats in Couple Section
+        const p1Answered = document.getElementById('p1-answered');
+        const p1Total = document.getElementById('p1-total');
+        if (p1Answered && p1Total) {
+            p1Answered.textContent = stats.answered;
+            p1Total.textContent = stats.total;
+        }
+
+        // Also update name if we know it
+        const p1Name = document.getElementById('p1-name');
+        if (p1Name) {
+            const name = this.getParticipantName();
+            if (name && name !== 'Me') {
+                p1Name.textContent = name;
+            }
+        }
+    },
+
+    /**
+     * Bind events for the Complete page specifically.
+     */
+    bindCompleteViewEvents() {
+        // Partner file upload
+        const zone = document.getElementById('upload-zone-partner');
+        const input = document.getElementById('import-file-partner');
+        const removeBtn = document.querySelector('#upload-info-partner .upload-remove');
+        const generateBtn = document.getElementById('btn-generate-couple-prompt');
+
+        if (zone && input) {
+            // Remove old listeners by cloning (simple reset)
+            const newZone = zone.cloneNode(true);
+            zone.parentNode.replaceChild(newZone, zone);
+
+            // Re-select fresh elements
+            const freshZone = document.getElementById('upload-zone-partner');
+            const freshInput = freshZone.querySelector('#import-file-partner');
+            const freshRemoveBtn = freshZone.querySelector('.upload-remove');
+            const freshGenerateBtn = document.getElementById('btn-generate-couple-prompt');
+
+            // Click to upload
+            freshZone.addEventListener('click', (e) => {
+                if (e.target !== freshRemoveBtn) freshInput.click();
+            });
+
+            // File change
+            freshInput.addEventListener('change', async (e) => {
+                if (e.target.files.length > 0) {
+                    await this.handlePartnerFile(e.target.files[0]);
+                }
+            });
+
+            // Drag & Drop
+            freshZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                freshZone.classList.add('drag-over');
+            });
+            freshZone.addEventListener('dragleave', () => {
+                freshZone.classList.remove('drag-over');
+            });
+            freshZone.addEventListener('drop', async (e) => {
+                e.preventDefault();
+                freshZone.classList.remove('drag-over');
+                if (e.dataTransfer.files.length > 0) {
+                    await this.handlePartnerFile(e.dataTransfer.files[0]);
+                }
+            });
+
+            // Remove file
+            if (freshRemoveBtn) {
+                freshRemoveBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.clearPartnerFile();
+                });
+            }
+
+            // Prevent input click from triggering file upload
+            const partnerInfo = document.getElementById('partner-info-container');
+            if (partnerInfo) {
+                partnerInfo.addEventListener('click', (e) => {
+                    // Stop propagation so we don't trigger the zone's click listener
+                    e.stopPropagation();
+                });
+            }
+
+            // Generate Button
+            if (freshGenerateBtn) {
+                // Remove old listeners
+                const newBtn = freshGenerateBtn.cloneNode(true);
+                freshGenerateBtn.parentNode.replaceChild(newBtn, freshGenerateBtn);
+
+                newBtn.addEventListener('click', () => {
+                    this.generateCombinedCouplePrompt();
+                });
+            }
+        }
+    },
+
+    /**
+     * Handle partner file upload.
+     */
+    async handlePartnerFile(file) {
+        try {
+            const parsed = await ImportManager.parseFile(file);
+            this.partnerData = parsed;
+
+            // Get current user context for validation
+            const currentArtifact = DataLoader.getArtifact();
+            const currentStats = QuestionnaireEngine.getStats();
+
+            // UI References
+            const zone = document.getElementById('upload-zone-partner');
+            const content = zone.querySelector('.upload-zone-content');
+            const info = zone.querySelector('.upload-zone-info');
+            const nameEl = info.querySelector('.upload-name');
+            const btn = document.getElementById('btn-generate-couple-prompt');
+
+            // New UI fields
+            const nameInput = document.getElementById('partner-name-input');
+            const statsAnswered = document.getElementById('partner-stats-answered');
+            const statsTotal = document.getElementById('partner-stats-total');
+            const warningEl = document.getElementById('partner-warning');
+
+            // Validation Checks
+            const warnings = [];
+            let isValid = true; // Use this to gate generation if critical mismatch? 
+
+            // 1. Check if Artifact IDs match
+            if (parsed.artifactId && currentArtifact.id && parsed.artifactId !== currentArtifact.id) {
+                warnings.push(`⚠️ Mismatch: Partner used a different questionnaire ("${parsed.artifactId}" vs yours "${currentArtifact.id}"). Results may not align.`);
+            }
+
+            // 2. Check Mode (Lite vs Full) match - ImportManager also checks this conceptually but we do it explicitly here
+            // We can infer mode from stats if not explicit
+            const partnerMode = parsed.mode;
+            const myMode = QuestionnaireEngine.mode || 'lite';
+
+            if (partnerMode !== myMode) {
+                warnings.push(`⚠️ Mode Mismatch: Partner did "${partnerMode}" but you did "${myMode}". Proceed with caution.`);
+            }
+
+            // 3. Stats Check (Unanswered questions)
+            const answered = parsed.stats?.answered || 0;
+            const total = parsed.stats?.total || parsed.questionCount || 0;
+
+            if (answered < total) {
+                // Not necessarily a warning, just info, but if it's very low...
+                if (answered === 0) {
+                    warnings.push(`⚠️ Partner file appears empty (0 answers).`);
+                }
+            }
+
+            // Update UI
+            if (content) content.style.display = 'none';
+            if (info) info.style.display = 'flex'; // Use flex for column layout
+            if (nameEl) nameEl.textContent = parsed.fileName;
+            if (zone) zone.classList.add('has-file');
+
+            // Populate fields
+            if (nameInput) {
+                // Default to parsed name, or "Partner" if empty/unknown
+                nameInput.value = parsed.name && parsed.name !== 'Unknown' ? parsed.name : 'Partner';
+
+                // Add listener to update partnerData.name when input changes
+                nameInput.oninput = (e) => {
+                    if (this.partnerData) {
+                        this.partnerData.name = e.target.value;
+                    }
+                };
+            }
+
+            if (statsAnswered) statsAnswered.textContent = answered;
+            if (statsTotal) statsTotal.textContent = total;
+
+            // Show warnings if any
+            if (warningEl) {
+                if (warnings.length > 0) {
+                    warningEl.textContent = warnings.join('\n');
+                    warningEl.style.display = 'block';
+                } else {
+                    warningEl.style.display = 'none';
+                }
+            }
+
+            if (btn) btn.disabled = false;
+
+        } catch (error) {
+            alert(`Error reading file: ${error.message}`);
+            this.clearPartnerFile();
+        }
+    },
+
+    /**
+     * Clear partner file.
+     */
+    clearPartnerFile() {
+        this.partnerData = null;
+
+        const zone = document.getElementById('upload-zone-partner');
+        const input = document.getElementById('import-file-partner');
+        const content = zone?.querySelector('.upload-zone-content');
+        const info = zone?.querySelector('.upload-zone-info');
+        const btn = document.getElementById('btn-generate-couple-prompt');
+
+        // Specific fields
+        const nameInput = document.getElementById('partner-name-input');
+        const warningEl = document.getElementById('partner-warning');
+
+        if (input) input.value = '';
+        if (content) content.style.display = 'flex';
+        if (info) info.style.display = 'none';
+        if (zone) zone.classList.remove('has-file');
+        if (btn) btn.disabled = true;
+
+        if (nameInput) nameInput.value = '';
+        if (warningEl) {
+            warningEl.textContent = '';
+            warningEl.style.display = 'none';
+        }
+    },
+
+    /**
+     * Generate and copy the combined couple prompt.
+     */
+    async generateCombinedCouplePrompt() {
+        if (!this.partnerData) return;
+
+        try {
+            // Ensure we have the latest name from input
+            const nameInput = document.getElementById('partner-name-input');
+            if (nameInput && nameInput.value) {
+                this.partnerData.name = nameInput.value;
+            }
+
+            // Create "self" data structure similar to what ImportManager returns
+            const selfData = {
+                name: this.getParticipantName() || 'Me',
+                mode: QuestionnaireEngine.mode || 'lite',
+                formattedText: ImportManager.formatJSONResponses(QuestionnaireEngine.responses),
+                format: 'json' // Simulated
+            };
+
+            const mode = QuestionnaireEngine.mode || 'lite';
+            const prompt = DataLoader.getPrompt('couple', mode);
+
+            // Generate text
+            const promptText = ImportManager.buildCouplePrompt(
+                selfData,
+                this.partnerData,
+                prompt
+            );
+
+            // Copy to clipboard
+            await navigator.clipboard.writeText(promptText);
+
+            // Toast feedback on button
+            const btn = document.getElementById('btn-generate-couple-prompt');
+            const originalText = btn.textContent;
+            btn.textContent = '✓ Copied to Clipboard!';
+            btn.classList.add('btn-success');
+
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.classList.remove('btn-success');
+            }, 3000);
+
+        } catch (error) {
+            console.error('Failed to generate couple prompt:', error);
+            alert('Failed to generate prompt. Please try again.');
         }
     },
 

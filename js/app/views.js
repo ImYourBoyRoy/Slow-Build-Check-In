@@ -82,31 +82,18 @@ const AppViews = {
 
     /**
      * Render complete view.
+     * Updates stats and upgrade prompt visibility.
      */
     renderComplete() {
-        const container = document.getElementById('complete-summary');
-        if (!container) return;
-
         const stats = QuestionnaireEngine.getStats();
-        const artifact = DataLoader.getArtifact();
 
-        container.innerHTML = `
-            <div class="complete-stats">
-                <div class="stat-item">
-                    <span class="stat-number">${stats.answered}</span>
-                    <span class="stat-label">Questions Answered</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">${stats.skipped}</span>
-                    <span class="stat-label">Skipped</span>
-                </div>
-            </div>
-            <p class="complete-message">
-                ${artifact?.complete_message || 'Great job! Your responses have been saved.'}
-            </p>
-        `;
+        // Update stats text
+        const statsText = document.getElementById('complete-stats-text');
+        if (statsText) {
+            statsText.textContent = `${stats.answered} / ${stats.total} Questions Answered`;
+        }
 
-        // Update participant name display
+        // Update participant name display if it exists (for personalized messaging)
         const nameEl = document.getElementById('complete-participant-name');
         if (nameEl) {
             nameEl.textContent = this.getParticipantName() || 'Participant';
@@ -118,28 +105,30 @@ const AppViews = {
             skipBtn.style.display = stats.skipped > 0 ? 'inline-block' : 'none';
         }
 
-        // Handle upgrade prompt using existing DOM structure
+        // Handle upgrade prompt visibility
         const upgradeSection = document.getElementById('upgrade-section');
         const upgradeBtn = document.getElementById('btn-upgrade-full');
         const countSpan = document.getElementById('additional-count');
 
-        if (upgradeSection && QuestionnaireEngine.canUpgradeToFull()) {
-            upgradeSection.style.display = 'block';
+        if (upgradeSection) {
+            if (QuestionnaireEngine.canUpgradeToFull()) {
+                upgradeSection.style.display = 'block';
 
-            if (countSpan) {
-                countSpan.textContent = QuestionnaireEngine.getAdditionalQuestionCount();
-            }
+                if (countSpan) {
+                    countSpan.textContent = QuestionnaireEngine.getAdditionalQuestionCount();
+                }
 
-            // Remove old listeners to prevent duplicates (cloning is a simple way)
-            if (upgradeBtn) {
-                const newBtn = upgradeBtn.cloneNode(true);
-                upgradeBtn.parentNode.replaceChild(newBtn, upgradeBtn);
-                newBtn.addEventListener('click', () => {
-                    this.upgradeToFullMode();
-                });
+                // Remove old listeners to prevent duplicates (cloning is a simple way)
+                if (upgradeBtn) {
+                    const newBtn = upgradeBtn.cloneNode(true);
+                    upgradeBtn.parentNode.replaceChild(newBtn, upgradeBtn);
+                    newBtn.addEventListener('click', () => {
+                        this.upgradeToFullMode();
+                    });
+                }
+            } else {
+                upgradeSection.style.display = 'none';
             }
-        } else if (upgradeSection) {
-            upgradeSection.style.display = 'none';
         }
     },
 

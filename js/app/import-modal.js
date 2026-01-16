@@ -479,6 +479,7 @@ const AppImportModal = {
             this.showView('questionnaire');
             this.renderCurrentQuestion();
             this.updateProgress();
+            this.updateModeDisplay();
 
             // Log import summary (no intrusive alert)
             const totalImported = Object.keys(mappedResponses).length;

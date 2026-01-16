@@ -343,74 +343,7 @@ const AppDashboard = {
         }
     },
 
-    /**
-     * Render a questionnaire card for the dashboard.
-     * @param {Object} phase - Phase object
-     * @param {Object} metadata - Phase metadata
-     * @returns {string} HTML for the card
-     */
-    renderQuestionnaireCard(phase, metadata) {
-        const artifact = metadata.artifact || {};
 
-        // Format phase number
-        const phaseMatch = phase.id.match(/phase_([\d.]+)/);
-        const phaseLabel = phaseMatch ? `Phase ${phaseMatch[1]}` : '';
-
-        // Get stage label and eligibility from manifest
-        const stageLabel = artifact.stage?.label || '';
-        const eligibility = artifact.stage?.eligibility || [];
-        const purpose = artifact.purpose || [];
-
-        return `
-            <div class="questionnaire-card" data-phase-id="${phase.id}" role="listitem" tabindex="0">
-                <div class="card-header">
-                    <span class="card-icon">${phase.icon || '📋'}</span>
-                    <div class="card-titles">
-                        ${phaseLabel ? `<div class="card-phase-label">${phaseLabel}${stageLabel ? ` · ${stageLabel}` : ''}</div>` : ''}
-                        <h3 class="card-title">${artifact.title || phase.title}</h3>
-                    </div>
-                </div>
-                
-                <p class="card-subtitle">${artifact.subtitle || phase.description || ''}</p>
-                
-                ${eligibility.length > 0 ? `
-                    <div class="card-details">
-                        <div class="card-details-title">This is for you if...</div>
-                        <ul class="card-list">
-                            ${eligibility.map(e => `<li>${e}</li>`).join('')}
-                        </ul>
-                    </div>
-                ` : ''}
-                
-                ${purpose.length > 0 ? `
-                    <div class="card-details">
-                        <div class="card-details-title">Purpose</div>
-                        <ul class="card-list">
-                            ${purpose.slice(0, 3).map(p => `<li>${p}</li>`).join('')}
-                        </ul>
-                    </div>
-                ` : ''}
-                
-                <div class="card-footer">
-                    <div class="card-question-counts">
-                        <div class="question-count-badge">
-                            <span class="count-number">${metadata.liteCount}</span>
-                            <span class="count-label">Lite</span>
-                        </div>
-                        <div class="count-divider"></div>
-                        <div class="question-count-badge">
-                            <span class="count-number">${metadata.fullCount}</span>
-                            <span class="count-label">Full</span>
-                        </div>
-                    </div>
-                    <div class="card-cta">
-                        <span class="cta-text">Tap to Begin</span>
-                        <span class="cta-arrow">→</span>
-                    </div>
-                </div>
-            </div>
-        `;
-    },
 
     /**
      * Update the install banner on dashboard.

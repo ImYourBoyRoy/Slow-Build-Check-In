@@ -367,6 +367,7 @@ const QuestionnaireEngine = {
      * Reset the questionnaire (clear all progress).
      */
     reset() {
+        this.mode = 'lite';
         this.currentIndex = 0;
         this.responses = {};
         this.skipped = [];

@@ -1,0 +1,219 @@
+/* ./css/complete.css */
+/**
+ * Complete Page Styles
+ *
+ * Designed to match the "About" page's premium, authentic aesthetic.
+ * Widescreen layout (max-width 1200px) for a proper dashboard feel.
+ */
+
+/* ==================== Container ==================== */
+.complete-container {
+    max-width: 1200px;
+    /* Widescreen for desktop */
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-6) var(--space-16);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+/* ==================== Header ==================== */
+.complete-header {
+    text-align: center;
+    margin-bottom: var(--space-4);
+    max-width: 800px;
+    /* Keep text readable */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.complete-icon {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-4);
+    display: block;
+    animation: float 6s ease-in-out infinite;
+}
+
+.complete-title {
+    font-size: var(--font-size-4xl);
+    /* Larger title */
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.02em;
+}
+
+.complete-subtitle {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+    margin: 0 auto;
+}
+
+/* ==================== Cards ==================== */
+.complete-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+    /* More luxurious padding */
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal);
+}
+
+.complete-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.card-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+}
+
+.card-description {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+    line-height: var(--line-height-relaxed);
+    max-width: 800px;
+}
+
+/* ==================== Couple's Reflection (Comparison) ==================== */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Force 50/50 split */
+    gap: var(--space-8);
+    /* Wider gap */
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-8);
+    align-items: stretch;
+}
+
+.partner-column {
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    height: 100%;
+    /* Match heights */
+}
+
+.partner-label {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+}
+
+.partner-name {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+}
+
+.partner-stats-display {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: var(--font-weight-medium);
+}
+
+/* ==================== Upload Zone Override ==================== */
+.upload-zone.mini-zone {
+    padding: var(--space-6);
+    /* Bigger touch target */
+    min-height: 0;
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    border: 2px dashed var(--color-border);
+    transition: all var(--transition-fast);
+    flex: 1;
+    /* Fill vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.upload-zone.mini-zone:hover {
+    border-color: var(--color-primary);
+    background: var(--color-bg-hover);
+}
+
+.upload-text {
+    font-size: var(--font-size-base);
+}
+
+/* 
+ * CRITICAL FIX: Force visual contrast for the editable partner name input.
+ * Overrides base inheritance to ensure readability in all modes.
+ */
+.upload-zone.mini-zone input#partner-name-input {
+    color: var(--color-text) !important;
+    background-color: var(--color-bg-elevated) !important;
+    border: 1px solid var(--color-border) !important;
+    padding: var(--space-2) var(--space-3) !important;
+    border-radius: var(--radius-sm);
+    -webkit-text-fill-color: var(--color-text) !important;
+    /* Forces Safari/Chrome to respect color */
+}
+
+/* ==================== Actions Row ==================== */
+.action-row {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn-full-width {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-4);
+    /* Bigger CTA */
+    font-size: var(--font-size-lg);
+}
+
+/* ==================== Helper Classes ==================== */
+.text-center {
+    text-align: center;
+}
+
+.margin-top-4 {
+    margin-top: var(--space-4);
+}
+
+/* ==================== Mobile Adjustment ==================== */
+@media (max-width: 768px) {
+    .complete-container {
+        padding: var(--space-6) var(--space-4) var(--space-12);
+        max-width: 100%;
+    }
+
+    .complete-card {
+        padding: var(--space-6);
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+        gap: var(--space-6);
+    }
+
+    .action-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .complete-title {
+        font-size: var(--font-size-2xl);
+    }
+}

@@ -176,6 +176,9 @@ const AppNavigation = {
         // Special handling for complete view - render stats and upgrade prompt
         if (viewName === 'complete') {
             this.renderComplete();
+            if (typeof this.initCompleteView === 'function') {
+                this.initCompleteView();
+            }
         }
 
         // Special handling for about view - update back button text

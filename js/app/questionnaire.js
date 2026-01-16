@@ -27,6 +27,7 @@ const AppQuestionnaire = {
         this.showView('questionnaire');
         this.renderCurrentQuestion();
         this.updateProgress();
+        this.updateModeDisplay();
     },
 
     /**

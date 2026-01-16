@@ -138,6 +138,7 @@ const AppPhase = {
             // Reset the questionnaire engine for new phase  
             const savedMode = StorageManager.loadMode();
             QuestionnaireEngine.init(savedMode);
+            this.updateModeDisplay();
 
             // Check for resumable progress in this phase
             if (StorageManager.hasResumableProgress()) {

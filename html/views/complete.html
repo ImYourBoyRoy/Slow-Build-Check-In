@@ -2,42 +2,60 @@
 <!-- Complete view: Completion stats, export options, and AI prompt generation -->
 
 <section id="view-complete" class="view container" aria-labelledby="complete-title" tabindex="-1">
-    <div class="complete-content">
-        <div class="complete-icon" aria-hidden="true">💜</div>
-        <h1 id="complete-title" class="complete-title">Beautiful Work!</h1>
-        <p class="complete-subtitle">
-            You've taken a meaningful step toward clarity and kindness.
-            Your answers are yours to keep, share, or reflect on.
-        </p>
+    <div class="complete-container">
 
-        <!-- Stats -->
-        <div id="complete-stats" aria-live="polite">
-            <!-- Stats rendered dynamically -->
+        <!-- Header -->
+        <header class="complete-header">
+            <div class="complete-icon" aria-hidden="true">💜</div>
+            <h1 id="complete-title" class="complete-title">Beautiful Work</h1>
+            <p class="complete-subtitle">
+                You've taken a meaningful step toward clarity. Your answers are safe here—yours to keep, share, or
+                reflect on.
+            </p>
+
+            <!-- Global Stats -->
+            <div id="complete-stats" aria-live="polite"
+                style="margin-top: var(--space-4); font-weight: var(--font-weight-medium); color: var(--color-primary);">
+                <span id="complete-stats-text">Loading stats...</span>
+            </div>
+        </header>
+
+        <!-- Review Action - Moved to top -->
+        <div class="complete-card"
+            style="margin-bottom: var(--space-4); text-align: center; border: 2px solid var(--color-primary-light); background: var(--color-bg-elevated);">
+            <p class="card-description" style="margin-bottom: var(--space-3);">Before you save or generate prompts, take
+                a moment to reflect on your answers.</p>
+            <button id="btn-review-answers" class="btn btn-primary btn-lg"
+                style="width: 100%; justify-content: center; box-shadow: var(--shadow-md);">
+                📋 Review Your Answers
+            </button>
         </div>
 
-        <!-- Export Section -->
-        <div class="export-section">
-            <h2 class="export-title">Save Your Responses</h2>
-            <div class="export-buttons">
-                <button id="btn-export-text" class="btn btn-primary">
-                    📄 Download as Text
+        <!-- Card 1: Save & Actions -->
+        <div class="complete-card">
+            <h2 class="card-title">Save Your Progress</h2>
+            <p class="card-description">Download your responses to keep them safe or verify them later.</p>
+
+            <div class="action-row">
+                <button id="btn-export-json" class="btn btn-primary">
+                    📁 Save Progress (JSON)
                 </button>
-                <button id="btn-export-json" class="btn btn-secondary">
-                    📁 Download as JSON
-                </button>
-                <button id="btn-copy" class="btn btn-ghost">
-                    📋 Copy to Clipboard
+                <button id="btn-export-text" class="btn btn-secondary">
+                    📄 Save for Personal Use (Text)
                 </button>
             </div>
         </div>
 
-        <!-- Individual Reflection -->
-        <div class="export-section">
-            <h2 class="export-title">✨ Individual AI Reflection</h2>
-            <p class="export-hint">For solo reflection - copies prompt + your responses</p>
-            <div class="export-buttons">
+        <!-- Card 2: Individual AI Reflection -->
+        <div class="complete-card">
+            <h2 class="card-title">✨ Individual AI Reflection</h2>
+            <p class="card-description">
+                Generate a private prompt to use with ChatGPT, Claude, or Gemini. It combines your answers with
+                psychological insights to help you reflect deeper.
+            </p>
+            <div class="action-row">
                 <button id="btn-copy-ai-prompt" class="btn btn-primary">
-                    🤖 Copy Individual Prompt
+                    🤖 Copy Prompt
                 </button>
                 <button id="btn-view-ai-prompt" class="btn btn-ghost">
                     👁 View Raw
@@ -45,48 +63,87 @@
             </div>
         </div>
 
-        <!-- Couple's Reflection -->
-        <div class="export-section">
-            <h2 class="export-title">💑 Couple's AI Reflection</h2>
-            <p class="export-hint">For couples - share your results, then combine for joint reflection</p>
-            <div class="export-buttons">
-                <button id="btn-copy-results" class="btn btn-secondary">
-                    📤 Copy My Results
-                </button>
-                <button id="btn-view-results" class="btn btn-ghost">
-                    👁 View
-                </button>
+        <!-- Card 3: Couple's Reflection -->
+        <div class="complete-card">
+            <h2 class="card-title">💑 Couple's AI Reflection</h2>
+            <p class="card-description">
+                Ready to discuss? Generate a combined guide for both of you. Ensure you both completed the same
+                questionnaire mode.
+            </p>
+
+            <div class="comparison-grid">
+                <!-- Partner 1 (You) -->
+                <div class="partner-column">
+                    <span class="partner-label">Partner 1 (You)</span>
+                    <div class="partner-name" id="p1-name">Me</div>
+                    <div class="partner-stats-display" id="p1-stats">
+                        <span id="p1-answered">--</span>/<span id="p1-total">--</span> Answered
+                    </div>
+                </div>
+
+                <!-- Partner 2 (Upload) -->
+                <div class="partner-column">
+                    <span class="partner-label">Partner 2</span>
+
+                    <!-- Upload Zone -->
+                    <div id="upload-zone-partner" class="upload-zone mini-zone">
+                        <input type="file" id="import-file-partner" accept=".json,.txt" hidden>
+
+                        <!-- Empty State -->
+                        <div class="upload-zone-content">
+                            <div class="upload-icon" style="font-size: 1.5em; margin-bottom: var(--space-2);">📂</div>
+                            <div class="upload-text">
+                                <span class="upload-link"
+                                    style="color: var(--color-primary); font-weight: 500; cursor: pointer;">Upload
+                                    JSON</span>
+                            </div>
+                        </div>
+
+                        <!-- Filled State -->
+                        <div class="upload-zone-info"
+                            style="display: none; width: 100%; padding: 0; background: transparent;">
+                            <div class="upload-file-details" style="margin-bottom: var(--space-2);">
+                                <span class="upload-name" style="font-size: var(--font-size-sm);">filename.json</span>
+                                <button class="upload-remove" aria-label="Remove file">×</button>
+                            </div>
+
+                            <!-- Editable Inputs -->
+                            <div id="partner-info-container">
+                                <input type="text" id="partner-name-input" class="text-input input-sm"
+                                    style="width: 100%; margin-bottom: var(--space-2);" placeholder="Name"
+                                    value="Partner">
+                                <div class="partner-stats-display">
+                                    <span id="partner-stats-answered">--</span>/<span id="partner-stats-total">--</span>
+                                    Answered
+                                </div>
+                                <div id="partner-warning" class="partner-warning"
+                                    style="display: none; margin-top: var(--space-2); font-size: var(--font-size-xs); color: var(--color-error);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="export-buttons" style="margin-top: var(--space-2);">
-                <button id="btn-copy-couple-prompt" class="btn btn-primary">
-                    💕 Copy Couple's Prompt
-                </button>
-                <button id="btn-view-couple-prompt" class="btn btn-ghost">
-                    👁 View Raw
-                </button>
-            </div>
+
+            <!-- Generate Action -->
+            <button id="btn-generate-couple-prompt" class="btn btn-primary btn-full-width" disabled>
+                ✨ Generate Combined Prompt & Copy
+            </button>
         </div>
 
-        <!-- Continue to Full Mode (shown for Lite completions) -->
-        <div id="upgrade-section" class="export-section" style="display: none;">
-            <h2 class="export-title">🚀 Ready for More?</h2>
-            <p class="export-hint">You've completed the Lite version. Continue with <span
-                    id="additional-count">--</span> more questions for deeper insights.</p>
-            <div class="export-buttons">
-                <button id="btn-upgrade-full" class="btn btn-primary">
-                    📈 Continue to Full Mode
-                </button>
-            </div>
+        <!-- Upgrade Section -->
+        <div id="upgrade-section" class="complete-card"
+            style="display: none; text-align: center; border-color: var(--color-primary-light); background: var(--color-bg-elevated);">
+            <h2 class="card-title">🚀 Ready for More?</h2>
+            <p class="card-description">
+                You've completed the Lite version. Continue with <span id="additional-count"
+                    style="font-weight: bold; color: var(--color-primary);">--</span> more questions to go deeper.
+            </p>
+            <button id="btn-upgrade-full" class="btn btn-primary">
+                📈 Continue to Full Mode
+            </button>
         </div>
 
-        <!-- Actions -->
-        <div class="complete-actions">
-            <button id="btn-review-answers" class="btn btn-secondary">
-                📋 Review Answers
-            </button>
-            <button id="btn-restart" class="btn btn-ghost">
-                Start Over
-            </button>
-        </div>
+
     </div>
 </section>
