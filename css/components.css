@@ -1176,6 +1176,7 @@
     transition: all var(--transition-fast);
     -webkit-user-select: none;
     user-select: none;
+    touch-action: pan-y;
     min-height: 56px;
     /* Touch-friendly */
     cursor: pointer;
@@ -1265,6 +1266,7 @@
     font-size: 1.25rem;
     color: var(--color-text-light);
     cursor: grab;
+    touch-action: none;
     padding: var(--space-2);
     flex-shrink: 0;
     opacity: 0.6;

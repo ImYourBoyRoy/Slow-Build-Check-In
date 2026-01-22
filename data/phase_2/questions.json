@@ -163,7 +163,7 @@
           ]
         },
         {
-          "key": "how_long_have_you_2",
+          "key": "how_long_have_you_been_intentionally_dating_seeing_each_other",
           "label": "How long have you been intentionally dating/seeing each other?",
           "type": "number",
           "layout": "inline"
@@ -193,7 +193,7 @@
           ]
         },
         {
-          "key": "about_how_often_do",
+          "key": "about_how_often_do_you_see_each_other_right_now",
           "label": "About how often do you see each other right now?",
           "type": "dropdown",
           "options": [
@@ -210,7 +210,7 @@
               "label": "every other week"
             },
             {
-              "value": "rarelylong_distance",
+              "value": "rarely_long_distance",
               "label": "rarely/long distance"
             },
             {
@@ -226,8 +226,9 @@
         }
       ],
       "examples": [
-        "how long have you known each other total: 2 (years); how long have you been intentionally dating/seeing each other?: 6 (months); about how often do you see each other right now?: weekly.",
-        "how long have you known each other total: 3 (months); how long have you been intentionally dating/seeing each other?: 3 (months); about how often do you see each other right now?: multiple times/week."
+        "2 (years); 6 (months); weekly. notes: We were friends first, then shifted into dating. We do one longer date and one shorter hangout most weeks.",
+        "6 (weeks); 3 (weeks); multiple times/week. notes: New relationship energy is high, so we are moving fast and trying to sanity-check it.",
+        "9 (months); 2 (months); varies. notes: Work travel and family schedules make it inconsistent, which affects how secure the connection feels."
       ]
     },
     "q02": {
@@ -279,9 +280,11 @@
         }
       ],
       "examples": [
-        "warmth or smile (e.g., I feel immediate happiness when their name pops up).",
-        "anxious or tight (e.g., I worry about what they want or if I'm in trouble).",
-        "neutral or flat (e.g., it doesn't really change my mood much)."
+        "Warmth or smile (e.g., I instinctively feel fondness or excitement, even if I'm busy. Their message feels like a good thing, not a task).",
+        "Calm and steady (e.g., it feels normal and safe. I do not overthink it, I just respond when I can).",
+        "Anxious or tight (e.g., my stomach drops because I do not know what mood they are in, or I worry I did something wrong).",
+        "Dread or avoidance (e.g., I see it and want to ignore it because it usually leads to tension, pressure, or emotional labor).",
+        "It depends lately (e.g., some days it is warmth, other days it is tightness. The variability itself is the data)."
       ]
     },
     "q03": {
@@ -333,9 +336,11 @@
         }
       ],
       "examples": [
-        "recharged (e.g., I feel more energetic and lighter after hanging out).",
-        "tired but happy (e.g., it was good, but I need some alone time to recover).",
-        "tired and stressed (e.g., I feel drained or like I worked hard to keep things going)."
+        "recharged (e.g., I leave feeling clearer and more regulated. I am more productive and more myself afterward).",
+        "steady and neutral (e.g., it was fine and pleasant. No big spike up or down, just stable).",
+        "tired but happy (e.g., it was connecting, but I used a lot of social energy. I want quiet time, not distance).",
+        "tired and stressed (e.g., I feel like I performed, managed emotions, or walked on eggshells. I need recovery because it cost me).",
+        "varies a lot (e.g., good when things are easy, draining when logistics or conflict appears, which tells me what triggers the strain)."
       ]
     },
     "q04": {
@@ -357,19 +362,19 @@
       },
       "options": [
         {
-          "value": "none_im_fully",
+          "value": "none_im_fully_myself",
           "label": "none, I'm fully myself"
         },
         {
-          "value": "light_filtering_mostly",
+          "value": "light_filtering_mostly_myself",
           "label": "light filtering, mostly myself"
         },
         {
-          "value": "moderate_filtering_im",
+          "value": "moderate_filtering_im_careful_about_what_i_say_do",
           "label": "moderate filtering, I'm careful about what I say/do"
         },
         {
-          "value": "heavy_masking_i",
+          "value": "heavy_masking_i_feel_like_i_have_to_be_on_to_be_liked",
           "label": "heavy masking, I feel like I have to be on to be liked"
         },
         {
@@ -382,9 +387,11 @@
         }
       ],
       "examples": [
-        "none, I'm fully myself (e.g., I can be weird, quiet, or loud, and they accept it all).",
-        "light filtering, mostly myself (e.g., I'm mostly myself but hold back slightly on controversial opinions).",
-        "heavy masking, I feel like I have to be on to be liked (e.g., I feel like I'm playing a character to keep them interested)."
+        "none, I'm fully myself (e.g., I can be tired, awkward, or honest about my limits and it does not threaten the connection).",
+        "light filtering, mostly myself (e.g., I soften some opinions early on, but I am not afraid to be real and I do not feel punished for it).",
+        "moderate filtering, I'm careful about what I say/do (e.g., I am actively monitoring my tone, words, or topics to avoid reactions).",
+        "heavy masking, I feel like I have to be on to be liked (e.g., I feel like I am auditioning. If I relax, I fear they will lose interest).",
+        "not sure yet (e.g., we have not spent enough long stretches together to know what my nervous system does)."
       ]
     },
     "q05": {
@@ -406,20 +413,20 @@
       },
       "fields": [
         {
-          "key": "f_3_things_that_feel",
+          "key": "3_things_that_feel_genuinely_good_or_healthy_right_now",
           "label": "3 things that feel genuinely good or healthy right now",
           "type": "free_text"
         },
         {
-          "key": "one_moment_you_felt",
+          "key": "one_moment_you_felt_especially_safe_cared_for_or_understood",
           "label": "One moment you felt especially safe, cared for, or understood",
           "type": "free_text"
         }
       ],
       "examples": [
-        "Examples: consistently planning dates, feeling safe sharing fears, laughing together easily.",
-        "Examples: they respect my boundaries, we have great physical chemistry, they get along with my friends.",
-        "Moment: When I was sick last week, they brought me soup and didn't make a big deal of it."
+        "1) we keep our plans and follow through 2) we can talk about hard topics without it turning into a fight 3) we laugh easily and recover quickly from small misunderstandings. One moment you felt especially safe, cared for, or understood: When I admitted I was anxious and they listened, reflected it back, and did not try to fix me.",
+        "1) they respect my boundaries without sulking 2) we are affectionate in a way that feels mutual, not pressured 3) I feel included in their real life, not hidden. One moment you felt especially safe, cared for, or understood: They checked on me after a family situation and asked what support actually helps, instead of assuming.",
+        "1) consistent communication 2) shared values in daily choices 3) conflict stays respectful. One moment you felt especially safe, cared for, or understood: After a tense moment, they owned their part, apologized clearly, and we repaired the same day."
       ]
     },
     "q06": {
@@ -446,7 +453,7 @@
           "label": "comfortably paced"
         },
         {
-          "value": "a_little_fast",
+          "value": "a_little_fast_for_my_nervous_system",
           "label": "a little fast for my nervous system"
         },
         {
@@ -471,9 +478,11 @@
         }
       ],
       "examples": [
-        "comfortably paced (e.g., things are moving at a speed that feels right for both of us).",
-        "too fast (e.g., they are talking about marriage and I'm still figuring out fit/compatibility).",
-        "too slow (e.g., it feels stagnant and I want more momentum)."
+        "Comfortably paced (e.g., closeness is increasing naturally and I do not feel rushed or stalled. My nervous system stays calm).",
+        "A little fast for my nervous system (e.g., the connection is good, but I notice myself getting tight, overwhelmed, or pressured to keep up).",
+        "Too fast (e.g., big commitment talk or expectations are happening before trust and patterns have had time to prove themselves).",
+        "A little slow (e.g., I am mostly okay, but I want clearer movement toward exclusivity, integration, or intentional planning).",
+        "It varies (e.g., when we are together it feels fast, when we are apart it feels slow. The inconsistency is the problem, not the pace itself)."
       ]
     },
     "q07": {
@@ -496,34 +505,36 @@
       },
       "options": [
         {
-          "value": "exploring__getting",
-          "label": "exploring / getting to know each other"
+          "value": "exploring_getting_to_know_each_other",
+          "label": "Exploring / getting to know each other"
         },
         {
-          "value": "dating_intentionally_still",
-          "label": "dating intentionally, still open to others"
+          "value": "dating_intentionally_still_open_to_others",
+          "label": "Dating intentionally, still open to others"
         },
         {
-          "value": "functionally_exclusive_not",
-          "label": "functionally exclusive (not seeing others), but undefined"
+          "value": "functionally_exclusive_not_seeing_others_but_undefined",
+          "label": "Functionally exclusive (not seeing others), but undefined"
         },
         {
-          "value": "exclusive_and_defined",
-          "label": "exclusive and defined (boyfriend/girlfriend/partner)"
+          "value": "exclusive_and_defined_boyfriend_girlfriend_partner",
+          "label": "Exclusive and defined (boyfriend/girlfriend/partner)"
         },
         {
           "value": "its_complicated",
-          "label": "it's complicated"
+          "label": "It's complicated"
         },
         {
           "value": "other",
-          "label": "other (write in)"
+          "label": "Other (write in)"
         }
       ],
       "examples": [
-        "exploring / getting to know each other (e.g., we are just having fun and getting to know each other).",
-        "functionally exclusive (not seeing others), but undefined (e.g., we haven't said it, but neither of us is looking elsewhere).",
-        "exclusive and defined (boyfriend/girlfriend/partner) (e.g., we have had the talk and are committed)."
+        "Exploring / getting to know each other (e.g., we enjoy each other but nothing is promised. If one of us dated someone else, it would be disappointing but not a betrayal).",
+        "Dating intentionally, still open to others (e.g., we are genuinely evaluating compatibility, but we have not closed the door to meeting others).",
+        "Functionally exclusive (not seeing others), but undefined (e.g., we act exclusive and would be hurt if the other dated, but we have not explicitly agreed).",
+        "Exclusive and defined (boyfriend/girlfriend/partner) (e.g., we have stated what we are, what exclusivity means, and what standards we expect).",
+        "It's complicated (e.g., we do couple things, but there are mixed signals, unclear boundaries, or mismatched expectations that keep it foggy)."
       ]
     },
     "q08": {
@@ -546,46 +557,47 @@
       },
       "options": [
         {
-          "value": "exclusivity_no_dating",
-          "label": "exclusivity (no dating others)"
+          "value": "exclusivity_no_dating_others",
+          "label": "Exclusivity (no dating others)"
         },
         {
-          "value": "a_clear_label",
-          "label": "a clear label (boyfriend/girlfriend/partner)"
+          "value": "a_clear_label_boyfriend_girlfriend_partner",
+          "label": "A clear label (boyfriend/girlfriend/partner)"
         },
         {
-          "value": "clearer_expectations_and",
-          "label": "clearer expectations and boundaries"
+          "value": "clearer_expectations_and_boundaries",
+          "label": "Clearer expectations and boundaries"
         },
         {
-          "value": "increased_consistency_time",
-          "label": "increased consistency (time, communication, follow-through)"
+          "value": "increased_consistency_time_communication_follow_through",
+          "label": "Increased consistency (time, communication, follow-through)"
         },
         {
-          "value": "deeper_emotional_responsibilit",
-          "label": "deeper emotional responsibility (repair matters more)"
+          "value": "deeper_emotional_responsibility_repair_matters_more",
+          "label": "Deeper emotional responsibility (repair matters more)"
         },
         {
-          "value": "integrating_lives_friends",
-          "label": "integrating lives (friends, family, routines)"
+          "value": "integrating_lives_friends_family_routines",
+          "label": "Integrating lives (friends, family, routines)"
         },
         {
-          "value": "future_intent_becomes",
-          "label": "future intent becomes more explicit (where this is going)"
+          "value": "future_intent_becomes_more_explicit",
+          "label": "Future intent becomes more explicit (where this is going)"
         },
         {
-          "value": "public_clarity_friendssocial",
-          "label": "public clarity (friends/social media)"
+          "value": "public_clarity_friends_social_media",
+          "label": "Public clarity (friends/social media)"
         },
         {
           "value": "other",
-          "label": "other (write in)"
+          "label": "Other (write in)"
         }
       ],
       "examples": [
-        "Exclusivity (no dating others) (e.g., we agree to close our dating apps and focus only on each other).",
-        "A clear label (boyfriend/girlfriend/partner) (e.g., I want to call them my boyfriend/girlfriend/partner).",
-        "Future intent becomes more explicit (where this is going) (e.g., I want to know if we are building toward something long-term)."
+        "Exclusivity (no dating others) + deleting/pausing dating apps. notes: I want clean emotional safety, not wondering who else is in the picture.",
+        "A clear label (boyfriend/girlfriend/partner) + public clarity (friends/social media). notes: I do not want ambiguity in social settings or to feel hidden.",
+        "Increased consistency (time, communication, follow-through) + clearer expectations and boundaries. notes: DTR should make day-to-day more stable, not just add a title.",
+        "Deeper emotional responsibility (repair matters more) + future intent becomes more explicit (where this is going). notes: I want us to treat conflict seriously and know we are building toward something, not drifting."
       ]
     },
     "q09": {
@@ -608,16 +620,16 @@
       },
       "fields": [
         {
-          "key": "which_are_part_of",
+          "key": "which_are_part_of_exclusivity_for_you",
           "label": "Which are part of exclusivity for you?",
           "type": "multi_select",
           "options": [
             {
-              "value": "no_dating_other",
+              "value": "no_dating_other_people",
               "label": "no dating other people"
             },
             {
-              "value": "no_flirtingkeeping_doors",
+              "value": "no_flirtingkeeping_doors_open",
               "label": "no flirting/keeping doors open"
             },
             {
@@ -625,15 +637,15 @@
               "label": "deleting/pausing dating apps"
             },
             {
-              "value": "transparency_about_close",
+              "value": "transparency_about_close_friendships_that_could_create_confusion",
               "label": "transparency about close friendships that could create confusion"
             },
             {
-              "value": "agreement_on_physical",
+              "value": "agreement_on_physical_boundaries",
               "label": "agreement on physical boundaries"
             },
             {
-              "value": "agreement_on_emotional",
+              "value": "agreement_on_emotional_boundaries_what_counts_as_betrayal",
               "label": "agreement on emotional boundaries (what counts as betrayal)"
             },
             {
@@ -654,10 +666,10 @@
         }
       ],
       "examples": [
-        "No dating other people: We stop seeing other people entirely.",
-        "No flirting/keeping doors open: We stop entertaining interest from others.",
-        "Deleting/pausing dating apps: We remove dating profiles.",
-        "Transparency about close friendships that could create confusion: We tell each other if an ex reaches out."
+        "No dating other people + deleting/pausing dating apps. notes: If we are exclusive, I want it to be clean and obvious, not vague.",
+        "No flirting/keeping doors open + agreement on emotional boundaries (what counts as betrayal). notes: The line for me is entertaining romantic attention, not just having friends.",
+        "Transparency about close friendships that could create confusion + ex-boundaries. notes: I do not need control, I need clarity so I do not have to guess.",
+        "Agreement on physical boundaries + other (write in). If other, describe: We do not do private one-on-one hangouts with exes. notes: This is about preventing predictable confusion, not policing."
       ]
     },
     "q10": {
@@ -685,31 +697,31 @@
           "type": "ranked_select",
           "options": [
             {
-              "value": "desire",
+              "value": "desire_to_move_forward",
               "label": "desire: I genuinely want to move forward"
             },
             {
-              "value": "safety",
+              "value": "safety_need_clarity_to_feel_steady",
               "label": "safety: I need clarity to feel steady"
             },
             {
-              "value": "fear",
+              "value": "fear_of_losing_them_or_being_replaced",
               "label": "fear: I'm afraid of losing them or being replaced"
             },
             {
-              "value": "logic",
+              "value": "logic_enough_time_has_passed_for_a_decision_point",
               "label": "logic: enough time has passed for a decision point"
             },
             {
-              "value": "discomfort",
+              "value": "discomfort_ambiguity_is_starting_to_hurt",
               "label": "discomfort: the ambiguity is starting to hurt"
             },
             {
-              "value": "pressure",
+              "value": "pressure_external_pressure_friends_family_age_etc",
               "label": "pressure: external pressure (friends, family, age, etc.)"
             },
             {
-              "value": "spiritual",
+              "value": "spiritual_clarity_or_prompting",
               "label": "spiritual: I feel spiritual clarity or prompting"
             },
             {
@@ -730,10 +742,10 @@
         }
       ],
       "examples": [
-        "Desire: I genuinely want to move forward (e.g., I really like them and want to secure this connection).",
-        "Safety: I need clarity to feel steady (e.g., I need to know where I stand so I can stop feeling anxious).",
-        "Logic: enough time has passed for a decision point (e.g., we've been dating 6 months, it's time to decide).",
-        "Fear: I'm afraid of losing them or being replaced (e.g., I'm terrified they will meet someone else if I don't lock it down)."
+        "Desire: I genuinely want to move forward > logic: enough time has passed for a decision point > safety: I need clarity to feel steady. notes: I like who we are together, and the only thing missing is a clean agreement.",
+        "Discomfort: the ambiguity is starting to hurt > safety: I need clarity to feel steady > desire: I genuinely want to move forward. notes: The uncertainty is costing me peace, even though I still want the relationship.",
+        "Fear: I'm afraid of losing them or being replaced > pressure: external pressure (friends, family, age, etc.) > other (write in). If other, describe: I feel behind in life. notes: I want to separate real desire from panic before we label anything.",
+        "Spiritual: I feel spiritual clarity or prompting > desire: I genuinely want to move forward > logic: enough time has passed for a decision point. notes: I feel unusually clear and calm, not rushed or desperate."
       ]
     },
     "q11": {
@@ -756,7 +768,7 @@
       },
       "fields": [
         {
-          "key": "select_any_that_you",
+          "key": "select_any_that_you_expect_to_change",
           "label": "Select any that you expect to change",
           "type": "multi_select",
           "options": [
@@ -769,11 +781,11 @@
               "label": "time together"
             },
             {
-              "value": "emotional_responsibility_and",
+              "value": "emotional_responsibility_and_follow_through",
               "label": "emotional responsibility and follow-through"
             },
             {
-              "value": "physicalsexual_boundaries",
+              "value": "physical_sexual_boundaries",
               "label": "physical/sexual boundaries"
             },
             {
@@ -781,7 +793,7 @@
               "label": "clarity about exclusivity"
             },
             {
-              "value": "social_visibility_friendsfamil",
+              "value": "social_visibility_friends_family_social_media",
               "label": "social visibility (friends/family/social media)"
             },
             {
@@ -789,7 +801,7 @@
               "label": "future planning"
             },
             {
-              "value": "nothing_major_should",
+              "value": "nothing_major_should_change_just_clarity",
               "label": "nothing major should change, just clarity"
             },
             {
@@ -810,10 +822,10 @@
         }
       ],
       "examples": [
-        "Communication consistency: I expect us to talk every day.",
-        "Social visibility (friends/family/social media): I expect to meet their friends soon.",
-        "Emotional responsibility and follow-through: I expect them to care more about my feelings.",
-        "Nothing major should change, just clarity: We are already acting like a couple, I just want the title."
+        "Communication consistency + time together. notes: I do not need constant texting, but I do want a predictable rhythm and planned time so I am not guessing.",
+        "Clarity about exclusivity + physical/sexual boundaries. notes: Labeling should include explicit agreements so neither of us is assuming and then feeling betrayed.",
+        "Emotional responsibility and follow-through + repair matters more. notes: If we label this, I want conflict to be handled with ownership and repair, not avoidance.",
+        "Nothing major should change, just clarity. notes: We already behave like partners. The title is about alignment and public clarity, not changing behavior."
       ]
     },
     "q12": {
@@ -834,20 +846,20 @@
       },
       "fields": [
         {
-          "key": "f_13_expectations",
+          "key": "1-3_expectations",
           "label": "1-3 expectations",
           "type": "free_text"
         },
         {
-          "key": "which_of_these_feel",
+          "key": "which_of_these_feel_fair_vs_possibly_unrealistic",
           "label": "Which of these feel fair vs possibly unrealistic?",
           "type": "free_text"
         }
       ],
       "examples": [
-        "Expectation: That I become their priority on weekends.",
-        "Expectation: That they stop talking to their ex.",
-        "Expectation: That we start planning a trip together."
+        "1) We communicate daily in a simple way 2) We do not keep dating doors open 3) We repair conflict within 24 hours. Fair vs possibly unrealistic: The repair expectation is fair, but 24 hours might be unrealistic during work travel. A better standard is: we name it and schedule repair.",
+        "1) If we are exclusive, ex contact has clear boundaries 2) I meet key friends/family within a reasonable timeline. Fair vs possibly unrealistic: Meeting family fast might be unrealistic if family is complicated. The fair core is: I do not want to feel hidden.",
+        "1) We plan at least one intentional date per week 2) Follow-through matters (no constant rescheduling) 3) We talk about direction within the next month. Fair vs possibly unrealistic: The direction talk is fair, but I may be over-attaching it to security instead of gathering data."
       ]
     },
     "q13": {
@@ -869,19 +881,19 @@
       },
       "options": [
         {
-          "value": "light_and_flexible",
+          "value": "light_and_flexible_communication",
           "label": "light and flexible, no pressure"
         },
         {
-          "value": "steady_but_simple",
+          "value": "steady_but_simple_communication_a_basic_daily_touchpoint",
           "label": "steady but simple (a basic daily touchpoint)"
         },
         {
-          "value": "consistent_and_connected",
+          "value": "consistent_and_connected_communication_regular_check_ins_predictable_rhythm",
           "label": "consistent and connected (regular check-ins, predictable rhythm)"
         },
         {
-          "value": "highly_integrated_frequent",
+          "value": "highly_integrated_communication_frequent_contact_shared_planning",
           "label": "highly integrated (frequent contact, shared planning)"
         },
         {
@@ -894,9 +906,10 @@
         }
       ],
       "examples": [
-        "Steady but simple (a basic daily touchpoint) (e.g., a daily check-in text is enough).",
-        "Consistent and connected (regular check-ins, predictable rhythm) (e.g., regular check-ins and a predictable rhythm feel good).",
-        "Highly integrated (frequent contact, shared planning) (e.g., frequent contact and shared planning feels natural, not controlling)."
+        "light and flexible, no pressure (e.g., we text when it makes sense, and silence does not mean drama. The relationship is secure enough to breathe).",
+        "steady but simple (a basic daily touchpoint) (e.g., one check-in most days plus a quick plan for when we will see each other next).",
+        "consistent and connected (regular check-ins, predictable rhythm) (e.g., we have a normal cadence: a brief daily touchpoint and a deeper call or check-in a couple times a week).",
+        "highly integrated (frequent contact, shared planning) (e.g., we naturally coordinate schedules, share small life updates throughout the day, and it feels mutual, not monitored)."
       ]
     },
     "q14": {
@@ -931,7 +944,7 @@
           "label": "not sure"
         },
         {
-          "value": "we_havent_defined",
+          "value": "we_havent_defined_it",
           "label": "we haven't defined it"
         },
         {
@@ -940,9 +953,11 @@
         }
       ],
       "examples": [
-        "Yes (we have explicitly agreed to be exclusive).",
-        "No (we are still technically free to see others).",
-        "It's complicated (we act exclusive but haven't defined it)."
+        "Yes (e.g., we explicitly agreed: no dating others, apps are paused, and we clarified what counts as flirting or betrayal).",
+        "No (e.g., we like each other, but we have not made agreements and either of us could still date).",
+        "Not sure (e.g., we act exclusive sometimes, but the rules are unclear and I would not be able to call it a clear agreement).",
+        "We haven't defined it (e.g., we are basically behaving like a couple, but we have never said the words or clarified boundaries).",
+        "It's complicated (e.g., mixed signals, unclear boundaries, or a situation like distance, ex overlap, or timing that makes exclusivity unclear)."
       ]
     },
     "q15": {
@@ -991,20 +1006,20 @@
           ]
         },
         {
-          "key": "what_makes_it_feel",
+          "key": "what_makes_it_feel_clear",
           "label": "What makes it feel clear",
           "type": "free_text"
         },
         {
-          "key": "what_makes_it_feel_2",
+          "key": "what_makes_it_feel_unclear",
           "label": "What makes it feel unclear",
           "type": "free_text"
         }
       ],
       "examples": [
-        "Very steady (e.g., their actions match their words completely).",
-        "Mostly steady (e.g., usually good, but they sometimes go silent).",
-        "Unclear (e.g., I'm constantly guessing if they are still interested)."
+        "Very steady. What makes it feel clear: They follow through, communicate consistently, and we have explicit boundaries about others. What makes it feel unclear: Nothing major right now, it feels aligned.",
+        "Mostly steady. What makes it feel clear: Their actions show commitment and they include me in plans. What makes it feel unclear: When conflict happens they go quiet, so I start guessing where I stand.",
+        "Unclear. What makes it feel clear: We act exclusive when together. What makes it feel unclear: There is no explicit agreement and I notice evasiveness around attention from others."
       ]
     },
     "q16": {
@@ -1098,7 +1113,7 @@
           ]
         },
         {
-          "key": "timeavailability_pace",
+          "key": "time_availability_pace",
           "label": "Time/availability pace",
           "type": "single_select",
           "options": [
@@ -1127,9 +1142,9 @@
         }
       ],
       "examples": [
-        "Aligned: We both want to see each other twice a week.",
-        "Mismatched on physical pace: They want to move faster sexually than I do.",
-        "Mismatched on emotional pace: I am falling in love, they are still 'seeing how it goes'."
+        "Aligned; physical pace: aligned; communication pace: aligned; time/availability pace: aligned; notes: We both want to build steadily, we talk at a similar frequency, and our physical boundaries feel mutual.",
+        "Slightly mismatched; physical pace: aligned; communication pace: slightly mismatched; time/availability pace: aligned; notes: I am more emotionally invested right now and I want more reassurance than they naturally give, but we can talk about it without pressure.",
+        "Mismatched; physical pace: mismatched; communication pace: aligned; time/availability pace: slightly mismatched; notes: The biggest friction is physical pacing and availability. We need explicit boundaries and a realistic schedule so no one feels rejected or pushed."
       ]
     },
     "q17": {
@@ -1155,7 +1170,7 @@
           "label": "healthy and comfortable"
         },
         {
-          "value": "a_little_fast",
+          "value": "a_little_fast_for_my_nervous_system",
           "label": "a little fast for my nervous system"
         },
         {
@@ -1180,9 +1195,10 @@
         }
       ],
       "examples": [
-        "Healthy and comfortable (e.g., meeting friends felt natural and fun).",
-        "Too fast (e.g., meeting parents after 3 weeks felt like too much pressure).",
-        "Too slow (e.g., I feel hidden because I haven't met anyone in their life yet)."
+        "healthy and comfortable (e.g., meeting friends and showing up in each other's real life feels natural, not performative or pressured).",
+        "a little fast for my nervous system (e.g., I like them, but public visibility or family integration is happening before I feel settled).",
+        "too fast (e.g., expectations around family, church/community visibility, or routines feel like a forced escalator).",
+        "too slow (e.g., I feel compartmentalized. I am not asking to rush, but I need to know I am not being hidden)."
       ]
     },
     "q18": {
@@ -1212,7 +1228,7 @@
           "label": "different but complementary"
         },
         {
-          "value": "workable_with_some",
+          "value": "workable_with_some_coordination",
           "label": "workable with some coordination"
         },
         {
@@ -1220,7 +1236,7 @@
           "label": "frequent friction"
         },
         {
-          "value": "likely_a_major",
+          "value": "likely_a_major_clash",
           "label": "likely a major clash"
         },
         {
@@ -1233,9 +1249,10 @@
         }
       ],
       "examples": [
-        "Seamless, very similar (e.g., we are both morning people and like a tidy house).",
-        "Different but complementary (e.g., I cook, they clean; I plan, they execute).",
-        "Frequent friction (e.g., their messiness stresses me out constantly)."
+        "seamless, very similar (e.g., sleep, cleanliness, planning style, and pace are naturally compatible. Coexisting would feel easy).",
+        "different but complementary (e.g., one is spontaneous and one is structured, but we respect it and build a rhythm that uses both strengths).",
+        "workable with some coordination (e.g., we need agreements on things like planning ahead, chores, or sleep routines, but it feels solvable).",
+        "frequent friction (e.g., I feel stressed by their chaos tolerance or last-minute changes, and it keeps repeating despite conversations)."
       ]
     },
     "q19": {
@@ -1258,7 +1275,7 @@
       },
       "fields": [
         {
-          "key": "are_you_ignoring_a",
+          "key": "are_you_ignoring_a_small_but_real_concern",
           "label": "Are you ignoring a small-but-real concern?",
           "type": "single_select",
           "options": [
@@ -1290,19 +1307,19 @@
               "label": "conflict behavior"
             },
             {
-              "value": "faithvalues",
+              "value": "faith_values",
               "label": "faith/values"
             },
             {
-              "value": "boundariessexual_pace",
+              "value": "boundaries_sexual_pace",
               "label": "boundaries/sexual pace"
             },
             {
-              "value": "jealousyinsecurity",
+              "value": "jealousy_insecurity",
               "label": "jealousy/insecurity"
             },
             {
-              "value": "ambitionwork_ethic",
+              "value": "ambition_work_ethic",
               "label": "ambition/work ethic"
             },
             {
@@ -1310,11 +1327,11 @@
               "label": "money habits"
             },
             {
-              "value": "cleanlinesslifestyle",
+              "value": "cleanliness_lifestyle",
               "label": "cleanliness/lifestyle"
             },
             {
-              "value": "exboundaries",
+              "value": "ex_boundaries",
               "label": "ex-boundaries"
             },
             {
@@ -1326,7 +1343,7 @@
               "label": "other"
             },
             {
-              "value": "prefer_not_to",
+              "value": "prefer_not_to_say",
               "label": "prefer not to say"
             }
           ]
@@ -1338,9 +1355,9 @@
         }
       ],
       "examples": [
-        "No (e.g., everything feels green light).",
-        "Yes (conflict behavior): They shut down and won't talk for days.",
-        "Yes (money habits): They seem financially irresponsible."
+        "No; Optional context: The chemistry is strong, but it is not blinding me. We have talked through the main risks.",
+        "Yes (conflict behavior): When tension hits, they go cold or disappear. The chemistry makes me excuse it, but it would be a serious long-term problem.",
+        "Unsure; If yes/unsure: ex-boundaries; Optional context: There are friendships that feel ambiguous and I am not sure if I am overreacting or noticing a real instability."
       ]
     },
     "q20": {
@@ -1390,20 +1407,21 @@
           ]
         },
         {
-          "key": "what_makes_it_feel",
+          "key": "what_makes_it_feel_safe",
           "label": "What makes it feel safe",
           "type": "free_text"
         },
         {
-          "key": "what_makes_it_feel_2",
+          "key": "what_makes_it_feel_less_safe",
           "label": "What makes it feel less safe",
           "type": "free_text"
         }
       ],
       "examples": [
-        "Yes (e.g., I can share my deepest fears and they listen without judgment).",
-        "Mostly (e.g., I share most things, but hide my anxiety to not look 'needy').",
-        "Not really (e.g., I worry they will think less of me if I show weakness)."
+        "Yes. What makes it feel safe: They stay kind in hard conversations, do not punish honesty, and they repair quickly. What makes it feel less safe: I still get a little guarded around one topic, but it is shrinking.",
+        "Mostly. What makes it feel safe: They listen and validate. What makes it feel less safe: I edit myself when I fear being seen as too intense, needy, or critical.",
+        "Sometimes. What makes it feel safe: When they are regulated, they are great. What makes it feel less safe: When stressed, they get defensive or dismissive, so I choose silence.",
+        "Not really. What makes it feel safe: Very little. What makes it feel less safe: I fear backlash, judgment, or withdrawal if I am fully honest."
       ]
     },
     "q21": {
@@ -1446,9 +1464,10 @@
         }
       ],
       "examples": [
-        "No (e.g., I feel free to bring up issues).",
-        "Sometimes (e.g., I hesitate to bring up needs because they might get annoyed).",
-        "Yes, regularly (e.g., I constantly monitor their mood to avoid conflict)."
+        "No (e.g., I can bring up needs directly and it does not become a mood event. We can handle discomfort without punishment).",
+        "Sometimes (e.g., I delay certain topics until the timing feels safe because I do not want an overreaction).",
+        "Often (e.g., I pre-edit my words, scan their tone, and choose peace over honesty more than I want to).",
+        "Yes, regularly (e.g., I am managing their emotions like a job. The relationship has a peace-keeping tax)."
       ]
     },
     "q22": {
@@ -1498,19 +1517,20 @@
           ]
         },
         {
-          "key": "one_thing_that_feels",
+          "key": "one_thing_that_feels_respectful",
           "label": "One thing that feels respectful",
           "type": "short_text"
         },
         {
-          "key": "one_thing_that_doesnt",
+          "key": "one_thing_that_doesnt_feel_respectful",
           "label": "One thing that doesn't",
           "type": "short_text"
         }
       ],
       "examples": [
-        "Yes (e.g., they respect my 'no' always).",
-        "Mixed (e.g., they are mostly respectful, but sometimes pushy about time)."
+        "Yes. One thing that feels respectful: They honor my boundaries the first time. One thing that doesn't: Nothing consistent stands out.",
+        "Mostly. One thing that feels respectful: They speak kindly even when upset. One thing that doesn't: They sometimes minimize my needs or rush me when I need time.",
+        "Mixed. One thing that feels respectful: They try. One thing that doesn't: They get sarcastic, dismissive, or inconsistent with honesty, and it undermines trust."
       ]
     },
     "q23": {
@@ -1532,19 +1552,19 @@
       },
       "options": [
         {
-          "value": "more_regulated_and",
+          "value": "more_regulated_and_grounded",
           "label": "more regulated and grounded"
         },
         {
-          "value": "more_open_and",
+          "value": "more_open_and_hopeful",
           "label": "more open and hopeful"
         },
         {
-          "value": "more_anxiousactivated",
+          "value": "more_anxious_activated",
           "label": "more anxious/activated"
         },
         {
-          "value": "more_shut_downnumb",
+          "value": "more_shut_down_numb",
           "label": "more shut down/numb"
         },
         {
@@ -1557,9 +1577,10 @@
         }
       ],
       "examples": [
-        "More regulated and grounded (e.g., I feel calm and safe with them).",
-        "More open and hopeful (e.g., I feel excited about the future context).",
-        "More anxious/activated (e.g., I feel on edge or hyper-vigilant)."
+        "More regulated and grounded (e.g., my baseline anxiety drops with them. I feel more like myself and less reactive).",
+        "More open and hopeful (e.g., I feel energized about building, like my life expands with them, not contracts).",
+        "More anxious/activated (e.g., I overthink texts, feel uncertainty in my body, or feel like I am always calibrating to their moods).",
+        "More shut down/numb (e.g., I am present physically but emotionally muted. I avoid bringing up needs because it feels pointless)."
       ]
     },
     "q24": {
@@ -1582,7 +1603,7 @@
       },
       "options": [
         {
-          "value": "we_talk_and",
+          "value": "we_talk_and_repair",
           "label": "we talk and repair"
         },
         {
@@ -1590,11 +1611,11 @@
           "label": "we avoid it"
         },
         {
-          "value": "one_of_us",
+          "value": "one_of_us_shuts_down",
           "label": "one of us shuts down"
         },
         {
-          "value": "it_escalates_then",
+          "value": "it_escalates_then_cools_off",
           "label": "it escalates then cools off"
         },
         {
@@ -1602,7 +1623,7 @@
           "label": "we go distant"
         },
         {
-          "value": "not_enough_conflict",
+          "value": "not_enough_conflict_yet_to_know",
           "label": "not enough conflict yet to know"
         },
         {
@@ -1611,9 +1632,10 @@
         }
       ],
       "examples": [
-        "We talk and repair (e.g., we can disagree but come back together stronger).",
-        "We avoid it (e.g., we pretend nothing happened and just move on).",
-        "It escalates then cools off (e.g., small disagreements turn into big fights and then settle)."
+        "We talk and repair (e.g., we address issues directly, stay respectful, and actually resolve them instead of stacking resentment).",
+        "We avoid it (e.g., we change the subject, smooth it over, or pretend it is fine, but it shows up later as distance).",
+        "One of us shuts down (e.g., one person goes quiet, disappears, or becomes unavailable, so repair gets delayed or never happens).",
+        "It escalates then cools off (e.g., the issue becomes a blowup, then we reset without real repair, which trains the cycle)."
       ]
     },
     "q25": {
@@ -1644,7 +1666,7 @@
           "label": "about the same"
         },
         {
-          "value": "a_little_less",
+          "value": "a_little_less_safe",
           "label": "a little less safe"
         },
         {
@@ -1661,9 +1683,10 @@
         }
       ],
       "examples": [
-        "More connected (e.g., resolving it made us feel closer).",
-        "About the same (e.g., we got through it).",
-        "A little less safe (e.g., I'm afraid to bring it up again)."
+        "More connected (e.g., we owned our parts, understood each other better, and the repair increased trust).",
+        "About the same (e.g., the issue ended, but nothing deep changed. It is neutral, not building or breaking trust).",
+        "A little less safe (e.g., the repair was partial, so I feel hesitant to bring up similar needs again).",
+        "More distant (e.g., we never fully repaired, so I pull back, feel guarded, or question the relationship)."
       ]
     },
     "q26": {
@@ -1694,11 +1717,11 @@
               "label": "values"
             },
             {
-              "value": "faithspirituality",
+              "value": "faith_spirituality",
               "label": "faith/spirituality"
             },
             {
-              "value": "sexphysical_boundaries",
+              "value": "sex_physical_boundaries",
               "label": "sex/physical boundaries"
             },
             {
@@ -1714,7 +1737,7 @@
               "label": "kids"
             },
             {
-              "value": "timelinecommitment",
+              "value": "timeline_commitment",
               "label": "timeline/commitment"
             },
             {
@@ -1751,9 +1774,10 @@
         }
       ],
       "examples": [
-        "None (e.g., we have discussed everything difficult).",
-        "Money (e.g., I haven't asked about their debt yet).",
-        "Faith/spirituality (e.g., I'm worried our religious views are too different)."
+        "None. notes: Hard talks are uncomfortable, but we do them. I do not feel like I am hiding a landmine.",
+        "Money + timeline/commitment. notes: I have not asked about debt, spending, or what commitment timeline they actually want, and it affects my ability to say yes cleanly.",
+        "Sex/physical boundaries + exes. notes: There are assumptions about physical pace and about ex contact that could create betrayal if we do not name them.",
+        "Emotional needs + mental health. notes: I am avoiding naming a need because I fear it will change how they see me, which is already information."
       ]
     },
     "q27": {
@@ -1784,7 +1808,7 @@
               "label": "yelling"
             },
             {
-              "value": "insultsnamecalling",
+              "value": "insults_namecalling",
               "label": "insults/name-calling"
             },
             {
@@ -1796,7 +1820,7 @@
               "label": "threats"
             },
             {
-              "value": "contemptsarcasm",
+              "value": "contempt_sarcasm",
               "label": "contempt/sarcasm"
             },
             {
@@ -1816,7 +1840,7 @@
               "label": "sexual pressure"
             },
             {
-              "value": "breaking_objectsintimidation",
+              "value": "breaking_objects_intimidation",
               "label": "breaking objects/intimidation"
             },
             {
@@ -1831,14 +1855,15 @@
           "type": "short_text"
         },
         {
-          "key": "if_one_happens_what",
+          "key": "if_one_happens_what_should_the_immediate_response_be",
           "label": "If one happens, what should the immediate response be?",
           "type": "free_text"
         }
       ],
       "examples": [
-        "Not okay: Yelling, name-calling, stonewalling.",
-        "Response: 'I can't continue this conversation while you are yelling. Let's take 20 minutes.'"
+        "Yelling + insults/name-calling + breaking objects/intimidation. If one happens, what should the immediate response be?: I end the conversation immediately, leave the space if needed, and we only reconnect when calm. Repeated incidents mean I step back from the relationship.",
+        "Stonewalling + contempt/sarcasm. If one happens, what should the immediate response be?: We pause, set a specific time to resume (same day if possible), and the person who shuts down still communicates: I need 30 minutes, I will come back.",
+        "Jealousy control + privacy violations. If one happens, what should the immediate response be?: We name it as a boundary violation, clarify expectations, and if it repeats, I treat it as a dealbreaker because it predicts control."
       ]
     },
     "q28": {
@@ -1888,20 +1913,20 @@
           ]
         },
         {
-          "key": "f_12_values_that_feel",
+          "key": "1-2_values_that_feel_aligned",
           "label": "1-2 values that feel aligned",
           "type": "short_text"
         },
         {
-          "key": "f_12_values_that_feel_2",
+          "key": "1-2_values_that_feel_uncertain",
           "label": "1-2 values that feel uncertain",
           "type": "short_text"
         }
       ],
       "examples": [
-        "Aligned (e.g., we both value family and honesty deeply).",
-        "Misaligned (e.g., they prioritize work over everything, I prioritize connection).",
-        "Mixed (e.g., we share political views but differ on financial goals)."
+        "Aligned. 1-2 values that feel aligned: honesty and family. 1-2 values that feel uncertain: none right now. notes: Our values show up in day-to-day choices, not just words.",
+        "Mostly aligned. 1-2 values that feel aligned: faith/spirituality and service. 1-2 values that feel uncertain: money and lifestyle pace. notes: We want the same big things, but the operating style may clash.",
+        "Mixed. 1-2 values that feel aligned: loyalty and growth. 1-2 values that feel uncertain: sexual boundaries or integrity. notes: The mismatch is showing up as recurring tension, not just hypothetical disagreement."
       ]
     },
     "q29": {
@@ -1937,8 +1962,9 @@
         }
       ],
       "examples": [
-        "No (e.g., I accept them exactly as they are today).",
-        "Yes (e.g., I hope they become more ambitious/cleaner/more communicative)."
+        "No (e.g., I can say yes to who they are today, not to a future version. Any growth would be a bonus, not a requirement).",
+        "Yes (e.g., I am hoping commitment will fix something like communication, effort, cleanliness, or emotional availability, which means I am not fully okay with the current reality).",
+        "Unsure (e.g., I am telling myself it will get better, but I cannot tell if that is faith in growth or denial of a pattern)."
       ]
     },
     "q30": {
@@ -1964,8 +1990,10 @@
         ]
       },
       "examples": [
-        "I hope they will start planning dates more often once we are 'official'.",
-        "I hope they will be more open about their feelings."
+        "I hope they will become more consistent with communication and follow-through. Right now it feels like I am doing more of the emotional and logistical work.",
+        "I hope they will handle conflict with more ownership instead of defensiveness or withdrawal. I do not want a relationship where repair is rare.",
+        "I hope they will clarify ex boundaries and stop leaving gray areas that make me feel unstable. I need transparency, not control.",
+        "I hope I will stop feeling like I have to earn their effort. If I need to chase, I do not want to label it."
       ]
     },
     "q31": {
@@ -2008,8 +2036,10 @@
         }
       ],
       "examples": [
-        "More myself (e.g., I feel freer and more authentic with them).",
-        "Somewhat edited (e.g., I hold back my true personality to fit what they like)."
+        "More myself (e.g., I can be honest, tired, awkward, or intense and still feel liked. I do not fear punishment for authenticity).",
+        "Mostly myself (e.g., I am real, but I still hold back a couple topics or traits until trust is deeper).",
+        "Somewhat edited (e.g., I am tracking their reactions and adjusting myself to avoid disapproval. It is not extreme, but it is not free either).",
+        "Heavily edited (e.g., I feel like I am curating a version of me. If I relaxed, I think the relationship would wobble)."
       ]
     },
     "q32": {
@@ -2031,7 +2061,7 @@
       },
       "fields": [
         {
-          "key": "is_there_a_potential",
+          "key": "is_there_a_potential_dealbreaker",
           "label": "Is there a potential dealbreaker?",
           "type": "single_select",
           "options": [
@@ -2067,15 +2097,15 @@
               "label": "sexual boundaries"
             },
             {
-              "value": "honestytrust",
-              "label": "honesty/trust"
+              "value": "honesty_and_trust",
+              "label": "honesty and trust"
             },
             {
               "value": "emotional_availability",
               "label": "emotional availability"
             },
             {
-              "value": "angerconflict_behavior",
+              "value": "anger_conflict_behavior",
               "label": "anger/conflict behavior"
             },
             {
@@ -2103,9 +2133,9 @@
         }
       ],
       "examples": [
-        "No potential dealbreakers.",
-        "Yes: Life direction (they want to be nomadic, I want roots).",
-        "Yes: Kids (they are unsure, I definitely want them)."
+        "No; Category: prefer not to say; Notes: Nothing stands out as a dealbreaker. I am not avoiding anything major right now.",
+        "Yes; Category: life direction; Notes: Their lifestyle vision and mine may be incompatible, and I have been postponing the conversation because the chemistry is strong.",
+        "Unsure; Category: emotional availability; Notes: I do not know if they can show up consistently under stress, and I am afraid to test it because the answer could change everything."
       ]
     },
     "q33": {
@@ -2132,7 +2162,7 @@
           "label": "grounded desire"
         },
         {
-          "value": "anxiety_and_need",
+          "value": "anxiety_and_need_for_certainty",
           "label": "anxiety and need for certainty"
         },
         {
@@ -2149,9 +2179,10 @@
         }
       ],
       "examples": [
-        "Grounded desire (e.g., I want this partnership because it adds to my life).",
-        "Anxiety and need for certainty (e.g., I'm afraid of being alone or losing them).",
-        "Both (e.g., I really like them, but I'm also scared)."
+        "Grounded desire (e.g., I want to build with them because our values and patterns look healthy, and I feel calm about the direction).",
+        "Anxiety and need for certainty (e.g., the urgency spikes when I feel insecure, triggered, or afraid of replacement, not when I feel steady).",
+        "Both (e.g., I want them and I also want relief from uncertainty. I need to separate commitment from panic before I decide).",
+        "Neither (e.g., I do not feel pulled toward labeling. I may be coasting, avoiding a decision, or noticing a lack of fit)."
       ]
     },
     "q34": {
@@ -2177,19 +2208,19 @@
           "type": "single_select",
           "options": [
             {
-              "value": "calmsettled",
+              "value": "calm_settled",
               "label": "calm/settled"
             },
             {
-              "value": "excitedenergized",
+              "value": "excited_energized",
               "label": "excited/energized"
             },
             {
-              "value": "tightuneasy",
+              "value": "tight_uneasy",
               "label": "tight/uneasy"
             },
             {
-              "value": "numbflat",
+              "value": "numb_flat",
               "label": "numb/flat"
             },
             {
@@ -2209,9 +2240,10 @@
         }
       ],
       "examples": [
-        "Calm/settled (e.g., a warm feeling in my chest).",
-        "Excited/energized (e.g., butterflies and smiles).",
-        "Tight/uneasy (e.g., a knot in my stomach)."
+        "Calm/settled. In one sentence, why?: It feels like relief and stability, like I can exhale and be myself.",
+        "Excited/energized. In one sentence, why?: I feel motivated and hopeful, like building a future with them makes sense.",
+        "Tight/uneasy. In one sentence, why?: My body flags risk, like I am about to sign up for stress, pressure, or loss of self.",
+        "Mixed. In one sentence, why?: Part of me is drawn in, part of me braces. The ambivalence is the signal I need to explore."
       ]
     },
     "q35": {
@@ -2262,9 +2294,10 @@
         }
       ],
       "examples": [
-        "Understanding (e.g., I'm willing to wait if they need time).",
-        "Hurt (e.g., I would feel rejected and sad).",
-        "Relief (e.g., honestly, I'm not ready either)."
+        "Understanding (e.g., I can handle not yet if there is clear care and a plan for what we are learning next).",
+        "Hurt (e.g., it would feel like rejection, especially if they cannot articulate what needs to change or what timeline they want).",
+        "Anxious (e.g., I would start scanning for replacement or loss, and I would need clarity to stay regulated).",
+        "Relief (e.g., I want the connection, but I also feel pressure. Waiting would give me space to decide cleanly)."
       ]
     },
     "q36": {
@@ -2286,19 +2319,19 @@
       },
       "options": [
         {
-          "value": "define_the_relationship",
+          "value": "define_the_relationship_now",
           "label": "define the relationship now"
         },
         {
-          "value": "move_toward_defining",
+          "value": "move_toward_defining_it_but_not_yet",
           "label": "move toward defining it, but not yet"
         },
         {
-          "value": "keep_it_undefined",
+          "value": "keep_it_undefined_for_a_while",
           "label": "keep it undefined for a while"
         },
         {
-          "value": "step_back_or",
+          "value": "step_back_or_end_it",
           "label": "step back or end it"
         },
         {
@@ -2307,9 +2340,10 @@
         }
       ],
       "examples": [
-        "Define the relationship now (e.g., I'm ready to commit fully).",
-        "Move toward defining it, but not yet (e.g., keep dating exclusively but no label yet).",
-        "Step back or end it (e.g., I need space to think)."
+        "Define the relationship now (e.g., I have enough data, the risks are known, and I feel peace. I am ready to make agreements and move forward).",
+        "Move toward defining it, but not yet (e.g., I want exclusivity or clearer expectations first, then label when consistency is proven).",
+        "Keep it undefined for a while (e.g., I enjoy them, but I do not want pressure. I need more time observing patterns before adding stakes).",
+        "Step back or end it (e.g., my body or values are saying no, and continuing would be denial or attachment, not wisdom)."
       ]
     },
     "q37": {
@@ -2332,7 +2366,7 @@
       },
       "fields": [
         {
-          "key": "readiness_score",
+          "key": "readiness_score_1_not_ready_10_is_ready",
           "label": "Readiness score (1 = not ready at all, 10 = ready and at peace)",
           "type": "number"
         },
@@ -2348,9 +2382,10 @@
         }
       ],
       "examples": [
-        "8: I feel very good about us, just want to clarify one boundary.",
-        "10: I am completely at peace and excited to define this.",
-        "3: I have too many doubts right now."
+        "9. why that number?: We are basically acting committed and our conflict is respectful. what would raise it by 1-2 points?: Clarify exclusivity boundaries and make a simple plan for communication consistency.",
+        "6. why that number?: I like them, but I do not trust the pattern yet under stress. what would raise it by 1-2 points?: Watch follow-through for a few more weeks and have the hard conversation about direction.",
+        "3. why that number?: My nervous system is activated and I am minimizing concerns. what would raise it by 1-2 points?: Either we repair the core issue consistently, or I step back and stop forcing it.",
+        "10. why that number?: I feel calm, clear, and excited, and my yes is not a rescue or a panic. what would raise it by 1-2 points?: Nothing, I am already there."
       ]
     },
     "q38": {
@@ -2384,7 +2419,7 @@
           "label": "behavioral consistency"
         },
         {
-          "value": "repair_and_conflict",
+          "value": "repair_and_conflict_stability",
           "label": "repair and conflict stability"
         },
         {
@@ -2396,11 +2431,11 @@
           "label": "clarity about exclusivity"
         },
         {
-          "value": "faithspiritual_alignment",
+          "value": "faith_spiritual_alignment",
           "label": "faith/spiritual alignment"
         },
         {
-          "value": "meet_friendsfamily",
+          "value": "meet_friends_family",
           "label": "meet friends/family"
         },
         {
@@ -2413,9 +2448,10 @@
         }
       ],
       "examples": [
-        "More time (e.g., I need a few more weeks to see consistency).",
-        "A hard conversation (e.g., we need to talk about finances first).",
-        "Meet friends/family (e.g., I need to see how they are with my siblings)."
+        "Behavioral consistency + repair and conflict stability. notes: I need to see how we handle stress and repair, not just how good it feels when things are easy.",
+        "A hard conversation + clarity about exclusivity. notes: We are close, but the agreement layer is missing. Until we define the rules, I cannot say yes cleanly.",
+        "Meet friends/family + time availability clarity. notes: I need to see integration and whether our real-life schedules are compatible long-term.",
+        "Emotional safety + faith/spiritual alignment. notes: I can date without full alignment, but I cannot define without it if faith is central for me."
       ]
     },
     "q39": {
@@ -2435,9 +2471,10 @@
         ]
       },
       "examples": [
-        "They must be willing to go to therapy if we get stuck.",
-        "We must agree on being exclusive.",
-        "They must be open about their past relationships."
+        "Behavioral consistency + repair and conflict stability. notes: I need to see how we handle stress and repair, not just how good it feels when things are easy.",
+        "A hard conversation + clarity about exclusivity. notes: We are close, but the agreement layer is missing. Until we define the rules, I cannot say yes cleanly.",
+        "Meet friends/family + time availability clarity. notes: I need to see integration and whether our real-life schedules are compatible long-term.",
+        "Emotional safety + faith/spiritual alignment. notes: I can date without full alignment, but I cannot define without it if faith is central for me."
       ]
     },
     "q40": {
@@ -2456,9 +2493,10 @@
         ]
       },
       "examples": [
-        "We should cool things off and see other people.",
-        "We should keep dating but check in again in 2 weeks.",
-        "We should break up if we aren't on the same page."
+        "Not yet: I would name the specific missing data (exclusivity clarity, conflict pattern, direction) and agree on a time-box to re-evaluate, like 2 to 4 weeks, with one or two concrete conversations planned.",
+        "No: I would be honest and kind, stop escalating intimacy, and create clean space so we do not drift into ambiguity or emotional dependence.",
+        "Not yet: I would slow the pace, reduce pressure, and gather data intentionally rather than staying in limbo. If there is no progress, I would step back.",
+        "No: I would end it respectfully, with clarity and minimal mixed signals, so both of us can heal and move forward without confusion."
       ]
     },
     "q41": {
@@ -2498,14 +2536,15 @@
           ]
         },
         {
-          "key": "if_yesunsure",
+          "key": "if_yes_unsure",
           "label": "If yes/unsure",
           "type": "short_text"
         }
       ],
       "examples": [
-        "No (e.g., I am being totally honest with myself).",
-        "Yes (e.g., deep down I know they aren't 'the one', but I don't want to be lonely)."
+        "No. If yes/unsure: (blank). notes: I feel clear and I am not hiding from the answer.",
+        "Yes. If yes/unsure: I know I do not want to define this, but I am attached to the comfort and attention. notes: I am scared of loneliness or regret.",
+        "Unsure. If yes/unsure: Part of me knows, but I keep arguing with myself. notes: I need to face the data instead of the fantasy."
       ]
     },
     "q42": {
@@ -2544,9 +2583,10 @@
         }
       ],
       "examples": [
-        "Central (e.g., my faith guides all my decisions).",
-        "Important (e.g., it matters but isn't the only factor).",
-        "Not relevant (e.g., I am not religious)."
+        "Central (e.g., faith shapes standards, pacing, and long-term direction, so misalignment here is a real dealbreaker, not a footnote).",
+        "Important (e.g., it matters for lifestyle and integrity, but I can navigate some differences if there is respect and shared direction).",
+        "Somewhat relevant (e.g., I value spirituality or meaning, but it is not the main filter for defining the relationship).",
+        "Not relevant (e.g., faith is not a factor in my decisions, so alignment here would not drive a yes or no)."
       ]
     },
     "q43": {
@@ -2596,8 +2636,9 @@
         }
       ],
       "examples": [
-        "Supports (e.g., we pray together and encourage each other).",
-        "Strains (e.g., we argue about how we spend Sundays)."
+        "Supports. in what way?: The relationship reinforces my values and standards. I feel more honest, more disciplined, and more aligned with what I believe.",
+        "Strains. in what way?: I feel pulled to compromise standards or hide parts of the relationship. It creates guilt, secrecy, or a sense of double life.",
+        "Mixed. in what way?: Some parts support my faith, but there are recurring situations that strain integrity, like boundaries, Sabbath approach, or value conflicts."
       ]
     },
     "q44": {
@@ -2619,15 +2660,15 @@
       },
       "options": [
         {
-          "value": "shared_worshipchurch_life",
+          "value": "shared_worship_church_life",
           "label": "shared worship/church life"
         },
         {
-          "value": "sexual_standardsboundaries_eg",
+          "value": "sexual_standards_boundaries_eg_chastity_expectations",
           "label": "sexual standards/boundaries (e.g., chastity expectations)"
         },
         {
-          "value": "word_of_wisdom",
+          "value": "word_of_wisdom_style_alignment_substances",
           "label": "Word of Wisdom style alignment (substances)"
         },
         {
@@ -2635,15 +2676,15 @@
           "label": "Sabbath day approach"
         },
         {
-          "value": "templecovenant_direction_if",
+          "value": "temple_covenant_direction_if_applicable",
           "label": "temple/covenant direction (if applicable)"
         },
         {
-          "value": "tithinggenerosity_and_stewards",
+          "value": "tithing_generosity_and_stewardship_approach",
           "label": "tithing/generosity and stewardship approach"
         },
         {
-          "value": "rolesleadership_expectations",
+          "value": "roles_leadership_expectations",
           "label": "roles/leadership expectations"
         },
         {
@@ -2660,9 +2701,10 @@
         }
       ],
       "examples": [
-        "Shared worship/church life (e.g., going to church together).",
-        "Sexual standards/boundaries (e.g., chastity expectations) (e.g., waiting for marriage).",
-        "Tithing/generosity and stewardship approach (e.g., agreement on charitable giving)."
+        "Shared worship/church life + Sabbath day approach. notes: I want shared participation and a compatible Sunday rhythm so faith is not a constant friction point.",
+        "Sexual standards/boundaries (e.g., chastity expectations) + temple/covenant direction (if applicable). notes: Defining the relationship requires clear agreements so we do not rely on willpower alone.",
+        "Word of wisdom style alignment (substances) + tithing/generosity and stewardship approach. notes: Lifestyle and stewardship choices affect long-term trust and partnership.",
+        "Family integration expectations + roles/leadership expectations. notes: I want clarity on how faith shapes family life, decision-making, and expectations, not vague assumptions."
       ]
     },
     "q45": {
@@ -2709,9 +2751,10 @@
         }
       ],
       "examples": [
-        "Direct and honest (e.g., just tell me the truth).",
-        "Gentle and validating (e.g., be kind and supportive).",
-        "Structured and practical (e.g., give me a plan)."
+        "Gentle and validating (e.g., I can hear truth best when it is compassionate and non-shaming, especially if I feel tender or triggered).",
+        "Direct and honest (e.g., I want the clean answer and the hard truth quickly, even if it stings).",
+        "Structured and practical (e.g., give me a checklist, a decision tree, or steps I can take, not just reflections).",
+        "Reflective and exploratory (e.g., ask sharp questions that help me see myself and the pattern, then let me decide)."
       ]
     },
     "q46": {
@@ -2750,8 +2793,10 @@
         }
       ],
       "examples": [
-        "Mostly challenged (e.g., push me to grow).",
-        "Mostly comforted (e.g., tell me it's going to be okay)."
+        "Mostly challenged (e.g., point out my blind spots, call out avoidance, and help me make a clean decision instead of staying in limbo).",
+        "Mostly comforted (e.g., help me regulate and feel safe first so I can think clearly, then we can look at the hard stuff).",
+        "Both (e.g., start with emotional grounding, then move into direct truth and next steps. I want care and accountability).",
+        "Not sure (e.g., I do not know what I need yet, so start with questions and let my response guide the dial)."
       ]
     },
     "q47": {
@@ -2789,11 +2834,11 @@
           "label": "expectations and boundaries"
         },
         {
-          "value": "conflictrepair",
+          "value": "conflict_repair",
           "label": "conflict/repair"
         },
         {
-          "value": "valuesfaith_alignment",
+          "value": "values_faith_alignment",
           "label": "values/faith alignment"
         },
         {
@@ -2810,8 +2855,10 @@
         }
       ],
       "examples": [
-        "My readiness (e.g., am I seeing this clearly?).",
-        "Their signals (e.g., are they really interested?)."
+        "My feelings + my readiness. notes: I want to separate love from anxiety and see whether my yes is calm or compulsive.",
+        "Their signals + having the conversation. notes: I need help turning mixed signals into clear questions and a respectful DTR conversation.",
+        "Expectations and boundaries + conflict/repair. notes: I want to define what I actually need and whether this relationship can meet it consistently.",
+        "Values/faith alignment + making the decision. notes: I want help weighing compatibility versus attachment so I do not choose chemistry over long-term fit."
       ]
     },
     "q48": {
@@ -2850,8 +2897,10 @@
         }
       ],
       "examples": [
-        "Just for me (e.g., I want to process this privately).",
-        "Shareable summary (e.g., I want something I can show my partner or friend)."
+        "Just for me (e.g., I want private clarity first so I can think without social pressure or negotiation).",
+        "Shareable summary (e.g., I want a clean, non-blaming summary I can share to start a good conversation).",
+        "Shareable full output (e.g., I want the full detail so we can work through it together and not oversimplify the issues).",
+        "Not sure yet (e.g., default to private, then I can choose to share later once I see what it says)."
       ]
     }
   },

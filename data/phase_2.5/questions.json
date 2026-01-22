@@ -314,6 +314,82 @@
         "Known: 8 months. Defined: 8 months. Last check-in: never. Ideal: every 2 weeks."
       ]
     },
+    "q01b": {
+      "id": "q01b",
+      "section_id": "s1",
+      "order": 2,
+      "title": "Follow-Through Since Last Check-In",
+      "prompt": "Accountability matters. What did you commit to improving last time, and how did that go? If this is your first check-in, skip or mark as 'first time.'",
+      "type": "compound",
+      "answer_schema": {
+        "last_agreements": "",
+        "follow_through_level": "",
+        "what_helped_or_blocked": "",
+        "notes": ""
+      },
+      "tags": {
+        "included_in_manifests": [
+          "full"
+        ]
+      },
+      "fields": [
+        {
+          "key": "last_agreements",
+          "label": "Main thing(s) we agreed to work on at our last check-in",
+          "type": "short_text",
+          "placeholder": "Example: Weekly date nights, better repair after conflict, more quality time"
+        },
+        {
+          "key": "follow_through_level",
+          "label": "How well did we actually follow through?",
+          "type": "dropdown",
+          "options": [
+            {
+              "value": "very_well",
+              "label": "Very well - we both showed up consistently"
+            },
+            {
+              "value": "okay",
+              "label": "Okay - some effort, but inconsistent"
+            },
+            {
+              "value": "poorly",
+              "label": "Poorly - we didn't really try"
+            },
+            {
+              "value": "forgot",
+              "label": "We forgot about it"
+            },
+            {
+              "value": "first_checkin",
+              "label": "This is our first check-in"
+            },
+            {
+              "value": "no_agreements",
+              "label": "We didn't make specific agreements last time"
+            }
+          ]
+        },
+        {
+          "key": "what_helped_or_blocked",
+          "label": "What made follow-through easy or hard?",
+          "type": "short_text",
+          "placeholder": "Example: Life got busy, we didn't have a clear plan, one person forgot, accountability helped"
+        },
+        {
+          "key": "notes",
+          "label": "Notes (optional)",
+          "type": "free_text"
+        }
+      ],
+      "examples": [
+        "Last agreements: Weekly date nights + better repair after conflict. Follow-through: Very well - we both showed up consistently. What made it easy/hard: We scheduled it and protected it. Hard part was one stressful week, but we still did a shorter check-in.",
+        "Last agreements: Share schedules earlier + fewer last-minute changes. Follow-through: Okay - some effort, but inconsistent. What made it easy/hard: When we used a shared calendar it worked. When we relied on memory, we forgot and got irritated.",
+        "Last agreements: Stop re-litigating old fights. Follow-through: Poorly - we didn't really try. What made it easy/hard: We never defined what to do instead in the moment, so we defaulted to the old pattern.",
+        "Last agreements: We forgot about it. Follow-through: We forgot about it. What made it easy/hard: Life got busy and we did not set reminders or a plan.",
+        "This is our first check-in."
+      ]
+    },
     "q02": {
       "id": "q02",
       "section_id": "s1",
@@ -367,7 +443,11 @@
         ]
       },
       "examples": [
-        "Boyfriend/Girlfriend"
+        "Boyfriend/Girlfriend - We have explicitly agreed we are exclusive and we use that label. Friends and family would describe us that way.",
+        "Exclusive, but we do not use labels - We have agreed to exclusivity, but we do not call it boyfriend/girlfriend (yet).",
+        "Exclusive long-distance - We are exclusive but distance changes how often we see each other. We treat it as defined, not casual.",
+        "Not sure / unclear - We act exclusive sometimes, but we have not clearly agreed on what we are.",
+        "Defined in another way - We have a clear agreement, but it does not fit the standard labels (for example, exclusive with a specific timeline or structure)."
       ]
     },
     "q03": {
@@ -540,7 +620,10 @@
         }
       ],
       "examples": [
-        "Partner: collaborative questions first. Hardest: during conflict. AI: direct action steps. Avoid: generic advice. Helps: calm tone. Shuts down: sarcasm."
+        "From partner (best): Asked as questions (curiosity first) because I stay open when it feels like teamwork. From partner (hard): During conflict or high emotion because I get defensive fast. From AI (best): Direct with action steps. From AI (avoid): Strong assumptions. Helps me stay open: start with one thing I did right. Shuts me down: sarcasm or a critical tone.",
+        "From partner (best): Gentle but direct. From partner (hard): In front of others. From AI (best): Balanced: questions, then suggestions. From AI (avoid): Too much text. Helps me stay open: clear example of what to do differently next time. Shuts me down: a long lecture.",
+        "From partner (best): Written first, then talked through so I can process. From partner (hard): A surprise with no warning. From AI (best): Mostly questions first. From AI (avoid): Pushy recommendations. Helps me stay open: time to cool down. Shuts me down: being cornered into an immediate answer.",
+        "From partner (best): Very direct and concise. From partner (hard): Vague or indirect. From AI (best): Challenge me and call out blind spots. From AI (avoid): Generic advice. Helps me stay open: agree on the goal first. Shuts me down: blaming language."
       ]
     },
     "q04": {
@@ -629,8 +712,10 @@
         }
       ],
       "examples": [
-        "Ranked: Better communication, More closeness, Better repair.",
-        "Ranked: Clearer sex and physical boundaries, Less conflict."
+        "Ranked: Better communication, Better repair after conflict, Less conflict. Notes: We keep having the same argument and we want a calmer repair plan.",
+        "Ranked: Clearer boundaries, Better affection alignment, More closeness. Notes: We are good emotionally, but we need clearer expectations around time, touch, and space.",
+        "Ranked: Less money stress, Better future planning, Family and faith balance. Notes: Logistics are starting to matter more and we want alignment without pressure.",
+        "Ranked: Other (write in), Better communication, More closeness. Other: Better teamwork with chores and routines. Notes: Home life is the friction point."
       ]
     },
     "q05": {
@@ -750,7 +835,10 @@
         ]
       },
       "examples": [
-        "Friendship + Trust + We still have fun"
+        "Friendship and companionship + Trust feels solid + We still have fun - Even when we are busy, we still laugh and feel like friends, not roommates.",
+        "Communication is generally good + We handle conflict better than before + We support each other under stress - We can bring up issues without spiraling and we recover faster.",
+        "Affection and warmth + Shared values feel strong + Spiritual connection (if relevant) - The day-to-day feels warm and aligned, not forced.",
+        "Other (write in) - What is working is very specific to us (for example, we are great when we are in person but struggle over text)."
       ]
     },
     "q07": {
@@ -868,7 +956,10 @@
         }
       ],
       "examples": [
-        "Frequency: a few times a week. I show: acts. I want: words. I wish they noticed my effort more."
+        "How often: A few times a week. I show: Acts of service. I want: Words / reassurance. I wish they noticed: the planning and invisible effort I put in.",
+        "How often: Daily. I show: Words / compliments. I want: Touch / affection. I wish they noticed: when I try to reconnect after a stressful day.",
+        "How often: Rarely. I show: Quality time. I want: Words / reassurance. I wish they noticed: that I am trying, but I do not feel seen.",
+        "How often: Varies. I show: Small gifts. I want: Quality time. I wish they noticed: the small ways I try to make life easier for them."
       ]
     },
     "q08": {
@@ -922,7 +1013,10 @@
         ]
       },
       "examples": [
-        "Ranked: Just talking, Spontaneous time, Planned dates, Adventures."
+        "Ranked: Just talking and laughing, Low-key time at home together, Planned dates and outings, Shared hobbies or activities, New adventures or experiences, Spontaneous hangout time, Physical activity together, Creative or building projects.",
+        "Ranked: Planned dates and outings, New adventures or experiences, Shared hobbies or activities, Physical activity together, Spontaneous hangout time, Just talking and laughing, Low-key time at home together, Creative or building projects.",
+        "Ranked: Low-key time at home together, Just talking and laughing, Shared hobbies or activities, Creative or building projects, Planned dates and outings, Spontaneous hangout time, Physical activity together, New adventures or experiences.",
+        "Ranked: Physical activity together, Shared hobbies or activities, New adventures or experiences, Planned dates and outings, Spontaneous hangout time, Just talking and laughing, Low-key time at home together, Creative or building projects."
       ]
     },
     "q09": {
@@ -938,15 +1032,15 @@
           "label": "No drift. We feel solid."
         },
         {
-          "value": "slight",
+          "value": "slight_drift",
           "label": "Slight drift. It is manageable."
         },
         {
-          "value": "moderate",
+          "value": "moderate_drift",
           "label": "Moderate drift. It needs attention."
         },
         {
-          "value": "significant",
+          "value": "significant_drift",
           "label": "Significant drift. It feels urgent."
         },
         {
@@ -966,7 +1060,11 @@
         ]
       },
       "examples": [
-        "Slight drift"
+        "No drift. We feel solid. We still feel like a team, conflicts resolve, and affection is steady.",
+        "Slight drift. It is manageable. We are a little less connected this week, but one good conversation or date would close the gap.",
+        "Moderate drift. It needs attention. We are misreading each other more, and small issues are stacking up.",
+        "Significant drift. It feels urgent. We feel distant or tense most days, and it is impacting trust or safety.",
+        "Not sure. Some things feel off, but I cannot tell if it is normal stress or a relationship issue."
       ]
     },
     "q10": {
@@ -1067,7 +1165,11 @@
         }
       ],
       "examples": [
-        "Ranked: Quality time, Clear communication, Better repair."
+        "Ranked: Quality time, Clear communication, Better repair. Notes: We love each other, but we drift when weeks get busy. Protected time plus fewer misunderstandings would change everything.",
+        "Ranked: Reliable follow-through, Reassurance and steadiness, Emotional openness. Notes: The hardest part is not knowing if plans or promises will hold. Consistency would lower my anxiety and make it easier to open up.",
+        "Ranked: Better repair, Less conflict, Clear communication. Notes: The issue is not that we disagree, it is that small conflicts linger for days. We need a clean way to reset after tension.",
+        "Ranked: More autonomy / space, Quality time, Reliable follow-through. Notes: I feel crowded sometimes, then I get irritable. If we balance space with intentional time, I can show up warmer and more consistent.",
+        "Ranked: Other (write in), Practical support, Reliable follow-through. Other: A shared calendar and a simple weekly plan. Notes: Most stress comes from logistics and last-minute surprises, not lack of love."
       ]
     },
     "q11": {
@@ -1132,7 +1234,11 @@
         }
       ],
       "examples": [
-        "Guess: more reassurance. Evidence: they get anxious when plans change. Ask: What helps you feel secure when I'm busy?"
+        "My guess: Quality time. Evidence: they relax and get affectionate when we have an intentional date, but seem distant after long stretches of unplanned time. Ask: What kind of time together makes you feel most connected?",
+        "My guess: Reassurance and steadiness. Evidence: they spiral when plans change or texts go quiet, and they ask for confirmation that we are okay. Ask: When you feel uncertain, what reassurance actually lands for you?",
+        "My guess: More autonomy / space. Evidence: after back-to-back hangouts they get short or shut down, but they are warm again after a solo day. Ask: Do you need more solo time to feel balanced in us?",
+        "My guess: Better repair. Evidence: after conflict they stay guarded for days even if the issue was small, and we never fully reset. Ask: After a hard moment, what helps you feel repaired within 24 hours?",
+        "My guess: Affection and touch. Evidence: they initiate hugs and sit close, and they mention missing physical closeness when life is stressful. Ask: Is physical affection something you want more of from me lately?"
       ]
     },
     "q13": {
@@ -1254,7 +1360,10 @@
         }
       ],
       "examples": [
-        "Slightly imbalanced (I do more). Where: planning + initiating. Resentment: low."
+        "Balance: Slightly imbalanced (I do more). Where: Planning and scheduling + Initiating dates / connection. Resentment: Low. Notes: I am okay doing more sometimes, but I do not want it to become the default.",
+        "Balance: Balanced. Where: Communication effort. Resentment: None. Notes: We both initiate and it feels fair most weeks.",
+        "Balance: Very imbalanced. Where: Emotional support + Household tasks. Resentment: Medium. Notes: I am starting to keep score, which makes me colder.",
+        "Balance: Slightly imbalanced (they do more). Where: Money / paying + Driving / travel. Resentment: Low. Notes: I appreciate it, but I want to contribute more."
       ]
     },
     "q14": {
@@ -1389,7 +1498,10 @@
         }
       ],
       "examples": [
-        "Contact: daily. In-person: weekly. Satisfaction: mixed (I want more time together)."
+        "Contact: Daily. In-person: Weekly. Satisfaction: Mixed. Notes: I want more consistent in-person time, not just more texting.",
+        "Contact: Throughout the day. In-person: Multiple times/week. Satisfaction: Mostly satisfied. Notes: The connection feels steady without feeling clingy.",
+        "Contact: A few times a week. In-person: Rare / long-distance. Satisfaction: Mostly unsatisfied. Notes: Distance makes small misunderstandings bigger.",
+        "Contact: Varies. In-person: Varies. Satisfaction: Mixed. Notes: When we are stressed, communication drops and anxiety rises."
       ]
     },
     "q16": {
@@ -1433,7 +1545,11 @@
         ]
       },
       "examples": [
-        "Mostly safe"
+        "Very safe - I can bring up hard things and we stay respectful. We might feel tension, but it does not become a fight.",
+        "Mostly safe - It usually goes okay, but certain topics (money, exes, sex, family) can still trigger defensiveness.",
+        "Mixed - Sometimes we can talk, sometimes it turns into blame or shutdown. It depends on timing and stress.",
+        "Often unsafe - I hesitate because it often escalates, becomes a lecture, or gets turned back on me.",
+        "Unsafe - I avoid bringing things up because it reliably becomes explosive, dismissive, or punishing."
       ]
     },
     "q17": {
@@ -1499,7 +1615,11 @@
         }
       ],
       "examples": [
-        "Style: need to ask. Want: more clarity on weekend plans. Respect: private journaling is off-limits."
+        "Our style: We naturally share plans and context. Want more of: a quick heads-up when plans change. Privacy boundary I respect: personal journaling is off-limits.",
+        "Our style: I usually have to ask for updates. Want more of: weekend schedule clarity (who, where, rough timing) so I am not guessing. Privacy boundary I respect: I do not need to read messages or see their phone.",
+        "Our style: We keep details minimal. Want more of: basic context about friend groups (names and how they know them) so things do not feel vague. Privacy boundary I respect: private conversations with a therapist or bishop stay private.",
+        "Our style: Inconsistent. Want more of: earlier notice about travel, late nights, or time with an ex. Privacy boundary I respect: alone time without interrogation.",
+        "Our style: Not sure. Want more of: clarity on what we consider important to share. Privacy boundary I respect: I will not track locations or demand receipts."
       ]
     },
     "q18": {
@@ -1558,7 +1678,11 @@
         ]
       },
       "examples": [
-        "I explain and justify + I need time"
+        "I get defensive + I explain and justify - I start proving my intent instead of hearing the impact.",
+        "I shut down + I need time before responding - My brain goes blank and I cannot respond well in the moment.",
+        "I jump into problem-solving + I apologize quickly - I try to fix it fast, sometimes before my partner feels heard.",
+        "I get curious and ask questions - Even if it stings, I try to understand what they experienced and what they need next.",
+        "Other - My pattern is specific (for example, I use humor or I leave the room)."
       ],
       "max": 5
     },
@@ -1682,7 +1806,10 @@
         }
       ],
       "examples": [
-        "Frequency: 1-2. Intensity: moderate. Trigger: time/attention."
+        "Conflicts in the last 4 weeks: 1-2. Typical intensity: Moderate. Most common trigger: Time / attention. Notes: Usually about effort, scheduling, or feeling unprioritized.",
+        "Conflicts in the last 4 weeks: 3-5. Typical intensity: High. Most common trigger: Tone / disrespect. Notes: The content is small, the tone makes it big.",
+        "Conflicts in the last 4 weeks: None. Typical intensity: Low. Most common trigger: Outside stress. Notes: We disagree, but it stays calm.",
+        "Conflicts in the last 4 weeks: Weekly or more. Typical intensity: Volatile. Most common trigger: Trust / jealousy. Notes: We keep reopening the same wound."
       ]
     },
     "q20": {
@@ -1733,7 +1860,13 @@
         ]
       },
       "examples": [
-        "Pursue"
+        "Pursue (push for clarity right now): If something feels off, I want to talk immediately so I do not spiral in uncertainty.",
+        "Withdraw (need space, shut down): When it gets intense, my brain goes quiet and I need time alone before I can speak clearly.",
+        "Problem-solve (fix it): I jump straight into solutions and action steps, even if my partner wanted empathy first.",
+        "Appease (smooth it over): I minimize my needs or agree too quickly just to stop the tension.",
+        "Freeze (blank, stuck): I feel stuck and cannot find words, even though I care.",
+        "Escalate (anger, intensity): I get louder or sharper and my tone becomes the weapon.",
+        "Other: I use humor or distraction to avoid the topic until it blows over."
       ]
     },
     "q21": {
@@ -1781,7 +1914,11 @@
         ]
       },
       "examples": [
-        "We mostly cool down and move on"
+        "We repair well and reconnect - We talk it through, both own our part, and the closeness actually returns.",
+        "We repair sometimes - Sometimes we do it well, but other times we just go quiet and pretend it did not happen.",
+        "We mostly cool down and move on - The tension fades, but the issue stays unresolved and comes back later.",
+        "We repeat the same fight - Different day, same argument. We do not change the pattern after.",
+        "We avoid conflict but tension builds - We keep the peace on the surface, but we both feel the distance grow."
       ]
     },
     "q22": {
@@ -1848,7 +1985,11 @@
         ]
       },
       "examples": [
-        "Name-calling + Threats of breakup as leverage"
+        "Name-calling or insults + Sarcasm or contempt - Even once, it changes the safety of the relationship.",
+        "Threats of breakup as leverage + Silent treatment - I do not want fear tactics or withdrawal used as control.",
+        "Yelling + Public shaming - If it happens, I want it named, repaired, and prevented, not normalized.",
+        "None of these are happening - We have disagreements, but we keep it respectful.",
+        "Prefer not to say - I am not ready to answer this honestly yet."
       ],
       "max": 7
     },
@@ -1927,7 +2068,11 @@
         }
       ],
       "examples": [
-        "Need: own part + validate + follow through. I will: pause before responding. Phrase: I'm stressed but I'm still here."
+        "Needs from them: Own their part, Apologize specifically, Validate my feelings, Talk calmly. I will practice: ask one clarifying question before defending myself. Phrase: I am activated, but I want repair.",
+        "Needs from them: Give space then return, Follow through with change, Reconnect with warmth/affection. I will practice: take a 10-minute break instead of escalating. Phrase: I want us to fix this, not win this.",
+        "Needs from them: Validate my feelings, Follow through with change, Talk calmly. I will practice: name my emotion without blaming. Phrase: I am feeling flooded, but I am still here.",
+        "Needs from them: Own their part, Follow through with change. I will practice: admit my part early. Phrase: I care about you and I want to reset.",
+        "Needs from them: Other (explain), Apologize specifically, Talk calmly. I will practice: stop interrupting. Phrase: I want to understand you and be understood."
       ]
     },
     "q24": {
@@ -2004,7 +2149,10 @@
         }
       ],
       "examples": [
-        "Ranked: Touch, Quality time, Words"
+        "Ranked: Touch (hugs, cuddling, hand-holding), Quality time, Words (compliments, reassurance). Notes: I feel loved when we are physically close and emotionally present.",
+        "Ranked: Words (compliments, reassurance), Acts of service, Quality time. Notes: I relax when I hear reassurance and see follow-through.",
+        "Ranked: Play and humor, Quality time, Touch (hugs, cuddling, hand-holding). Notes: Fun and warmth make intimacy easy for me.",
+        "Ranked: Prayer, faith, shared values, Quality time, Words (compliments, reassurance). Notes: Shared spiritual alignment makes me feel safe."
       ]
     },
     "q25": {
@@ -2052,7 +2200,11 @@
         ]
       },
       "examples": [
-        "Mixed"
+        "Very aligned - We want similar levels of closeness and we both feel satisfied most of the time.",
+        "Mostly aligned - The baseline is good, but we have occasional mismatches (timing, stress, or different styles).",
+        "Mixed - Some days it feels great, other days one of us feels starved or crowded.",
+        "Often misaligned - One of us wants noticeably more closeness than the other and it causes recurring friction.",
+        "Not sure - I cannot tell if this is a real mismatch or just temporary life stress."
       ]
     },
     "q26": {
@@ -2118,7 +2270,10 @@
         }
       ],
       "examples": [
-        "Level: mixed. Known: they ask about my day. Unseen: they dismiss my stress."
+        "I feel known: Mostly true. They do: they ask specific follow-up questions and remember what matters to me. Unseen pattern: they minimize my stress when they are tired.",
+        "I feel known: Mixed. They do: they show up practically, but miss my emotional cues. Unseen pattern: they assume they know what I meant instead of asking.",
+        "I feel known: Mostly false. They do: they listen, but forget quickly. Unseen pattern: they stay surface-level and avoid deeper topics.",
+        "I feel known: Very true. They do: they notice my patterns and respond with care. Unseen pattern: rare, but I want to protect this by speaking up early."
       ]
     },
     "q27": {
@@ -2237,7 +2392,10 @@
         }
       ],
       "examples": [
-        "Comfort: awkward. Goal: clarify boundaries and reduce pressure."
+        "Partner comfort: Awkward. AI comfort: Somewhat comfortable. Goal: Clarify boundaries. Notes: We avoid the topic until we are already in a heated moment.",
+        "Partner comfort: Very hard. AI comfort: Prefer not to say. Goal: Reduce pressure. Notes: I want the conversation to feel safe, not like negotiation.",
+        "Partner comfort: Somewhat comfortable. AI comfort: Very comfortable. Goal: Align expectations. Notes: We are mostly okay, but assumptions create tension.",
+        "Partner comfort: I avoid it. AI comfort: Somewhat comfortable. Goal: Prevent regret. Notes: I want a clear plan so we do not rely on willpower."
       ]
     },
     "q28": {
@@ -2253,15 +2411,15 @@
           "label": "No sexual experience"
         },
         {
-          "value": "limited",
+          "value": "limited_experience",
           "label": "Limited experience"
         },
         {
-          "value": "some",
+          "value": "some_experience",
           "label": "Some experience"
         },
         {
-          "value": "significant",
+          "value": "significant_experience",
           "label": "Significant experience"
         },
         {
@@ -2284,7 +2442,11 @@
         ]
       },
       "examples": [
-        "Limited experience"
+        "No sexual experience - I want guidance that does not assume I already know what feels normal or how to communicate about it.",
+        "Limited experience - I have some experience, but I still feel unsure and want clarity without pressure.",
+        "Some experience - I am comfortable with the basics, but I want better communication and boundaries.",
+        "Significant experience - I have enough experience to know what I want and what patterns to avoid.",
+        "Prefer not to say - I want the tool to stay helpful without me disclosing this."
       ]
     },
     "q29": {
@@ -2409,7 +2571,10 @@
         }
       ],
       "examples": [
-        "Aligned: mostly. Zone: affection only. Pressure mismatch: a little. Why: to protect trust and long-term peace."
+        "Our boundaries are: Mostly aligned. Physical closeness: Affection only (hugging, cuddling, kissing). Pressure mismatch: A little. Why: Protect trust and long-term peace.",
+        "Our boundaries are: Clear and aligned. Physical closeness: Heavier makeout. Pressure mismatch: No. Why: We want closeness without drifting into regret.",
+        "Our boundaries are: Unclear / not spoken. Physical closeness: Affection only (hugging, cuddling, kissing). Pressure mismatch: Not sure. Why: We want to stop guessing and start agreeing.",
+        "Our boundaries are: Misaligned. Physical closeness: Sexual touching. Pressure mismatch: Yes (they want more than I do). Why: Consent and safety matter more than momentum."
       ]
     },
     "q30": {
@@ -2480,8 +2645,11 @@
         }
       ],
       "examples": [
-        "Pattern: never. Why: we want clean boundaries and less temptation.",
-        "Pattern: sometimes separate. Boundaries: guest room, no cuddling in bed."
+        "Sleeping over: Never. Boundaries: We do not put ourselves in the situation. Why: We want clean boundaries and less temptation.",
+        "Sleeping over: Rare / special circumstances. Boundaries: Separate sleeping spaces, no cuddling in bed, lights out at a set time. Why: Travel or emergencies only.",
+        "Sleeping over: Sometimes, but separate spaces. Boundaries: Guest room, door closed, no getting in bed together, leave in the morning. Why: Late nights or long drives, but we keep it clean.",
+        "Sleeping over: Sometimes, same space. Boundaries: Clothes stay on, no making out in bed, we agree to stop if arousal ramps up. Why: We choose this, but we are honest that temptation risk is higher.",
+        "Sleeping over: Prefer not to say. Notes: We want the tool to focus on safety and clarity without details."
       ]
     },
     "q31": {
@@ -2623,7 +2791,10 @@
         }
       ],
       "examples": [
-        "Integrity: minor. Topic: guilt/shame. Trust impact: some. Want help: yes."
+        "Right now it feels: Minor tension. Tension relates to: Guilt or shame + Secrecy or honesty. Impact on trust: Some. Want help talking: Yes. Notes: I want a calm plan so it does not come out sideways.",
+        "Right now it feels: Moderate tension. Tension relates to: Pushing boundaries + Past experiences. Impact on trust: High. Want help talking: Yes. Notes: This affects safety and needs repair, not avoidance.",
+        "Right now it feels: Not an issue. Tension relates to: None. Impact on trust: None. Want help talking: No. Notes: Not a current topic for us.",
+        "Right now it feels: Prefer not to say. Notes: I do not want to answer this, but I still want respectful guidance."
       ]
     },
     "q32": {
@@ -2693,7 +2864,10 @@
         }
       ],
       "examples": [
-        "Mismatch: slightly misaligned. Need: more non-sexual affection. Fear: they will feel pressured."
+        "Right now desire feels: Slightly misaligned. Need: more non-sexual affection. Fear: they will feel pressured or judged.",
+        "Right now desire feels: Misaligned. Need: clearer boundaries and reassurance so I can relax. Fear: the talk becomes blame or a demand.",
+        "Right now desire feels: Very misaligned. Need: a plan that protects both of us (timing, consent, and aftercare). Fear: resentment builds silently.",
+        "Right now desire feels: Aligned. Need: keep communicating so it stays healthy. Fear: we get lazy and stop checking in."
       ]
     },
     "q33": {
@@ -2817,7 +2991,10 @@
         }
       ],
       "examples": [
-        "Time: almost enough. Distractions: work + phone. Change: phone-free dinner twice a week."
+        "Time together feels: Almost enough. Biggest time stealers: Work + Phones / social media. One change: phone-free dinner twice a week. Notes: I want presence more than quantity.",
+        "Time together feels: Not enough. Biggest time stealers: Distance / travel + Family. One change: schedule one protected evening weekly. Notes: I am starting to feel like an accessory.",
+        "Time together feels: Enough. Biggest time stealers: Church callings. One change: plan one intentional date night monthly. Notes: We are good, I just want to protect it.",
+        "Time together feels: Rare. Biggest time stealers: School + Work. One change: a 15-minute check-in on busy days. Notes: Small consistency would calm my anxiety."
       ]
     },
     "q35": {
@@ -2865,7 +3042,11 @@
         ]
       },
       "examples": [
-        "Moderate"
+        "Low - Money exists, but it is not running the relationship. It rarely affects mood or conflict.",
+        "Moderate - It is in the background and sometimes changes how we plan dates, travel, or big decisions.",
+        "High - It feels heavy and impacts emotions, arguments, or future planning regularly.",
+        "It is a conflict topic - We get tense fast when money comes up, even if the numbers are not catastrophic.",
+        "Prefer not to say - I want the tool to stay helpful without discussing this."
       ]
     },
     "q36": {
@@ -2971,7 +3152,10 @@
         }
       ],
       "examples": [
-        "Comfort: somewhat. Spending: we talk it out. Debt: partly discussed."
+        "Money talk comfort: Somewhat. Spending expectations: We talk it out and agree. Debt transparency: Partly discussed. Notes: We are okay, but we avoid specifics.",
+        "Money talk comfort: Awkward. Spending expectations: Unclear. Debt transparency: Not discussed. Notes: We keep postponing the conversation.",
+        "Money talk comfort: Very. Spending expectations: We mostly split. Debt transparency: Transparent. Notes: Clear talks reduce anxiety for us.",
+        "Money talk comfort: I avoid it. Spending expectations: One person pays more. Debt transparency: Prefer not to say. Notes: This topic is emotionally loaded for me."
       ]
     },
     "q37": {
@@ -3034,7 +3218,10 @@
         ]
       },
       "examples": [
-        "Planning and logistics + Driving/travel"
+        "Planning and logistics + Social planning - I carry the mental load of what we are doing and when, and it gets tiring.",
+        "Emotional support + Family obligations - The weight is mostly emotional and relational, not chores.",
+        "Feels balanced - We both carry the load and we talk about it when it starts drifting.",
+        "Not sure - The load shifts week to week, and I cannot tell if it is fair or just life."
       ],
       "max": 7
     },
@@ -3063,23 +3250,23 @@
           "type": "dropdown",
           "options": [
             {
-              "value": "comfort",
+              "value": "comfort_and_empathy",
               "label": "Comfort and empathy"
             },
             {
-              "value": "solutions",
+              "value": "solutions_and_planning",
               "label": "Solutions and planning"
             },
             {
-              "value": "space",
+              "value": "space_and_quiet",
               "label": "Space and quiet"
             },
             {
-              "value": "touch",
+              "value": "touch_and_closeness",
               "label": "Touch and closeness"
             },
             {
-              "value": "prayer",
+              "value": "prayer_and_spiritual_support",
               "label": "Prayer and spiritual support"
             },
             {
@@ -3105,7 +3292,11 @@
         }
       ],
       "examples": [
-        "I need: space. Backfires: pushing for a talk right then. I offer: solutions."
+        "When I am stressed, I need: Space and quiet. Backfires: pushing for a talk right then. What I usually offer my partner: Solutions and planning (even when they wanted comfort).",
+        "When I am stressed, I need: Comfort and empathy. Backfires: cold logic or being told to get over it. What I usually offer my partner: Touch and reassurance.",
+        "When I am stressed, I need: Solutions and planning. Backfires: vague encouragement without a plan. What I usually offer my partner: a checklist or next steps.",
+        "When I am stressed, I need: Touch and closeness. Backfires: being left alone without a return time. What I usually offer my partner: practical help and presence.",
+        "When I am stressed, I need: Prayer and spiritual support. Backfires: mocking faith or dismissing it. What I usually offer my partner: spiritual reassurance and service."
       ]
     },
     "q39": {
@@ -3149,7 +3340,11 @@
         ]
       },
       "examples": [
-        "Mostly"
+        "Yes, and it is clear - We have explicitly talked about what we are building toward, a rough timeline, and what life could look like (where we would live, money style, family plans). I feel calm because it is stated, not implied.",
+        "Mostly - We both want a future, but the specifics are still vague (timeline, location, kids, finances). It is not a fight, but I notice uncertainty when I try to plan past the next few months.",
+        "Uncertain - When future topics come up, we deflect, joke, or change the subject. I cannot tell what they want long-term, or I keep shifting what I want, so the direction feels foggy.",
+        "Misaligned - Our goals or timelines clearly differ (kids vs no kids, marriage soon vs not for years, staying local vs moving). The mismatch shows up as tension or avoidance whenever the topic surfaces.",
+        "Not discussed - We function like a committed couple day-to-day, but we have never had a real conversation about direction. I am filling in blanks based on chemistry and routines instead of shared reality."
       ]
     },
     "q40": {
@@ -3219,7 +3414,10 @@
         }
       ],
       "examples": [
-        "Pace: a few months. Fast: strong connection. Slow: want more stability under stress."
+        "Healthy pace: A few months. Speed up because: the connection feels stable and consistent. Slow down because: we want more proof under stress before big commitments.",
+        "Healthy pace: Weeks. Speed up because: we already feel aligned and we communicate well. Slow down because: none, it feels safe right now.",
+        "Healthy pace: 6-12 months. Speed up because: chemistry is high. Slow down because: we want to watch patterns, not just feelings.",
+        "Healthy pace: No timeline. Speed up because: pressure makes it worse. Slow down because: we want to enjoy the relationship without deadlines."
       ]
     },
     "q41": {
@@ -3307,7 +3505,10 @@
         }
       ],
       "examples": [
-        "Current: with family. Future: no cohab before marriage. Non-negotiable: protected quiet time."
+        "Current living: With family. Future preference: No cohabitation before marriage. Non-negotiable: protected quiet time daily.",
+        "Current living: Alone. Future preference: Open to cohabitation. Non-negotiable: financial responsibility and clean shared routines.",
+        "Current living: With roommates. Future preference: Unsure. Non-negotiable: we do not rush a move-in to fix emotional distance.",
+        "Current living: Prefer not to say. Future preference: Prefer not to say. Non-negotiable: I still want clarity on expectations before big steps."
       ]
     },
     "q42": {
@@ -3405,7 +3606,10 @@
         }
       ],
       "examples": [
-        "Kids: yes. Timeline: 1-3 years. Value: calm teamwork. Non-negotiable: no yelling at kids."
+        "Kids desire: Yes. Timeline: 1-3 years. Value: calm teamwork. Non-negotiable: no yelling at kids.",
+        "Kids desire: Unsure. Timeline: Not sure. Value: emotional safety. Non-negotiable: no pressure or ultimatums while deciding.",
+        "Kids desire: No. Timeline: Not applicable. Value: shared purpose. Non-negotiable: do not assume I will change my mind later.",
+        "Kids desire: I already have kids. Timeline: Not applicable. Value: consistency and stability. Non-negotiable: respect my parenting boundaries."
       ]
     },
     "q43": {
@@ -3497,7 +3701,10 @@
         }
       ],
       "examples": [
-        "Faith: important. Expectations: pressuring. Boundary: we decide timeline privately."
+        "Faith and spirituality: Important. Community expectations: Pressuring. Boundary: we decide timeline privately and do not outsource it.",
+        "Faith and spirituality: Central. Community expectations: Supportive. Boundary: protect couple time even when service demands increase.",
+        "Faith and spirituality: Somewhat relevant. Community expectations: Neutral. Boundary: no shaming each other for different practices.",
+        "Faith and spirituality: A tension point. Community expectations: Conflicting. Boundary: we talk privately first before involving family or leaders."
       ]
     },
     "q44": {
@@ -3509,43 +3716,43 @@
       "type": "multi_select",
       "options": [
         {
-          "value": "fear",
+          "value": "fear_of_my_partner",
           "label": "I sometimes feel afraid of my partner"
         },
         {
-          "value": "control",
+          "value": "control_of_my_choices",
           "label": "They try to control my choices"
         },
         {
-          "value": "monitoring",
+          "value": "monitoring_me",
           "label": "They monitor my phone, accounts, or location"
         },
         {
-          "value": "isolation",
+          "value": "isolation_from_friends_and_family",
           "label": "They isolate me from friends/family"
         },
         {
-          "value": "coercion",
+          "value": "coercion_into_physical_or_sexual_things",
           "label": "I feel pressured into physical or sexual things"
         },
         {
-          "value": "contempt",
+          "value": "they_use_contempt_ridicule_or_humiliation",
           "label": "They use contempt, ridicule, or humiliation"
         },
         {
-          "value": "threats",
+          "value": "threats_intimidation_or_breaking_things",
           "label": "Threats, intimidation, or breaking things"
         },
         {
-          "value": "violence",
+          "value": "physical_aggression",
           "label": "Any physical aggression"
         },
         {
-          "value": "none",
+          "value": "none_of_these",
           "label": "None of these"
         },
         {
-          "value": "prefer_not",
+          "value": "prefer_not_to_say",
           "label": "Prefer not to say"
         },
         {
@@ -3565,7 +3772,11 @@
         ]
       },
       "examples": [
-        "None of these"
+        "None of these - No fear, no coercion, no monitoring. The relationship feels safe.",
+        "They try to control my choices + They monitor my phone, accounts, or location - I feel managed instead of respected.",
+        "They isolate me from friends/family + They use contempt, ridicule, or humiliation - I feel smaller over time, not more secure.",
+        "Threats, intimidation, or breaking things + Any physical aggression - This is beyond normal conflict and needs outside support immediately.",
+        "Prefer not to say - I do not want to answer this, but I want the tool to proceed gently."
       ],
       "max": 5
     },
@@ -3654,7 +3865,10 @@
         }
       ],
       "examples": [
-        "Support: maybe helpful. Preferred: couples counseling. Barrier: cost."
+        "Support level: Maybe helpful. Preferred: Couples counseling. Barrier: cost. Notes: We are functional, but we want better tools.",
+        "Support level: We should consider it. Preferred: Trusted mentor. Barrier: pride. Notes: We keep repeating a pattern and need a third-party mirror.",
+        "Support level: We need it. Preferred: Individual therapy. Barrier: time. Notes: My triggers are spilling into the relationship.",
+        "Support level: Not needed. Preferred: Skills book/course. Barrier: none. Notes: We want maintenance, not crisis support."
       ]
     },
     "q46": {
@@ -3689,7 +3903,7 @@
               "label": "Communication"
             },
             {
-              "value": "conflict",
+              "value": "conflict_and_repair",
               "label": "Conflict and repair"
             },
             {
@@ -3697,7 +3911,7 @@
               "label": "Affection"
             },
             {
-              "value": "sex_boundaries",
+              "value": "sex_and_physical_boundaries",
               "label": "Sex and physical boundaries"
             },
             {
@@ -3705,11 +3919,11 @@
               "label": "Money"
             },
             {
-              "value": "future",
+              "value": "future_planning",
               "label": "Future planning"
             },
             {
-              "value": "family",
+              "value": "family_and_community",
               "label": "Family and community"
             },
             {
@@ -3717,7 +3931,7 @@
               "label": "Trust"
             },
             {
-              "value": "stress",
+              "value": "stress_support",
               "label": "Stress support"
             },
             {
@@ -3742,7 +3956,11 @@
         }
       ],
       "examples": [
-        "Ranked: Communication, Time and presence, Conflict and repair"
+        "Ranked: Conflict and repair, Communication, Trust. Notes: We keep looping in the same arguments and neither of us feels fully heard afterward. Rebuilding safety matters more than new plans right now.",
+        "Ranked: Time and presence, Communication, Stress support. Notes: We are not fighting, but we are not connecting. We need to protect time together and talk about how to support each other when work or life spikes.",
+        "Ranked: Money, Future planning, Family and community. Notes: The relationship is emotionally solid, but logistics are creating pressure. We need clarity on budgets, timeline, and how family expectations fit into our life.",
+        "Ranked: Sex and physical boundaries, Affection, Communication. Notes: Physical closeness is a frequent tension point. We need clear agreements so neither of us feels rejected or pressured.",
+        "Ranked: Other, Communication, Time and presence. Other: Phone use and availability expectations. Notes: A lot of conflict is really about responsiveness, texting tone, and feeling ignored."
       ]
     },
     "q47": {
@@ -3782,7 +4000,7 @@
               "label": "In a month"
             },
             {
-              "value": "quarter",
+              "value": "quarterly ",
               "label": "In a quarter"
             },
             {
@@ -3856,7 +4074,10 @@
         }
       ],
       "examples": [
-        "When: in 2 weeks. Length: 25 minutes. Format: walk."
+        "When: In 2 weeks. Length: 25 minutes. Format: Walk. Notes: Movement helps us stay calm and honest.",
+        "When: This week. Length: 15 minutes. Format: Write first, then talk. Notes: Writing reduces defensiveness.",
+        "When: In a month. Length: 45 minutes. Format: At home. Notes: We want depth, not just maintenance.",
+        "When: As needed. Length: 25 minutes. Format: Prayer then talk. Notes: We want a reset ritual when tension builds."
       ]
     },
     "q48": {
@@ -3878,80 +4099,6 @@
       "examples": [
         "We have a big family event coming up and it is stressing us.",
         "We are great in person but text misunderstandings cause most conflict."
-      ]
-    },
-    "q01b": {
-      "id": "q01b",
-      "section_id": "s1",
-      "order": 2,
-      "title": "Follow-Through Since Last Check-In",
-      "prompt": "Accountability matters. What did you commit to improving last time, and how did that go? If this is your first check-in, skip or mark as 'first time.'",
-      "type": "compound",
-      "answer_schema": {
-        "last_agreements": "",
-        "follow_through_level": "",
-        "what_helped_or_blocked": "",
-        "notes": ""
-      },
-      "tags": {
-        "included_in_manifests": [
-          "full"
-        ]
-      },
-      "fields": [
-        {
-          "key": "last_agreements",
-          "label": "Main thing(s) we agreed to work on at our last check-in",
-          "type": "short_text",
-          "placeholder": "Example: Weekly date nights, better repair after conflict, more quality time"
-        },
-        {
-          "key": "follow_through_level",
-          "label": "How well did we actually follow through?",
-          "type": "dropdown",
-          "options": [
-            {
-              "value": "very_well",
-              "label": "Very well - we both showed up consistently"
-            },
-            {
-              "value": "okay",
-              "label": "Okay - some effort, but inconsistent"
-            },
-            {
-              "value": "poorly",
-              "label": "Poorly - we didn't really try"
-            },
-            {
-              "value": "forgot",
-              "label": "We forgot about it"
-            },
-            {
-              "value": "first_checkin",
-              "label": "This is our first check-in"
-            },
-            {
-              "value": "no_agreements",
-              "label": "We didn't make specific agreements last time"
-            }
-          ]
-        },
-        {
-          "key": "what_helped_or_blocked",
-          "label": "What made follow-through easy or hard?",
-          "type": "short_text",
-          "placeholder": "Example: Life got busy, we didn't have a clear plan, one person forgot, accountability helped"
-        },
-        {
-          "key": "notes",
-          "label": "Notes (optional)",
-          "type": "free_text"
-        }
-      ],
-      "examples": [
-        "Last agreements: Better communication about schedules. Follow-through: Okay. What helped: Calendar sharing. What blocked: Work stress.",
-        "Last agreements: Weekly dates. Follow-through: Very well. We committed and followed through.",
-        "This is our first check-in."
       ]
     }
   },
