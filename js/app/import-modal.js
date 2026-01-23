@@ -313,6 +313,30 @@ const AppImportModal = {
         if (!hasA) return;
 
         try {
+            // PHASE SWITCHING LOGIC: Ensure we have the correct phase loaded for hydration
+            // This mirrors the logic in continueFromImport()
+            const file = this.importedFiles.a;
+            const artifactId = file.meta?.artifact?.id || file.artifactId || null;
+
+            if (artifactId) {
+                // Find the matching phase ID
+                const phaseId = await DataLoader.getPhaseIdByArtifactId(artifactId);
+                const currentPhaseId = DataLoader.getCurrentPhaseId();
+
+                // If phase mismatch, switch and load data so ImportManager has definitions
+                if (phaseId && phaseId !== currentPhaseId) {
+                    console.log(`Switching to phase ${phaseId} for prompt generation`);
+                    DataLoader.setCurrentPhase(phaseId);
+                    StorageManager.setPhase(phaseId);
+                    await DataLoader.load(); // Fetch questions.json for this phase
+
+                    // Update UI to reflect the phase change (optional but good for consistency)
+                    if (typeof this.updateModeOptions === 'function') {
+                        this.updateModeOptions();
+                    }
+                }
+            }
+
             let promptText = '';
             const mode = this.importedFiles.a.mode;
 

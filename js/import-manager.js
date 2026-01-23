@@ -338,25 +338,40 @@ const ImportManager = {
 
     /**
      * Format JSON responses into readable text for AI prompt.
-     * @param {Object} responses - The responses object from JSON.
+     * @param {Object} data - The responses object from JSON.
      * @returns {string} Formatted text.
      */
-    formatJSONResponses(responses) {
-        let text = '';
-        console.log('Formatting responses:', Object.keys(responses).length, 'items');
+    formatJSONResponses(data) {
+        if (!data || !data.responses) return '';
 
-        Object.entries(responses).forEach(([questionId, data]) => {
-            if (!data.question || !data.response) {
-                console.warn(`Skipping ${questionId}: Missing question or response`, data);
-                return;
+        let text = '';
+        Object.entries(data.responses).forEach(([questionId, entry]) => {
+            // HYDRATION FIX: Look up the full question definition from the app's data loader
+            // The imported 'entry.question' might be a skeletal snapshot (missing options/fields).
+            // We trust the App's current definition for metadata (options/labels) while using the Import's ID and Response.
+            let fullQuestion = null;
+
+            // Try to find the question in the currently loaded mode first
+            if (typeof QuestionnaireEngine !== 'undefined' && QuestionnaireEngine.questions) {
+                fullQuestion = QuestionnaireEngine.questions.find(q => q.id === questionId);
             }
 
-            const q = data.question;
-            const r = data.response;
+            // Fallback: If not found (maybe different mode), try to fetch from DataLoader if accessible
+            if (!fullQuestion && typeof DataLoader !== 'undefined') {
+                // Try both modes to find the definition
+                const fullQs = DataLoader.getQuestions('full');
+                fullQuestion = fullQs.find(q => q.id === questionId);
+            }
+
+            // Use the hydrated question if found, otherwise fall back to the imported snapshot
+            const q = fullQuestion || entry.question;
+            const r = entry.response;
+
+            if (!q) return;
 
             text += `**Q${q.id?.replace('q', '') || questionId}: ${q.title}**\n`;
             text += `${q.prompt}\n`;
-            text += `Answer: ${this.formatResponse(q.type, r)}\n\n`;
+            text += `Answer: ${this.formatResponse(q, r)}\n\n`;
         });
 
         if (!text) console.warn('formatJSONResponses produced empty text');
@@ -365,24 +380,43 @@ const ImportManager = {
 
     /**
      * Format a single response based on question type.
-     * @param {string} type - Question type.
+     * @param {Object} question - Question object (with type and options).
      * @param {Object} response - Response object.
-     * @returns {string} Formatted answer.
+     * @returns {string} Formatted answer (using labels where possible).
      */
-    formatResponse(type, response) {
+    formatResponse(question, response) {
         if (!response) return '[No response]';
+        const type = question.type;
+
+        // Helper to find label by value
+        const getLabel = (val) => {
+            if (!question.options) return val;
+            const opt = question.options.find(o => o.value === val);
+            return opt ? opt.label : val;
+        };
 
         switch (type) {
             case 'single_select':
-                let single = response.selected_value || '';
-                if (response.other_text) single += ` (${response.other_text})`;
-                return single || '[No selection]';
+                const singleVal = response.selected_value;
+                let singleLabel = singleVal ? getLabel(singleVal) : '';
+
+                // If label wasn't found (or it was 'other'), append specific text if available
+                if (response.other_text) {
+                    // If the value was 'other', simpler to just show the text? 
+                    // Or show "Other (My reason)"
+                    if (singleVal === 'other') {
+                        singleLabel = `Other (${response.other_text})`;
+                    } else {
+                        singleLabel += ` (${response.other_text})`;
+                    }
+                }
+                return singleLabel || '[No selection]';
 
             case 'multi_select':
                 const values = response.selected_values || [];
-                let multi = values.join(', ');
-                if (response.other_text) multi += ` (Other: ${response.other_text})`;
-                return multi || '[No selections]';
+                // Map all values to labels
+                const labels = values.map(v => v === 'other' ? `Other (${response.other_text || ''})` : getLabel(v));
+                return labels.join(', ') || '[No selections]';
 
             case 'free_text':
                 return response.text || '[No text]';
@@ -392,12 +426,33 @@ const ImportManager = {
                 const parts = [];
                 Object.entries(response).forEach(([key, val]) => {
                     if (val && key !== 'notes') {
+                        // Find the field definition to get the label and options
+                        // Robust lookup: match by key OR label (in case import uses labels as keys)
+                        const fieldDef = question.fields ? question.fields.find(f => f.key === key || f.label === key) : null;
+
+                        // Use field label if available, otherwise capitalize key
+                        // Cleaning the key for display if no label: frequency -> Frequency
+                        const displayKey = fieldDef ? (fieldDef.label || key) : key;
+
+                        let displayVal = val;
+
+                        // effective 'getLabel' for this specific field
+                        const getFieldLabel = (v) => {
+                            if (!fieldDef || !fieldDef.options) return v;
+                            const opt = fieldDef.options.find(o => o.value === v);
+                            return opt ? opt.label : v;
+                        };
+
                         if (Array.isArray(val) && val.length > 0) {
-                            parts.push(`${key}: ${val.join(', ')}`);
+                            // Map all items if it's an array (e.g. multi_select inside compound)
+                            displayVal = val.map(v => getFieldLabel(v)).join(', ');
                         } else if (typeof val === 'string' && val.trim()) {
-                            parts.push(`${key}: ${val}`);
-                        } else if (typeof val === 'number') {
-                            parts.push(`${key}: ${val}`);
+                            displayVal = getFieldLabel(val);
+                        }
+
+                        // Only add if we have a value
+                        if (displayVal !== null && displayVal !== undefined && displayVal !== '') {
+                            parts.push(`${displayKey}: ${displayVal}`);
                         }
                     }
                 });

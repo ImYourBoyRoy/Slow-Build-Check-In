@@ -777,7 +777,9 @@ const AppAIAnalysis = {
                             id: question.id,
                             title: question.title,
                             prompt: question.prompt,
-                            type: question.type
+                            type: question.type,
+                            options: question.options,
+                            fields: question.fields // <--- NEW: Required for compound lookups
                         },
                         response: answer,
                         status: 'answered'
