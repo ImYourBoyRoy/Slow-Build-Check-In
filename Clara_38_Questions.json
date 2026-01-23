@@ -1,0 +1,660 @@
+{
+  "meta": {
+    "artifact": {
+      "id": "phase1.5_intentional_early_dating",
+      "title": "Slow Build Connection",
+      "subtitle": "Growing closer through shared discovery and mutual respect.",
+      "language": "en-US",
+      "stage": {
+        "code": "phase1_5",
+        "label": "Intentional Connection",
+        "eligibility": [
+          "You both feel a spark of mutual interest.",
+          "You want to protect the trust you're building by moving slowly.",
+          "You want to communicate clearly without the pressure of labels."
+        ]
+      },
+      "purpose": [
+        "Build a foundation of kindness and reduce simple misunderstandings.",
+        "Respect each other's pace so no one feels rushed or pressured.",
+        "Create a safe space for physical and emotional boundaries.",
+        "Find a rhythm of communication that feels easy and natural."
+      ]
+    },
+    "exportedAt": "2026-01-23T01:35:36.093Z",
+    "participantName": "Clara",
+    "mode": "full"
+  },
+  "stats": {
+    "total": 38,
+    "answered": 38,
+    "skipped": 0,
+    "unanswered": 0,
+    "progress": 100
+  },
+  "responses": {
+    "q01": {
+      "question": {
+        "id": "q01",
+        "title": "Why I'm dating (right now)",
+        "prompt": "At this phase, I am dating because (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "discernment",
+          "long_term_potential",
+          "other",
+          "exploration"
+        ],
+        "other_text": "I am trying to retrain my brain to recognize what is normal and healthy in a relationship."
+      },
+      "status": "answered"
+    },
+    "q02": {
+      "question": {
+        "id": "q02",
+        "title": "What feels comfortable right now",
+        "prompt": "Right now, I feel most comfortable when dating feels (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "slow_intentional",
+          "playful_light"
+        ],
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q03": {
+      "question": {
+        "id": "q03",
+        "title": "Too slow (for me)",
+        "prompt": "A pace that would feel too slow for me right now would look like:",
+        "type": "free_text"
+      },
+      "response": {
+        "text": "If we had been actively dating for a month (building trust) and hadn't decided to be exclusive yet. "
+      },
+      "status": "answered"
+    },
+    "q04": {
+      "question": {
+        "id": "q04",
+        "title": "Too fast (for me)",
+        "prompt": "A pace that would feel too fast for me right now would look like:",
+        "type": "free_text"
+      },
+      "response": {
+        "text": "I would really like to keep the physical to a minimum. Because physical is so impactful for me, sometimes I feel that early physical touch clouds my judgment at the beginning. I would prefer to have kissing completely off the table for now and be prudent with hand-holding. I can go into this in more detail later when we reach that section.\n\nI am not ready to define the relationship. I also would feel more comfortable with little to no future casting conversations right now."
+      },
+      "status": "answered"
+    },
+    "q05": {
+      "question": {
+        "id": "q05",
+        "title": "Review point for clarity",
+        "prompt": "A healthy review point to revisit clarity (expectations, pacing, and whether we want a label) would be:",
+        "type": "compound"
+      },
+      "response": {
+        "scope": [
+          "labels",
+          "publicness",
+          "future_talk",
+          "focus_agreement",
+          "expectations"
+        ],
+        "review_type": "after_weeks",
+        "number_value": 4,
+        "milestone_text": "",
+        "natural_sign_text": ""
+      },
+      "status": "answered"
+    },
+    "q06": {
+      "question": {
+        "id": "q06",
+        "title": "Check-in cadence",
+        "prompt": "Ideal cadence and format for intentional check-ins:",
+        "type": "compound"
+      },
+      "response": {
+        "frequency": "biweekly_20",
+        "format": "walk_and_talk",
+        "trigger_rule": "within_24h"
+      },
+      "status": "answered"
+    },
+    "q07": {
+      "question": {
+        "id": "q07",
+        "title": "Overwhelm pattern",
+        "prompt": "When I feel unsure or overwhelmed, I tend to (choose any) AND the best way to respond is:",
+        "type": "compound"
+      },
+      "response": {
+        "patterns": [
+          "pull_inward",
+          "get_quiet",
+          "seek_reassurance",
+          "overthink"
+        ],
+        "best_response": "Hold my hand ask me a simple question and listen. If I say I'm okay or fine and it does not sound convincing pull me in gently for a hug.",
+        "do_not_assume": "That I want to stop seeing each other, or that I have something terrible to tell you."
+      },
+      "status": "answered"
+    },
+    "q08": {
+      "question": {
+        "id": "q08",
+        "title": "What safety means",
+        "prompt": "When I feel safe with you, it usually means (choose any) AND in my own words:",
+        "type": "compound"
+      },
+      "response": {
+        "selected_values": [
+          "not_rushed",
+          "emotionally_seen",
+          "physically_respected",
+          "conflict_not_abandonment",
+          "chosen_no_pressure",
+          "other",
+          "free_change_mind"
+        ],
+        "other_text": "I am not being lied to.",
+        "plain_language": "That I am heard, respected and told the truth (not partial truths). I can process and talk about things and know that the other person is not going to walk away.",
+        "notes": ""
+      },
+      "status": "answered"
+    },
+    "q09": {
+      "question": {
+        "id": "q09",
+        "title": "Support when stressed",
+        "prompt": "When I'm stressed, what helps most from you is:",
+        "type": "compound"
+      },
+      "response": {
+        "selected_values": [
+          "other",
+          "ask_need",
+          "listen_no_fix",
+          "provide_reassurance"
+        ],
+        "other_text": "Hug or breath with me",
+        "one_thing": "Take some deep breaths with me (this will most likely help me to want to talk)",
+        "do_not": "Making jokes that make it seem like the problem isn't that big of a deal.",
+        "notes": ""
+      },
+      "status": "answered"
+    },
+    "q10": {
+      "question": {
+        "id": "q10",
+        "title": "How to share the past",
+        "prompt": "When we talk about past relationships, I prefer:",
+        "type": "single_select"
+      },
+      "response": {
+        "selected_value": "slow_over_time",
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q11": {
+      "question": {
+        "id": "q11",
+        "title": "Affection that feels best right now",
+        "prompt": "Right now, the forms of affection that feel best to my nervous system are (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "verbal_affection",
+          "hand_holding",
+          "forehead_nose"
+        ],
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q12": {
+      "question": {
+        "id": "q12",
+        "title": "Approach for a kiss",
+        "prompt": "If you want to kiss me, the best approach is (choose one) plus what helps me feel safe in the moment:",
+        "type": "compound"
+      },
+      "response": {
+        "approach": "soft_checkin",
+        "preferred_words": "",
+        "if_not_yet": "Reassurance that I can take my time, and a hug (forehead kiss is also acceptible)"
+      },
+      "status": "answered"
+    },
+    "q13": {
+      "question": {
+        "id": "q13",
+        "title": "Overwhelm signs and best response",
+        "prompt": "If I start feeling overwhelmed during affection, my likely signs are (choose any). Then write the best response from you:",
+        "type": "compound"
+      },
+      "response": {
+        "signs": [
+          "disconnect_after",
+          "overly_agreeable",
+          "stiff",
+          "quiet"
+        ],
+        "other_signs_text": [
+          "disconnect_after",
+          "overly_agreeable",
+          "stiff",
+          "quiet"
+        ],
+        "best_response_text": "I am a people pleaser, so sometimes I smile when I feel nervous. But I will be more stiff and avoid eye contact."
+      },
+      "status": "answered"
+    },
+    "q14": {
+      "question": {
+        "id": "q14",
+        "title": "Group settings preference",
+        "prompt": "In group settings (friends, etc.), I prefer we:",
+        "type": "single_select"
+      },
+      "response": {
+        "selected_value": "other",
+        "other_text": "For now, I would prefer with friends for us to socialize the way we did before. Spending most of our friend time mingling with others, not sitting next to each other most of the time and afterword not driving back together."
+      },
+      "status": "answered"
+    },
+    "q15": {
+      "question": {
+        "id": "q15",
+        "title": "Initiative and leadership",
+        "prompt": "Initiative feels best when (choose one), then add a short explanation so I can do it the way you actually mean it:",
+        "type": "compound"
+      },
+      "response": {
+        "selected_value": "you_more",
+        "what_it_means": "I am feeling uncertain and scared right now so I think it will be better if you initiate more, but I also don't want you to feel pressure so lets talk about how I can support you in this or maybe find a better solution.  I want to put in effort as well. We should definetly revisit this in 4 weeks.",
+        "examples_in_practice": "Planning date times. I am willing to help with ideas, though it sounds like you have a lot of good ideas. ",
+        "notes": ""
+      },
+      "status": "answered"
+    },
+    "q16": {
+      "question": {
+        "id": "q16",
+        "title": "Chosen without pressure",
+        "prompt": "Something that helps me feel chosen without feeling pressured is:",
+        "type": "free_text"
+      },
+      "response": {
+        "text": "Small, affectionate gestures. Verbal reminders that I have a choice."
+      },
+      "status": "answered"
+    },
+    "q17": {
+      "question": {
+        "id": "q17",
+        "title": "A fear I'm willing to name",
+        "prompt": "A fear I have about dating right now (that I'm willing to name) is:",
+        "type": "free_text"
+      },
+      "response": {
+        "text": "That I'll move too quickly and lose myself in the relationship. I lose some of the friends that I have, both because we are in the same friend group, and also by not giving my girlfriends' friends enough time to foster the relationship.\n\nBeing pressured into intimacy. Going further than I want to."
+      },
+      "status": "answered"
+    },
+    "q18": {
+      "question": {
+        "id": "q18",
+        "title": "How we treat this connection",
+        "prompt": "One sentence that describes how I want us to treat this connection is:",
+        "type": "free_text"
+      },
+      "response": {
+        "text": "For now, like we are getting to know each other, with intention, but also with low pressure. Being honest, warm, and playful."
+      },
+      "status": "answered"
+    },
+    "q19": {
+      "question": {
+        "id": "q19",
+        "title": "Top values (choose up to 5)",
+        "prompt": "Select and rank the values that feel most important to you in a relationship right now (up to 5). Drag to reorder by priority (top = most important).",
+        "type": "compound"
+      },
+      "response": {
+        "values_ranked": [
+          "faith",
+          "integrity",
+          "growth",
+          "family",
+          "emotional_safety"
+        ],
+        "other_text": "",
+        "notes": "test words here"
+      },
+      "status": "answered"
+    },
+    "q20": {
+      "question": {
+        "id": "q20",
+        "title": "Faith and church alignment",
+        "prompt": "At this stage, faith/church shows up best for me as (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "mutual_support",
+          "other",
+          "temple_alignment"
+        ],
+        "other_text": "I'm happy to pray, go to the temple together. I am not ready to share church activities."
+      },
+      "status": "answered"
+    },
+    "q21": {
+      "question": {
+        "id": "q21",
+        "title": "Physical boundaries and standards (right now)",
+        "prompt": "Right now, I want our physical boundaries to feel:",
+        "type": "single_select"
+      },
+      "response": {
+        "selected_value": "slow_by_default",
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q22": {
+      "question": {
+        "id": "q22",
+        "title": "What “defining the relationship” means to me",
+        "prompt": "When we eventually define the relationship, for me that mainly means (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "public_label",
+          "routine_integration",
+          "family_introductions",
+          "future_intent",
+          "exclusive"
+        ],
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q23": {
+      "question": {
+        "id": "q23",
+        "title": "Future talk pacing",
+        "prompt": "Future talk (marriage/kids/life plans) feels best to me when:",
+        "type": "single_select"
+      },
+      "response": {
+        "selected_value": "as_it_comes",
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q24": {
+      "question": {
+        "id": "q24",
+        "title": "Roles and leadership expectations",
+        "prompt": "In a healthy relationship, I'm happiest when leadership looks like:",
+        "type": "single_select"
+      },
+      "response": {
+        "selected_value": "complementary",
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q25": {
+      "question": {
+        "id": "q25",
+        "title": "My conflict style under stress",
+        "prompt": "When I'm stressed or hurt, I tend to (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "withdraw",
+          "seek_closeness",
+          "overexplain",
+          "cry"
+        ],
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q26": {
+      "question": {
+        "id": "q26",
+        "title": "What helps me de-escalate",
+        "prompt": "If we feel tension, the fastest way for me to calm down is (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "physical_grounding",
+          "sleep_then_talk",
+          "validation_first"
+        ],
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q27": {
+      "question": {
+        "id": "q27",
+        "title": "Apology and repair language",
+        "prompt": "Select and rank what makes an apology most meaningful to you. Drag to reorder by importance (top = most important).",
+        "type": "compound"
+      },
+      "response": {
+        "apology_preferences_ranked": [
+          "acknowledgment",
+          "ownership",
+          "plan",
+          "action",
+          "time",
+          "other"
+        ],
+        "other_text": "Saying sorry healthily",
+        "notes": "actually meaning !"
+      },
+      "status": "answered"
+    },
+    "q28": {
+      "question": {
+        "id": "q28",
+        "title": "Not-okay conflict behaviors",
+        "prompt": "Conflict behaviors that are NOT okay for me (choose any) AND what I want us to do if one happens:",
+        "type": "compound"
+      },
+      "response": {
+        "not_okay": [
+          "name_calling",
+          "silent_treatment",
+          "threatening_breakup",
+          "public_shaming",
+          "yelling",
+          "bringing_up_past"
+        ],
+        "in_the_moment_boundary": "If one of these behaivor's happens, call the behavior what it is, both of us get in a non threatening position (for example criss-cross applesauce facing each other or on our stomachs facing each other) pause for 30 sec before resuming talking. If tensions are still too high each person go's to do something physical on their own for 10 min (walk, lifting, grounding, breathing/meditation)",
+        "repair_preference": "Remind each other that we care for one another even through we are disagreeing. Remind that we want to work this out. Make the case for the other persons side to show that we understand what they are trying to say without making it shameful, twisting words or conflating."
+      },
+      "status": "answered"
+    },
+    "q29": {
+      "question": {
+        "id": "q29",
+        "title": "Heavy topics boundaries",
+        "prompt": "When discussing heavy topics (past, trauma, sensitive history), select and rank your preferences. Drag to reorder by importance (top = most important).",
+        "type": "compound"
+      },
+      "response": {
+        "boundaries_ranked": [
+          "structured_window",
+          "only_when_stable",
+          "slow_with_checkins"
+        ],
+        "other_text": "",
+        "notes": "Holding hands and breathing"
+      },
+      "status": "answered"
+    },
+    "q30": {
+      "question": {
+        "id": "q30",
+        "title": "Preferred repair ritual",
+        "prompt": "After a tough moment, the best 'repair ritual' for us would be (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "short_summary",
+          "prayer",
+          "date_reset",
+          "reconnect_touch"
+        ],
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q31": {
+      "question": {
+        "id": "q31",
+        "title": "Ideal cadence for seeing each other (right now)",
+        "prompt": "Right now, a healthy cadence for seeing each other would be:",
+        "type": "compound"
+      },
+      "response": {
+        "selected_value": "2x_week",
+        "varies_text": "",
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q32": {
+      "question": {
+        "id": "q32",
+        "title": "Communication channel preferences",
+        "prompt": "At this stage, I prefer communication to be mostly:",
+        "type": "compound"
+      },
+      "response": {
+        "selected_value": "other",
+        "mix_template": "",
+        "mix_details": "",
+        "other_text": "texting is good, I would only want one to two calls a week. In-person is prefered.",
+        "notes": ""
+      },
+      "status": "answered"
+    },
+    "q33": {
+      "question": {
+        "id": "q33",
+        "title": "Privacy and sharing boundaries",
+        "prompt": "Regarding sharing our relationship with friends/social media, I prefer:",
+        "type": "compound"
+      },
+      "response": {
+        "selected_value": "private",
+        "depends_text": "",
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q34": {
+      "question": {
+        "id": "q34",
+        "title": "Pace of integration (friends/family)",
+        "prompt": "Introducing deeper parts of life (close friends, family, routines) feels best when:",
+        "type": "single_select"
+      },
+      "response": {
+        "selected_value": "as_natural",
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q35": {
+      "question": {
+        "id": "q35",
+        "title": "Jealousy triggers (if any)",
+        "prompt": "When I feel jealousy or insecurity, it's usually triggered by (choose any) AND what helps me most is:",
+        "type": "compound"
+      },
+      "response": {
+        "triggers": [
+          "social_media",
+          "friend_closeness",
+          "ambiguous_plans"
+        ],
+        "what_helps": "Unsure",
+        "what_to_avoid": "Comparing people to each other."
+      },
+      "status": "answered"
+    },
+    "q36": {
+      "question": {
+        "id": "q36",
+        "title": "What reassurance works best",
+        "prompt": "Select and rank what helps most when you're feeling insecure. Drag to reorder by importance (top = helps most).",
+        "type": "compound"
+      },
+      "response": {
+        "reassurance_ranked": [
+          "clear_words",
+          "gentle_touch",
+          "plans",
+          "transparency",
+          "other"
+        ],
+        "other_text": "I'm not completely sure about the space and reconection... never tried it.",
+        "notes": ""
+      },
+      "status": "answered"
+    },
+    "q37": {
+      "question": {
+        "id": "q37",
+        "title": "Exclusivity boundary preference",
+        "prompt": "At this stage, exclusivity feels healthiest when:",
+        "type": "single_select"
+      },
+      "response": {
+        "selected_value": "not_yet",
+        "other_text": ""
+      },
+      "status": "answered"
+    },
+    "q38": {
+      "question": {
+        "id": "q38",
+        "title": "Boundaries with other connections",
+        "prompt": "While we're exploring this, healthy boundaries with other people look like (choose any):",
+        "type": "multi_select"
+      },
+      "response": {
+        "selected_values": [
+          "no_dating_apps",
+          "friends_ok",
+          "avoid_flirty_texting",
+          "no_1on1_dates"
+        ],
+        "other_text": ""
+      },
+      "status": "answered"
+    }
+  }
+}

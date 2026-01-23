@@ -31,14 +31,18 @@ This section details exactly which fields are extracted from the source and how 
 | `id` | `"q05"` | Used to generate the header `Q05` |
 | `title` | `"Capacity for mutual responsibility"` | Used in the header line |
 | `prompt` | `"When dating, can you reliably..."` | **Directly included** as context |
-| `options.value` | `"yes_consistently"` | **The ONLY part of the answer sent to AI** |
-| `options.label` | `"Yes, consistently"` | **IGNORED** (User-only view) |
+| `options.value` | `"yes_consistently"` | Stored in database/files |
+| `options.label` | `"Yes, consistently"` | **Looked up and sent to AI** |
 
 ### Transition: User Input
 
-The user sees the `label` ("Yes, consistently") but the system stores the `value` (`"yes_consistently"`).
+The system uses **Hydration Logic** to ensure that while `value` is stored, the `label` is looked up and sent to the AI.
 
 ### Transformation: `ImportManager.js`
+
+1. **Detect Phase**: Reads `artifact.id` to identify the source phase (e.g., Phase 1.5).
+2. **Fetch Questions**: Dynamically loads the `questions.json` for that phase.
+3. **Hydrate**: Matches the stored `value` (`biweekly_20`) with the fetched `option` to extract the `label` ("Bi-weekly...").
 
 The system constructs a text block for each answered question using this specific template:
 

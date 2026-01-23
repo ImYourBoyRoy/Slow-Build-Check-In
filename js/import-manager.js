@@ -20,7 +20,7 @@ const ImportManager = {
         const fileName = file.name.toLowerCase();
 
         if (fileName.endsWith('.json')) {
-            return this.parseJSON(text, file.name);
+            return await this.parseJSON(text, file.name);
         } else if (fileName.endsWith('.txt')) {
             return this.parseTXT(text, file.name);
         } else {
@@ -34,7 +34,7 @@ const ImportManager = {
      * @param {string} fileName - Original file name.
      * @returns {Object} Parsed data.
      */
-    parseJSON(text, fileName) {
+    async parseJSON(text, fileName) {
         try {
             const data = JSON.parse(text);
 
@@ -47,8 +47,32 @@ const ImportManager = {
             const mode = data.meta.mode || (data.stats?.total > 20 ? 'full' : 'lite');
             const questionCount = data.stats?.total || Object.keys(data.responses).length;
 
+            // HYDRATION: Try to load the specific phase questions for this file
+            // This ensures we have the correct Labels for the Values (e.g. "Weekly" instead of "weekly_10")
+            let externalQuestions = null;
+            if (data.meta?.artifact?.id && typeof DataLoader !== 'undefined') {
+                try {
+                    const phaseId = await DataLoader.getPhaseIdByArtifactId(data.meta.artifact.id);
+                    if (phaseId) {
+                        const phase = DataLoader.getPhases().find(p => p.id === phaseId);
+                        if (phase) {
+                            const res = await fetch(`./${phase.data_path}/questions.json?v=${DataLoader.CACHE_VERSION || '1'}`);
+                            if (res.ok) {
+                                const qData = await res.json();
+                                // Store as array for easy searching in formatJSONResponses
+                                if (qData.questions) {
+                                    externalQuestions = Object.values(qData.questions);
+                                }
+                            }
+                        }
+                    }
+                } catch (err) {
+                    console.warn('ImportManager: Failed to hydrate phase questions:', err);
+                }
+            }
+
             // Build formatted responses for AI prompt
-            const formattedResponses = this.formatJSONResponses(data.responses);
+            const formattedResponses = this.formatJSONResponses(data, externalQuestions);
 
             // Extract artifact ID for validation
             const artifactId = data.meta?.artifact?.id || null;
@@ -341,7 +365,7 @@ const ImportManager = {
      * @param {Object} data - The responses object from JSON.
      * @returns {string} Formatted text.
      */
-    formatJSONResponses(data) {
+    formatJSONResponses(data, externalQuestions = null) {
         if (!data || !data.responses) return '';
 
         let text = '';
@@ -351,16 +375,21 @@ const ImportManager = {
             // We trust the App's current definition for metadata (options/labels) while using the Import's ID and Response.
             let fullQuestion = null;
 
-            // Try to find the question in the currently loaded mode first
-            if (typeof QuestionnaireEngine !== 'undefined' && QuestionnaireEngine.questions) {
-                fullQuestion = QuestionnaireEngine.questions.find(q => q.id === questionId);
+            // 1. Try external hydration (Best Match from correct phase)
+            if (externalQuestions) {
+                fullQuestion = externalQuestions.find(q => q.id === questionId);
             }
 
-            // Fallback: If not found (maybe different mode), try to fetch from DataLoader if accessible
+            // 2. Try to find the question in the currently loaded definitions from DataLoader (Database)
+            // This is preferred because ImportModal switches DataLoader to the correct phase
             if (!fullQuestion && typeof DataLoader !== 'undefined') {
-                // Try both modes to find the definition
                 const fullQs = DataLoader.getQuestions('full');
                 fullQuestion = fullQs.find(q => q.id === questionId);
+            }
+
+            // Fallback: Check active session state (QuestionnaireEngine)
+            if (!fullQuestion && typeof QuestionnaireEngine !== 'undefined' && QuestionnaireEngine.questions) {
+                fullQuestion = QuestionnaireEngine.questions.find(q => q.id === questionId);
             }
 
             // Use the hydrated question if found, otherwise fall back to the imported snapshot
@@ -388,10 +417,10 @@ const ImportManager = {
         if (!response) return '[No response]';
         const type = question.type;
 
-        // Helper to find label by value
+        // Helper to find label by value using robust matching
         const getLabel = (val) => {
             if (!question.options) return val;
-            const opt = question.options.find(o => o.value === val);
+            const opt = this.findMatchingOption(val, question.options);
             return opt ? opt.label : val;
         };
 
@@ -438,8 +467,15 @@ const ImportManager = {
 
                         // effective 'getLabel' for this specific field
                         const getFieldLabel = (v) => {
-                            if (!fieldDef || !fieldDef.options) return v;
-                            const opt = fieldDef.options.find(o => o.value === v);
+                            if (!fieldDef) return v;
+
+                            // Only look up options for select types
+                            const isSelect = ['single_select', 'multi_select'].includes(fieldDef.type) ||
+                                (fieldDef.options && fieldDef.options.length > 0);
+
+                            if (!isSelect || !fieldDef.options) return v;
+
+                            const opt = this.findMatchingOption(v, fieldDef.options);
                             return opt ? opt.label : v;
                         };
 

@@ -127,6 +127,7 @@ const ExportManager = {
      * @param {Object} options - Export options.
      */
     exportForAI(type = 'individual', options = {}) {
+        const { participantName = 'Participant' } = options;
         const mode = QuestionnaireEngine.mode || 'lite';
         const prompt = DataLoader.getPrompt(type, mode);
 
@@ -137,37 +138,26 @@ const ExportManager = {
 
         let text = '';
 
-        // Role/instruction
-        text += '--- SYSTEM ROLE ---\n';
-        text += prompt.role + '\n\n';
+        try {
+            // Unify logic: Use ImportManager to build the prompt
+            // This ensures consistent formatting (labels vs values) across all routes
+            const data = this._getExportData(participantName);
 
-        // Context
-        text += '--- CONTEXT ---\n';
-        prompt.context.forEach(c => text += `• ${c}\n`);
-        text += '\n';
-
-        // Responses
-        text += '--- RESPONSES ---\n\n';
-
-        QuestionnaireEngine.questions.forEach(question => {
-            const response = QuestionnaireEngine.responses[question.id];
-            if (!response) return;
-
-            text += `**Q${question.order}: ${question.title}**\n`;
-            text += `${question.prompt}\n`;
-            text += `Answer: ${this.formatResponseForText(question, response)}\n\n`;
-        });
-
-        // Output format
-        text += '--- REQUESTED OUTPUT FORMAT ---\n';
-        prompt.output_format.forEach(section => {
-            text += `\n### ${section.section}\n`;
-            section.requirements.forEach(req => text += `• ${req}\n`);
-        });
-
-        // Constraints
-        text += '\n--- CONSTRAINTS ---\n';
-        prompt.constraints.forEach(c => text += `• ${c}\n`);
+            if (type === 'couple') {
+                // For couple file export, we might need a different approach if it's just a template
+                // But usually this method is for generating YOUR prompt. 
+                // Actually exportForAI seems to be for the text file download of the prompt.
+                // If type is couple, it usually needs two people. 
+                // If this is just downloading the specific prompt for one person:
+                text = ImportManager.buildIndividualPrompt(data, prompt);
+            } else {
+                text = ImportManager.buildIndividualPrompt(data, prompt);
+            }
+        } catch (err) {
+            console.warn('ExportManager: Failed to use ImportManager for prompt generation, falling back to legacy.', err);
+            // Fallback (legacy logic) - stripped down
+            text = this.buildAIPromptText(prompt, participantName);
+        }
 
         this.downloadFile(text, 'ai-reflection-prompt.txt', 'text/plain');
     },
@@ -283,58 +273,19 @@ const ExportManager = {
     async copyAIPrompt(type = 'individual', options = {}) {
         const { participantName = 'Participant' } = options;
         const mode = QuestionnaireEngine.mode || 'lite';
-        const prompt = DataLoader.getPrompt(type, mode);
+        const promptTemplate = DataLoader.getPrompt(type, mode);
 
-        if (!prompt) {
+        if (!promptTemplate) {
             console.error('Prompt template not found');
             return false;
         }
 
-        let text = '';
-
-        // Role/instruction
-        text += '=== SYSTEM ROLE ===\n';
-        text += prompt.role + '\n\n';
-
-        // Context
-        text += '=== CONTEXT ===\n';
-        prompt.context.forEach(c => text += `• ${c}\n`);
-        text += '\n';
-
-        // Participant info
-        text += `=== PARTICIPANT: ${participantName} ===\n\n`;
-
-        // Responses
-        text += '=== RESPONSES ===\n\n';
-
-        QuestionnaireEngine.questions.forEach(question => {
-            const response = QuestionnaireEngine.responses[question.id];
-            const status = QuestionnaireEngine.getQuestionStatus(question.id);
-
-            text += `**Q${question.order}: ${question.title}**\n`;
-            text += `${question.prompt}\n`;
-
-            if (status === 'answered' && response) {
-                text += `Answer: ${this.formatResponseForText(question, response)}\n\n`;
-            } else if (status === 'skipped') {
-                text += `Answer: [Skipped]\n\n`;
-            } else {
-                text += `Answer: [Not answered]\n\n`;
-            }
-        });
-
-        // Output format
-        text += '=== REQUESTED OUTPUT FORMAT ===\n';
-        prompt.output_format.forEach(section => {
-            text += `\n### ${section.section}\n`;
-            section.requirements.forEach(req => text += `• ${req}\n`);
-        });
-
-        // Constraints
-        text += '\n=== CONSTRAINTS ===\n';
-        prompt.constraints.forEach(c => text += `• ${c}\n`);
-
         try {
+            // UNIFIED LOGIC: Use ImportManager to build the prompt
+            // This ensures we get the exact same output as Route 1 & 3
+            const data = this._getExportData(participantName);
+            const text = ImportManager.buildIndividualPrompt(data, promptTemplate);
+
             await navigator.clipboard.writeText(text);
             return true;
         } catch (err) {
@@ -556,11 +507,20 @@ const ExportManager = {
     showIndividualPromptRaw(options = {}) {
         const { participantName = 'Participant' } = options;
         const mode = QuestionnaireEngine.mode || 'lite';
-        const prompt = DataLoader.getPrompt('individual', mode);
-        if (!prompt) return;
+        const promptTemplate = DataLoader.getPrompt('individual', mode);
+        if (!promptTemplate) return;
 
-        let text = this.buildAIPromptText(prompt, participantName);
-        this.showRawView('Individual AI Prompt', text);
+        try {
+            // UNIFIED LOGIC
+            const data = this._getExportData(participantName);
+            const text = ImportManager.buildIndividualPrompt(data, promptTemplate);
+            this.showRawView('Individual AI Prompt', text);
+        } catch (err) {
+            console.error('Failed to build raw prompt:', err);
+            // Fallback
+            const text = this.buildAIPromptText(promptTemplate, participantName);
+            this.showRawView('Individual AI Prompt', text);
+        }
     },
 
     /**
@@ -625,12 +585,57 @@ const ExportManager = {
     },
 
     /**
+     * Helper to prepare data for ImportManager.
+     * Simulates the structure of a parsed imported file.
+     */
+    _getExportData(participantName) {
+        // We need to construct the responses object exactly like exportAsJSON does
+        // ImportManager expects { questionId: { question: {...}, response: {...} } }
+        const fullResponses = {};
+
+        QuestionnaireEngine.questions.forEach(question => {
+            fullResponses[question.id] = {
+                question: {
+                    id: question.id,
+                    title: question.title,
+                    prompt: question.prompt,
+                    type: question.type,
+                    options: question.options,
+                    fields: question.fields
+                },
+                response: QuestionnaireEngine.responses[question.id] || null,
+                status: QuestionnaireEngine.getQuestionStatus(question.id)
+            };
+        });
+
+        // Use ImportManager to format the responses
+        const formattedText = ImportManager.formatJSONResponses({ responses: fullResponses });
+
+        return {
+            name: participantName,
+            mode: QuestionnaireEngine.mode || 'lite',
+            questionCount: QuestionnaireEngine.questions.length,
+            responses: fullResponses,
+            stats: QuestionnaireEngine.getStats(),
+            formattedText: formattedText,
+            format: 'json'
+        };
+    },
+
+    /**
      * Build AI prompt text (helper).
      * @param {Object} prompt - Prompt template.
      * @param {string} participantName - Participant name.
      * @returns {string} Formatted prompt text.
      */
     buildAIPromptText(prompt, participantName) {
+        // Kept as fallback, but ideally should be removed or deprecated
+        // Logic duplicated from ImportManager.buildIndividualPrompt but using formatResponseForText
+
+        // Delegate to ImportManager if possible to keep things DRY even in fallback?
+        // No, if we are falling back it means ImportManager might have failed.
+        // Let's keep the original logic here as a safety net.
+
         let text = '';
         text += '=== SYSTEM ROLE ===\n';
         text += prompt.role + '\n\n';

@@ -116,6 +116,7 @@ const AppInit = {
         // Review button
         document.getElementById('btn-review')?.addEventListener('click', () => this.showView('review'));
         document.getElementById('btn-back-to-questions')?.addEventListener('click', () => this.showView('questionnaire'));
+        document.getElementById('btn-finish-review')?.addEventListener('click', () => this.showView('complete'));
 
         // Skipped questions button
         document.getElementById('btn-go-to-skipped')?.addEventListener('click', () => this.goToSkipped());
