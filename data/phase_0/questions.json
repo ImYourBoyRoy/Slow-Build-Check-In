@@ -167,8 +167,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Not ready (e.g., I don't feel the capacity for a relationship right now).",
@@ -198,51 +197,51 @@
           "type": "ranked_select",
           "options": [
             {
-              "value": "desire_marriage_family",
+              "value": "I_desire_marriage_family_and_feel_timing_matters",
               "label": "I desire marriage/family and feel timing matters"
             },
             {
-              "value": "desire_companionship",
+              "value": "I_want_companionship_and_partnership",
               "label": "I want companionship and partnership"
             },
             {
-              "value": "values_alignment",
+              "value": "I_want_to_build_a_values_based_relationship_intentionally",
               "label": "I want to build a values-based relationship intentionally"
             },
             {
-              "value": "readiness_growth",
+              "value": "I_feel_emotionally_ready_and_want_to-grow-through-real-connection",
               "label": "I feel emotionally ready and want to grow through real connection"
             },
             {
-              "value": "healing_move_forward",
+              "value": "I_want_to_practice_healthy_connection_after_a_hard_chapter",
               "label": "I want to practice healthy connection after a hard chapter"
             },
             {
-              "value": "lonely",
+              "value": "I_feel_lonely_and_want_relief",
               "label": "I feel lonely and want relief"
             },
             {
-              "value": "touch_affection",
+              "value": "I_miss_physical_affection_and_closeness",
               "label": "I miss physical affection and closeness"
             },
             {
-              "value": "life_stage_shift",
+              "value": "A_life_change_made_dating_feel_relevant_again_move_new_job_kids_etc",
               "label": "A life change made dating feel relevant again (move, new job, kids, etc.)"
             },
             {
-              "value": "social_pressure",
+              "value": "Social_family_church_community_pressure",
               "label": "Social/family/church/community pressure"
             },
             {
-              "value": "bored",
+              "value": "Boredom_novelty_curiosity",
               "label": "Boredom/novelty/curiosity"
             },
             {
-              "value": "validation_proving",
+              "value": "Validation_or_proving_something_to_self_or_someone_else",
               "label": "Validation or proving something (to self or someone else)"
             },
             {
-              "value": "avoid_pain",
+              "value": "I_want_distraction_from_pain_stress_grief",
               "label": "I want distraction from pain/stress/grief"
             },
             {
@@ -252,21 +251,21 @@
           ]
         },
         {
-          "key": "urgency_level",
+          "key": "urgency_level_for_dating_now",
           "label": "How urgent does dating feel right now? (0-10)",
           "type": "number",
           "min": 0,
           "max": 10
         },
         {
-          "key": "confidence_level",
+          "key": "confidence_level_that_this_is_a_healthy_time_to_date",
           "label": "How confident are you that this is a healthy time to date? (0-10)",
           "type": "number",
           "min": 0,
           "max": 10
         },
         {
-          "key": "notes",
+          "key": "notes_about_urgency_and_confidence",
           "label": "Anything else to add (1-3 sentences)",
           "type": "free_text",
           "placeholder": "Optional context. What changed recently, if anything?"
@@ -296,9 +295,9 @@
       },
       "answer_schema": {
         "reasons_ranked": [],
-        "urgency_level": 0,
-        "confidence_level": 0,
-        "notes": "",
+        "urgency_level_for_dating_now": 0,
+        "confidence_level_that_this_is_a_healthy_time_to_date": 0,
+        "notes_about_urgency_and_confidence": "",
         "other_text": ""
       },
       "examples": [
@@ -357,8 +356,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Stable/positive (e.g., generally happy and balanced).",
@@ -405,8 +403,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Light (e.g., life feels manageable).",
@@ -455,8 +452,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Yes, consistently (e.g., I follow through on what I say).",
@@ -502,8 +498,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No (e.g., feeling safe).",
@@ -556,8 +551,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "None (e.g., I don't use substances).",
@@ -607,8 +601,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Yes (e.g., my behavior aligns with my values).",
@@ -779,8 +772,7 @@
         "last_major_length_months": 0,
         "longest_relationship_months": 0,
         "avg_relationship_months": 0,
-        "major_relationship_count": 0,
-        "notes": ""
+        "major_relationship_count": 0
       },
       "examples": [
         "Months since last major relationship ended: 24. Length of last major relationship (months): 12. Length of longest relationship (months): 18. Your estimate of your average relationship length (months): 10. How many major relationships have you had?: 3.",
@@ -828,8 +820,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Never married.",
@@ -896,8 +887,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Neutral (e.g., I don't think about them much).",
@@ -952,8 +942,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No contact (e.g., we don't speak).",
@@ -1021,8 +1010,7 @@
       ],
       "answer_schema": {
         "boundary_quality": "",
-        "explanation": "",
-        "notes": ""
+        "explanation": ""
       },
       "examples": [
         "Very clean (clear purpose, no emotional leakage): boundaries are clear and respected.",
@@ -1072,8 +1060,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No (e.g., nothing left to resolve).",
@@ -1123,8 +1110,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Yes (e.g., I feel safe).",
@@ -1185,8 +1171,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Mutual drift (e.g., we grew apart).",
@@ -1276,8 +1261,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "In therapy (e.g., currently attending).",
@@ -1327,8 +1311,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Not applicable.",
@@ -1385,8 +1368,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Self-regulate (e.g., take a pause, breathe).",
@@ -1457,9 +1439,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "ranking": [],
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Stonewalling (e.g., shutting down conversation).",
@@ -1504,8 +1484,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Consistent (e.g., regular sleep schedule).",
@@ -1549,8 +1528,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No (e.g., never occurred).",
@@ -1602,8 +1580,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No (e.g., not an issue).",
@@ -1676,8 +1653,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Lean in (e.g., move closer).",
@@ -1728,8 +1704,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Secure (e.g., comfortable with intimacy and independence).",
@@ -1778,8 +1753,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Same day (e.g., resolve before sleeping).",
@@ -1845,9 +1819,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "ranking": [],
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Soft startup (e.g., gentle approach).",
@@ -1897,8 +1869,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Stay honest (e.g., speak truth despite fear).",
@@ -1943,8 +1914,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Strong (e.g., clear and consistent).",
@@ -2095,8 +2065,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Neutral (e.g., assume they are busy).",
@@ -2314,8 +2283,7 @@
       "answer_schema": {
         "clarity": "",
         "commitments": "",
-        "support": "",
-        "notes": ""
+        "support": ""
       },
       "examples": [
         "Clarity: Aligned (e.g., reliable follow-through).",
@@ -2362,7 +2330,7 @@
         },
         {
           "key": "commitments",
-          "label": "If you want, name 1–3 commitments you hope to keep (optional)",
+          "label": "If you want, name 1-3 commitments you hope to keep (optional)",
           "type": "short_text",
           "placeholder": "e.g., no sex, no cohabitation, worship weekly, avoid interfaith mismatch"
         },
@@ -2384,8 +2352,7 @@
       "answer_schema": {
         "goal": "",
         "covenant_commitment": "",
-        "timeline": "",
-        "notes": ""
+        "timeline": ""
       },
       "examples": [
         "Goal: Marriage. Timeline: 1-2 years.",
@@ -2484,15 +2451,15 @@
             },
             {
               "value": "0_6m",
-              "label": "0–6 months"
+              "label": "0-6 months"
             },
             {
               "value": "6_12m",
-              "label": "6–12 months"
+              "label": "6-12 months"
             },
             {
               "value": "1_2y",
-              "label": "1–2 years"
+              "label": "1-2 years"
             },
             {
               "value": "2y_plus",
@@ -2545,8 +2512,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Aligned (e.g., actions match values).",
@@ -2708,8 +2674,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Preparation (e.g., focusing on self).",
@@ -2866,8 +2831,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Low-key (e.g., walk, coffee).",
@@ -2917,8 +2881,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Light (e.g., occasional texts).",
@@ -2968,8 +2931,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Conservative (e.g., minimal touch early on).",
@@ -3070,8 +3032,7 @@
       "answer_schema": {
         "risk_level": "",
         "supports": [],
-        "one_change": "",
-        "notes": ""
+        "one_change": ""
       },
       "examples": [
         "Risk: Medium. Support: Date structure.",
@@ -3123,8 +3084,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Kindness/Character.",
@@ -3175,8 +3135,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No.",
@@ -3242,8 +3201,7 @@
       ],
       "answer_schema": {
         "coparent_state": "",
-        "impact": "",
-        "notes": ""
+        "impact": ""
       },
       "examples": [
         "State: Healthy. Impact: minimal.",
@@ -3292,8 +3250,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "0 times/week (e.g., currently busy).",
@@ -3338,8 +3295,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Stable (e.g., bills paid, some savings).",
@@ -3380,8 +3336,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Predictable (e.g., standard hours).",
@@ -3425,8 +3380,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No (e.g., good health).",
@@ -3492,8 +3446,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Act (e.g., make a plan to address it).",
@@ -3555,8 +3508,7 @@
       ],
       "answer_schema": {
         "best_style": "",
-        "triggers": "",
-        "notes": ""
+        "triggers": ""
       },
       "examples": [
         "Style: Direct. Trigger: condescension.",
@@ -3750,8 +3702,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Serial monogamy (e.g., jumping from one to next).",
@@ -3796,8 +3747,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Slowly (e.g., takes time to build feelings).",
@@ -3847,8 +3797,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Not at all (e.g., feeling stable).",
@@ -3902,8 +3851,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No (e.g., no known trauma).",
@@ -3969,8 +3917,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Direct (e.g., state needs clearly).",
@@ -4019,8 +3966,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Rare (e.g., generally trust).",
@@ -4065,8 +4011,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Very comfortable (e.g., can ask easily).",
@@ -4160,9 +4105,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "ranking": [],
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Practices: Prayer, Meditation.",
@@ -4209,8 +4152,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Strict abstinence: waiting for marriage.",
@@ -4277,8 +4219,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Agree (e.g., go along with it).",
@@ -4323,8 +4264,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Hold boundary (e.g., say no).",
@@ -4393,9 +4333,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "ranking": [],
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Slower pace.",
@@ -4444,8 +4382,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No (e.g., established here).",
@@ -4489,8 +4426,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Low (e.g., manageable payments).",
@@ -4556,8 +4492,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Very willing (e.g., prefer directness).",

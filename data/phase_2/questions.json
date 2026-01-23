@@ -120,9 +120,9 @@
       "answer_schema": {
         "how_long_have_you": "",
         "unit": "",
-        "how_long_have_you_2": "",
+        "how_long_have_you_been_intentionally_dating_seeing_each_other": "",
         "unit_2": "",
-        "about_how_often_do": "",
+        "about_how_often_do_you_see_each_other_right_now": "",
         "notes": ""
       },
       "tags": {
@@ -240,8 +240,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -296,8 +295,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -352,8 +350,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -402,8 +399,8 @@
       "prompt": "Let's start with what's working. This matters.",
       "type": "compound",
       "answer_schema": {
-        "f_3_things_that_feel": "",
-        "one_moment_you_felt": ""
+        "3_things_that_feel_genuinely_good_or_healthy_right_now": "",
+        "one_moment_you_felt_especially_safe_cared_for_or_understood": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -437,9 +434,7 @@
       "prompt": "Right now, the pace of the relationship feels:",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -494,8 +489,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -544,10 +538,12 @@
       "title": "What DTR Means to Me",
       "prompt": "If you define the relationship, what does that specifically mean to you? Select all that fit.",
       "type": "multi_select",
+      "validation": {
+        "max_selected": 5
+      },
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -608,7 +604,7 @@
       "prompt": "People mean different things by exclusive. What would exclusivity mean to you right now?",
       "type": "compound",
       "answer_schema": {
-        "which_are_part_of": [],
+        "which_are_part_of_exclusivity_for_you": [],
         "if_other_describe": "",
         "notes": ""
       },
@@ -756,7 +752,7 @@
       "prompt": "If you define the relationship, what do you believe should change (if anything)?",
       "type": "compound",
       "answer_schema": {
-        "select_any_that_you": [],
+        "select_any_that_you_expect_to_change": [],
         "if_other_describe": "",
         "notes": ""
       },
@@ -836,8 +832,8 @@
       "prompt": "Name the expectations you already have, even if you haven't said them out loud.",
       "type": "compound",
       "answer_schema": {
-        "f_13_expectations": "",
-        "which_of_these_feel": ""
+        "1-3_expectations": "",
+        "which_of_these_feel_fair_vs_possibly_unrealistic": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -871,8 +867,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -920,9 +915,7 @@
       "prompt": "Right now, are you exclusive?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -969,8 +962,8 @@
       "type": "compound",
       "answer_schema": {
         "steadiness": "",
-        "what_makes_it_feel": "",
-        "what_makes_it_feel_2": ""
+        "what_makes_it_feel_clear": "",
+        "what_makes_it_feel_unclear": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1033,7 +1026,7 @@
         "emotional_pace": "",
         "physical_pace": "",
         "communication_pace": "",
-        "timeavailability_pace": "",
+        "time_availability_pace": "",
         "notes": ""
       },
       "tags": {
@@ -1155,9 +1148,7 @@
       "prompt": "The pace of integrating lives (friends, family, routines, church/community visibility if applicable) feels:",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1210,8 +1201,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1263,7 +1253,7 @@
       "prompt": "Is there something you're minimizing because the chemistry is strong? You can keep it high-level.",
       "type": "compound",
       "answer_schema": {
-        "are_you_ignoring_a": "",
+        "are_you_ignoring_a_small_but_real_concern": "",
         "if_yesunsure": "",
         "optional_context": ""
       },
@@ -1369,8 +1359,8 @@
       "type": "compound",
       "answer_schema": {
         "safety_level": "",
-        "what_makes_it_feel": "",
-        "what_makes_it_feel_2": ""
+        "what_makes_it_feel_safe": "",
+        "what_makes_it_feel_less_safe": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1432,9 +1422,7 @@
       "prompt": "Do you feel you have to manage their emotions to keep peace?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1479,8 +1467,8 @@
       "type": "compound",
       "answer_schema": {
         "respect_level": "",
-        "one_thing_that_feels": "",
-        "one_thing_that_doesnt": ""
+        "one_thing_that_feels_respectful": "",
+        "one_thing_that_doesnt_feel_respectful": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1541,9 +1529,7 @@
       "prompt": "Overall, this relationship tends to make your nervous system feel:",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1592,8 +1578,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1646,9 +1631,7 @@
       "prompt": "After a hard moment, you usually feel:",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1790,7 +1773,7 @@
       "answer_schema": {
         "not_okay": [],
         "if_other_describe": "",
-        "if_one_happens_what": ""
+        "if_one_happens_what_should_the_immediate_response_be": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1875,8 +1858,8 @@
       "type": "compound",
       "answer_schema": {
         "overall_alignment": "",
-        "f_12_values_that_feel": "",
-        "f_12_values_that_feel_2": ""
+        "1-2_values_that_feel_aligned": "",
+        "1-2_values_that_feel_uncertain": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1937,9 +1920,7 @@
       "prompt": "Are you hoping something important will change if you commit?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2004,9 +1985,7 @@
       "prompt": "Around them, you feel:",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2050,7 +2029,7 @@
       "prompt": "Is there a potential dealbreaker you're trying not to look at yet? You don't have to name details.",
       "type": "compound",
       "answer_schema": {
-        "is_there_a_potential": "",
+        "is_there_a_potential_dealbreaker": "",
         "category": "",
         "notes": ""
       },
@@ -2146,9 +2125,7 @@
       "prompt": "Which is most true right now?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2254,9 +2231,7 @@
       "prompt": "If they said not yet, you would mostly feel:",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2308,9 +2283,7 @@
       "prompt": "If you had to choose today, you would most want to:",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2354,7 +2327,7 @@
       "prompt": "On a scale of 1-10, how ready are you to define the relationship?",
       "type": "compound",
       "answer_schema": {
-        "readiness_score": "",
+        "readiness_score_1_not_ready_10_is_ready": "",
         "why_that_number": "",
         "what_would_raise_it": ""
       },
@@ -2395,10 +2368,12 @@
       "title": "What You Still Need",
       "prompt": "What do you still need to decide cleanly? Select any.",
       "type": "multi_select",
+      "validation": {
+        "max_selected": 3
+      },
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2508,7 +2483,7 @@
       "type": "compound",
       "answer_schema": {
         "choice": "",
-        "if_yesunsure": ""
+        "if_yes_unsure": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2555,9 +2530,7 @@
       "prompt": "How relevant is faith/spiritual life to your relationship decisions?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2648,10 +2621,12 @@
       "title": "Faith-Based Expectations / Standards",
       "prompt": "If applicable, which faith-based expectations matter for defining the relationship? Select any.",
       "type": "multi_select",
+      "validation": {
+        "max_selected": 5
+      },
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2715,9 +2690,7 @@
       "prompt": "When receiving guidance (human or AI), you prefer it to be:",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2765,9 +2738,7 @@
       "prompt": "Right now, do you want to be challenged, comforted, or both?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2806,10 +2777,12 @@
       "title": "What You Most Want Help With",
       "prompt": "What do you most want help seeing clearly right now?",
       "type": "multi_select",
+      "validation": {
+        "max_selected": 3
+      },
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2869,9 +2842,7 @@
       "prompt": "How private do you want your results and recommendations to be?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [

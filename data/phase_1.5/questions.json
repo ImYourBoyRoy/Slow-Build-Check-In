@@ -135,8 +135,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Exploration: I'm seeing what is out there without pressure.",
@@ -184,9 +183,7 @@
         }
       ],
       "answer_schema": {
-        "selected_values": [],
-        "ranking": [],
-        "notes": ""
+        "selected_values": []
       },
       "examples": [
         "Slow and intentional: we take time to build trust before escalating.",
@@ -347,8 +344,7 @@
         "number_value": null,
         "milestone_text": "",
         "natural_sign_text": "",
-        "scope": [],
-        "notes": ""
+        "scope": []
       },
       "examples": [
         "After 4 dates: Review expectations and physical boundaries.",
@@ -381,7 +377,7 @@
             },
             {
               "value": "biweekly_20",
-              "label": "Bi-weekly (15–20 minutes)"
+              "label": "Bi-weekly (15-20 minutes)"
             },
             {
               "value": "as_needed",
@@ -443,8 +439,7 @@
       "answer_schema": {
         "frequency": "",
         "format": "",
-        "trigger_rule": "",
-        "notes": ""
+        "trigger_rule": ""
       },
       "examples": [
         "Weekly: Sunday night check-in over tea.",
@@ -499,7 +494,7 @@
         },
         {
           "key": "best_response",
-          "label": "Best response from you (1–2 sentences)",
+          "label": "Best response from you (1-2 sentences)",
           "type": "short_text"
         },
         {
@@ -511,8 +506,7 @@
       "answer_schema": {
         "patterns": [],
         "best_response": "",
-        "do_not_assume": "",
-        "notes": ""
+        "do_not_assume": ""
       },
       "examples": [
         "I pull inward: I go quiet and retreat. Best response: Sit close, stay calm, give me space without disappearing.",
@@ -716,8 +710,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "notes": ""
+        "selected_value": ""
       },
       "examples": [
         "Slowly: Share stories as they become relevant.",
@@ -770,8 +763,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Subtle touch: small grounding contact like a hand on the back or a light shoulder touch.",
@@ -833,8 +825,7 @@
       "answer_schema": {
         "approach": "",
         "preferred_words": "",
-        "if_not_yet": "",
-        "notes": ""
+        "if_not_yet": ""
       },
       "examples": [
         "Ask directly: \"Can I kiss you?\"",
@@ -906,8 +897,7 @@
       "answer_schema": {
         "signs": [],
         "other_signs_text": "",
-        "best_response_text": "",
-        "notes": ""
+        "best_response_text": ""
       },
       "examples": [
         "Signs: I get quiet and go still. Best response: pause and ask, \"Want to slow down?\"",
@@ -952,8 +942,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Act as a quiet unit: we arrive together, stay mostly together, leave together.",
@@ -1247,8 +1236,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Mutual support: encourage each other without policing or shaming.",
@@ -1290,8 +1278,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "notes": ""
+        "selected_value": ""
       },
       "examples": [
         "Very clear boundaries: we talk explicitly about what is and is not okay right now.",
@@ -1339,8 +1326,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Exclusive and intentional: we are not dating others, and we act like it.",
@@ -1387,8 +1373,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "High-level only: values and direction, no timelines yet.",
@@ -1431,8 +1416,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "notes": ""
+        "selected_value": ""
       },
       "examples": [
         "Shared leadership: we both initiate, plan, and carry the relationship.",
@@ -1484,8 +1468,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Withdraw: I go quiet and need a little time before I can talk clearly.",
@@ -1540,8 +1523,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Short break + validation first: Give me 15 minutes, then start with “I get why that hurt” before solutions.",
@@ -1689,8 +1671,7 @@
       "answer_schema": {
         "not_okay": [],
         "in_the_moment_boundary": "",
-        "repair_preference": "",
-        "notes": ""
+        "repair_preference": ""
       },
       "examples": [
         "Name-calling or insults: stop and reset, then repair before continuing.",
@@ -1817,8 +1798,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Reconnect with gentle touch + one clear next step: Hold hands/hug, then agree on one change for next time.",
@@ -1893,8 +1873,7 @@
       "answer_schema": {
         "selected_value": "",
         "varies_text": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "validation": {
         "required_if": [
@@ -2118,8 +2097,7 @@
       "answer_schema": {
         "selected_value": "",
         "depends_text": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "validation": {
         "required_if": [
@@ -2184,8 +2162,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Slow and gradual: meet close friends/family after trust is built.",
@@ -2239,7 +2216,7 @@
         },
         {
           "key": "what_helps",
-          "label": "What helps most from you (1–2 sentences)",
+          "label": "What helps most from you (1-2 sentences)",
           "type": "short_text"
         },
         {
@@ -2251,8 +2228,7 @@
       "answer_schema": {
         "triggers": [],
         "what_helps": "",
-        "what_to_avoid": "",
-        "notes": ""
+        "what_to_avoid": ""
       },
       "examples": [
         "Triggers: ambiguous plans. Helps: clear plans and a quick reassurance. Avoid: \"you're being crazy.\"",
@@ -2367,8 +2343,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Not yet: we keep it open while we get clarity.",
@@ -2416,8 +2391,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No dating apps and avoid flirty texting with others.",

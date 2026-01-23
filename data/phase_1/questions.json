@@ -115,8 +115,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Yes—no marriage, separation, or complicated situation (e.g., fully single and emotionally available).",
@@ -327,8 +326,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Neutral / at peace (e.g., I wish them well and feel complete).",
@@ -393,9 +391,7 @@
       "prompt": "Right now, do you feel physically and emotionally safe from any current partner, ex, or person you're dating? (No harassment, threats, stalking, or control.)",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "examples": [
         "Yes—completely safe (e.g., no pressure, no fear, no threats).",
@@ -441,8 +437,7 @@
       "answer_schema": {
         "primary_pull": "",
         "explanation": "",
-        "pattern_awareness": "",
-        "notes": ""
+        "pattern_awareness": ""
       },
       "examples": [
         "Primary pull: They feel emotionally safe / stable. Pattern awareness: No—this feels different/healthy. Explanation: calm, consistent, and kind.",
@@ -632,8 +627,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "I'd process it and move on gracefully (e.g., it hurts, but I recover and keep my dignity).",
@@ -688,9 +682,7 @@
       "prompt": "Right now, who seems more invested or leaning in? (This affects pacing and expectations—be honest.)",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "examples": [
         "About equal (e.g., mutual initiation and effort).",
@@ -862,8 +854,7 @@
       "type": "multi_select",
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Active mental health challenge (anxiety, depression, etc.); Significant debt.",
@@ -875,6 +866,9 @@
           "lite",
           "full"
         ]
+      },
+      "validation": {
+        "max_selected": 6
       },
       "options": [
         {
@@ -1109,8 +1103,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "No—this isn't an issue for me (e.g., not present and not a temptation).",
@@ -1185,8 +1178,7 @@
       "answer_schema": {
         "reaction_pattern": [],
         "recovery_time": "",
-        "what_would_help": "",
-        "notes": ""
+        "what_would_help": ""
       },
       "examples": [
         "Reaction pattern: Seek reassurance (text more, ask questions); Catastrophize / assume the worst. Recovery time: Takes a bit (up to a day). What would help: clear reassurance + a plan.",
@@ -1285,8 +1277,7 @@
       "answer_schema": {
         "stress_behavior": "",
         "what_they_should_know": "",
-        "warning_signs": "",
-        "notes": ""
+        "warning_signs": ""
       },
       "examples": [
         "Stress behavior: Withdraw / need space. What they should know: I get quiet but I'm not angry. Warning signs: I stop responding and avoid plans.",
@@ -1400,8 +1391,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "I communicate directly and kindly (I name it early, without blame, and propose a fix).",
@@ -1650,8 +1640,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Lean in and connect (e.g., closeness makes me warmer and more available).",
@@ -1814,8 +1803,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Same day (e.g., we can reset after a short cool-down).",
@@ -1864,8 +1852,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Harsh or critical tone (e.g., I shut down if it feels contemptuous).",
@@ -2195,8 +2182,7 @@
       "answer_schema": {
         "clarity": "",
         "commitments": "",
-        "lds_temple": "",
-        "notes": ""
+        "lds_temple": ""
       },
       "examples": [
         "Clarity: Clear and aligned—I can live what I believe. LDS temple: Current temple recommend.",
@@ -2554,8 +2540,7 @@
       "type": "single_select",
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "examples": [
         "Early—I like getting input from people I trust (I value outside perspective quickly).",
@@ -2709,9 +2694,7 @@
       "prompt": "Realistically, how much time and energy do you have for a relationship right now?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "examples": [
         "Plenty—this is a priority for me (e.g., I can consistently make time weekly).",
@@ -2755,9 +2738,7 @@
       "prompt": "How would you describe your financial situation right now?",
       "type": "single_select",
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "examples": [
         "Stable and comfortable (e.g., bills paid, savings growing).",
@@ -2916,8 +2897,7 @@
       "answer_schema": {
         "primary_need": "",
         "explanation": "",
-        "what_doesnt_work": "",
-        "notes": ""
+        "what_doesnt_work": ""
       },
       "examples": [
         "Primary need: I need direct communication—I don't pick up hints. (Example: tell me plainly what's wrong and what you want.)",
@@ -3020,8 +3000,7 @@
         "readiness_score": 0,
         "why_that_score": "",
         "state_or_typical": "",
-        "what_would_raise_it": "",
-        "notes": ""
+        "what_would_raise_it": ""
       },
       "examples": [
         "Readiness score: 8. Why: I'm emotionally available and stable. State/typical: Usually (this is typical for me). What would raise it: more margin in my schedule.",

@@ -433,8 +433,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -825,8 +824,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1049,9 +1047,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1534,9 +1530,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1669,8 +1663,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1851,8 +1844,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1903,9 +1895,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1976,8 +1966,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2189,9 +2178,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2433,8 +2420,7 @@
       ],
       "answer_schema": {
         "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -3031,9 +3017,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -3209,8 +3193,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -3329,9 +3312,7 @@
         }
       ],
       "answer_schema": {
-        "selected_value": "",
-        "other_text": "",
-        "notes": ""
+        "selected_value": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -3762,8 +3743,7 @@
       ],
       "answer_schema": {
         "selected_values": [],
-        "other_text": "",
-        "notes": ""
+        "other_text": ""
       },
       "tags": {
         "included_in_manifests": [

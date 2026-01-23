@@ -211,9 +211,11 @@ const AppRankedSelect = {
                 console.warn('Failed to capture pointer', err);
             }
 
-            // Haptic feedback (catch error if blocked)
+            // Haptic feedback (silently fail if blocked)
             try {
-                if (navigator.vibrate) navigator.vibrate(50);
+                if (navigator.vibrate && navigator.userActivation && navigator.userActivation.hasBeenActive) {
+                    navigator.vibrate(50);
+                }
             } catch (err) { }
 
             // Visuals
@@ -340,9 +342,9 @@ const AppRankedSelect = {
 
                     // Defer re-render to allow cleanup to finish and event to propagate
                     setTimeout(() => {
-                        AppRankedSelect.rerenderRankedCards(cardsList, field, response[fieldKey], questionId, fieldKey);
-                        AppRankedSelect.updateNavigationButtons();
-                        AppRankedSelect.updateProgress();
+                        App.rerenderRankedCards(cardsList, field, response[fieldKey], questionId, fieldKey);
+                        App.updateNavigationButtons();
+                        App.updateProgress();
                     }, 0);
 
                 } else {
