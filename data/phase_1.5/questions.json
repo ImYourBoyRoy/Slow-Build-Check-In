@@ -645,6 +645,15 @@
           ]
         },
         {
+          "key": "selected_values_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "selected_values",
+            "includes": "other"
+          }
+        },
+        {
           "key": "other_text",
           "label": "Other (if selected)",
           "type": "short_text"
@@ -670,7 +679,8 @@
         "other_text": "",
         "one_thing": "",
         "do_not": "",
-        "notes": ""
+        "notes": "",
+        "selected_values_other": ""
       },
       "examples": [
         "Listen: Just hear me out, don't fix.",
@@ -812,6 +822,15 @@
           ]
         },
         {
+          "key": "approach_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "approach",
+            "includes": "other"
+          }
+        },
+        {
           "key": "preferred_words",
           "label": "Words that land well for me (optional)",
           "type": "short_text"
@@ -825,7 +844,8 @@
       "answer_schema": {
         "approach": "",
         "preferred_words": "",
-        "if_not_yet": ""
+        "if_not_yet": "",
+        "approach_other": ""
       },
       "examples": [
         "Ask directly: \"Can I kiss you?\"",
@@ -1658,6 +1678,15 @@
           ]
         },
         {
+          "key": "not_okay_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "not_okay",
+            "includes": "other"
+          }
+        },
+        {
           "key": "in_the_moment_boundary",
           "label": "In the moment, I want us to (optional)",
           "type": "short_text"
@@ -1671,7 +1700,8 @@
       "answer_schema": {
         "not_okay": [],
         "in_the_moment_boundary": "",
-        "repair_preference": ""
+        "repair_preference": "",
+        "not_okay_other": ""
       },
       "examples": [
         "Name-calling or insults: stop and reset, then repair before continuing.",
@@ -1850,6 +1880,15 @@
           ]
         },
         {
+          "key": "selected_value_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "selected_value",
+            "includes": "other"
+          }
+        },
+        {
           "key": "varies_text",
           "label": "Describe your schedule",
           "type": "short_text",
@@ -1873,7 +1912,8 @@
       "answer_schema": {
         "selected_value": "",
         "varies_text": "",
-        "other_text": ""
+        "other_text": "",
+        "selected_value_other": ""
       },
       "validation": {
         "required_if": [
@@ -1942,6 +1982,15 @@
           ]
         },
         {
+          "key": "selected_value_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "selected_value",
+            "includes": "other"
+          }
+        },
+        {
           "key": "mix_template",
           "label": "Pick a starting template (optional)",
           "type": "single_select",
@@ -2003,7 +2052,8 @@
         "mix_template": "",
         "mix_details": "",
         "other_text": "",
-        "notes": ""
+        "notes": "",
+        "selected_value_other": ""
       },
       "examples": [
         "Text for logistics, call for feelings: quick texts, then a phone talk for depth.",
@@ -2074,6 +2124,15 @@
           ]
         },
         {
+          "key": "selected_value_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "selected_value",
+            "includes": "other"
+          }
+        },
+        {
           "key": "depends_text",
           "label": "Explain the context",
           "type": "short_text",
@@ -2097,7 +2156,8 @@
       "answer_schema": {
         "selected_value": "",
         "depends_text": "",
-        "other_text": ""
+        "other_text": "",
+        "selected_value_other": ""
       },
       "validation": {
         "required_if": [
@@ -2215,6 +2275,15 @@
           ]
         },
         {
+          "key": "triggers_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "triggers",
+            "includes": "other"
+          }
+        },
+        {
           "key": "what_helps",
           "label": "What helps most from you (1-2 sentences)",
           "type": "short_text"
@@ -2228,7 +2297,8 @@
       "answer_schema": {
         "triggers": [],
         "what_helps": "",
-        "what_to_avoid": ""
+        "what_to_avoid": "",
+        "triggers_other": ""
       },
       "examples": [
         "Triggers: ambiguous plans. Helps: clear plans and a quick reassurance. Avoid: \"you're being crazy.\"",

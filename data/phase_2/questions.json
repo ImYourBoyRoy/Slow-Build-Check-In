@@ -606,7 +606,8 @@
       "answer_schema": {
         "which_are_part_of_exclusivity_for_you": [],
         "if_other_describe": "",
-        "notes": ""
+        "notes": "",
+        "which_are_part_of_exclusivity_for_you_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -651,6 +652,15 @@
           ]
         },
         {
+          "key": "which_are_part_of_exclusivity_for_you_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "which_are_part_of_exclusivity_for_you",
+            "includes": "other"
+          }
+        },
+        {
           "key": "if_other_describe",
           "label": "If other, describe",
           "type": "short_text"
@@ -678,7 +688,8 @@
       "answer_schema": {
         "drivers": [],
         "if_other_describe": "",
-        "notes": ""
+        "notes": "",
+        "drivers_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -727,6 +738,15 @@
           ]
         },
         {
+          "key": "drivers_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "drivers",
+            "includes": "other"
+          }
+        },
+        {
           "key": "if_other_describe",
           "label": "If other, describe",
           "type": "short_text"
@@ -754,7 +774,8 @@
       "answer_schema": {
         "select_any_that_you_expect_to_change": [],
         "if_other_describe": "",
-        "notes": ""
+        "notes": "",
+        "select_any_that_you_expect_to_change_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -805,6 +826,15 @@
               "label": "other (write in)"
             }
           ]
+        },
+        {
+          "key": "select_any_that_you_expect_to_change_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "select_any_that_you_expect_to_change",
+            "includes": "other"
+          }
         },
         {
           "key": "if_other_describe",
@@ -1255,7 +1285,8 @@
       "answer_schema": {
         "are_you_ignoring_a_small_but_real_concern": "",
         "if_yesunsure": "",
-        "optional_context": ""
+        "optional_context": "",
+        "if_yesunsure_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1337,6 +1368,15 @@
               "label": "prefer not to say"
             }
           ]
+        },
+        {
+          "key": "if_yesunsure_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "if_yesunsure",
+            "includes": "other"
+          }
         },
         {
           "key": "optional_context",
@@ -1682,7 +1722,8 @@
       "answer_schema": {
         "categories": [],
         "if_other_describe": "",
-        "notes": ""
+        "notes": "",
+        "categories_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1746,6 +1787,15 @@
           ]
         },
         {
+          "key": "categories_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "categories",
+            "includes": "other"
+          }
+        },
+        {
           "key": "if_other_describe",
           "label": "If other, describe",
           "type": "short_text"
@@ -1773,7 +1823,8 @@
       "answer_schema": {
         "not_okay": [],
         "if_other_describe": "",
-        "if_one_happens_what_should_the_immediate_response_be": ""
+        "if_one_happens_what_should_the_immediate_response_be": "",
+        "not_okay_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1831,6 +1882,15 @@
               "label": "other"
             }
           ]
+        },
+        {
+          "key": "not_okay_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "not_okay",
+            "includes": "other"
+          }
         },
         {
           "key": "if_other_describe",
@@ -2031,7 +2091,8 @@
       "answer_schema": {
         "is_there_a_potential_dealbreaker": "",
         "category": "",
-        "notes": ""
+        "notes": "",
+        "category_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2104,6 +2165,15 @@
               "label": "prefer not to say"
             }
           ]
+        },
+        {
+          "key": "category_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "category",
+            "includes": "other"
+          }
         },
         {
           "key": "notes",

@@ -167,7 +167,8 @@
         "months_since_end": 0,
         "what_defines_major": "",
         "how_it_ended": "",
-        "notes": ""
+        "notes": "",
+        "how_it_ended_other": ""
       },
       "examples": [
         "Months since end: 6. Major: lived together. How it ended: Mutual and healthy. Notes: entering this with a clean slate.",
@@ -221,6 +222,15 @@
               "label": "Other"
             }
           ]
+        },
+        {
+          "key": "how_it_ended_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "how_it_ended",
+            "includes": "other"
+          }
         },
         {
           "key": "notes",
@@ -437,7 +447,8 @@
       "answer_schema": {
         "primary_pull": "",
         "explanation": "",
-        "pattern_awareness": ""
+        "pattern_awareness": "",
+        "primary_pull_other": ""
       },
       "examples": [
         "Primary pull: They feel emotionally safe / stable. Pattern awareness: No—this feels different/healthy. Explanation: calm, consistent, and kind.",
@@ -489,6 +500,15 @@
           ]
         },
         {
+          "key": "primary_pull_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "primary_pull",
+            "includes": "other"
+          }
+        },
+        {
           "key": "explanation",
           "label": "Describe what drew you in—both surface-level and deeper",
           "type": "free_text"
@@ -529,7 +549,8 @@
         "reasons_ranked": [],
         "urgency_level": 0,
         "confidence_healthy": 0,
-        "notes": ""
+        "notes": "",
+        "reasons_ranked_other": ""
       },
       "examples": [
         "Reasons ranked: 1) Genuine connection and curiosity, 2) We seem aligned on important things. Urgency level: 2. Confidence healthy: 8.",
@@ -595,6 +616,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "reasons_ranked_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "reasons_ranked",
+            "includes": "other"
+          }
         },
         {
           "key": "urgency_level",
@@ -757,7 +787,8 @@
       "answer_schema": {
         "dealbreakers_ranked": [],
         "other_text": "",
-        "notes": ""
+        "notes": "",
+        "dealbreakers_ranked_other": ""
       },
       "examples": [
         "Dealbreakers ranked: 1) Active addiction (substances, porn, gambling), 2) Dishonesty / lying, 3) Faith/values misalignment.",
@@ -827,6 +858,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "dealbreakers_ranked_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "dealbreakers_ranked",
+            "includes": "other"
+          }
         },
         {
           "key": "other_text",
@@ -1178,7 +1218,8 @@
       "answer_schema": {
         "reaction_pattern": [],
         "recovery_time": "",
-        "what_would_help": ""
+        "what_would_help": "",
+        "reaction_pattern_other": ""
       },
       "examples": [
         "Reaction pattern: Seek reassurance (text more, ask questions); Catastrophize / assume the worst. Recovery time: Takes a bit (up to a day). What would help: clear reassurance + a plan.",
@@ -1238,6 +1279,15 @@
           ]
         },
         {
+          "key": "reaction_pattern_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "reaction_pattern",
+            "includes": "other"
+          }
+        },
+        {
           "key": "recovery_time",
           "label": "Recovery Time",
           "type": "single_select",
@@ -1277,7 +1327,8 @@
       "answer_schema": {
         "stress_behavior": "",
         "what_they_should_know": "",
-        "warning_signs": ""
+        "warning_signs": "",
+        "stress_behavior_other": ""
       },
       "examples": [
         "Stress behavior: Withdraw / need space. What they should know: I get quiet but I'm not angry. Warning signs: I stop responding and avoid plans.",
@@ -1324,6 +1375,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "stress_behavior_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "stress_behavior",
+            "includes": "other"
+          }
         },
         {
           "key": "what_they_should_know",
@@ -1449,7 +1509,8 @@
       "answer_schema": {
         "bonding_speed": "",
         "what_causes_pullback": [],
-        "notes": ""
+        "notes": "",
+        "what_causes_pullback_other": ""
       },
       "examples": [
         "Bonding speed: Very quickly—I attach fast. Pullback causes: Inconsistency (mixed signals); Too much intensity too fast.",
@@ -1528,6 +1589,15 @@
           ]
         },
         {
+          "key": "what_causes_pullback_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "what_causes_pullback",
+            "includes": "other"
+          }
+        },
+        {
           "key": "notes",
           "label": "Anything else to know about your bonding pattern?",
           "type": "free_text",
@@ -1545,7 +1615,8 @@
       "answer_schema": {
         "reassurance_forms": [],
         "frequency_needed": "",
-        "notes": ""
+        "notes": "",
+        "reassurance_forms_other": ""
       },
       "examples": [
         "Reassurance forms: Clear words ('I like you, I'm here'); Making plans together; Transparency about what's going on. Frequency needed: Moderate—check-ins help.",
@@ -1599,6 +1670,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "reassurance_forms_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "reassurance_forms",
+            "includes": "other"
+          }
         },
         {
           "key": "frequency_needed",
@@ -1719,7 +1799,8 @@
       "answer_schema": {
         "preferred_approach": "",
         "timing_matters": "",
-        "notes": ""
+        "notes": "",
+        "preferred_approach_other": ""
       },
       "examples": [
         "Preferred approach: Direct and in-person. Timing matters: When we're both calm and rested. What shuts you down: raised voice or rapid-fire accusations.",
@@ -1762,6 +1843,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "preferred_approach_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "preferred_approach",
+            "includes": "other"
+          }
         },
         {
           "key": "timing_matters",
@@ -1932,7 +2022,8 @@
         "importance": "",
         "tradition": "",
         "faith_alignment_importance": "",
-        "notes": ""
+        "notes": "",
+        "tradition_other": ""
       },
       "examples": [
         "Importance: Central—it's my guiding anchor. Tradition: Latter-day Saint (LDS). Faith alignment importance: Essential—we must align.",
@@ -2009,6 +2100,15 @@
           ]
         },
         {
+          "key": "tradition_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "tradition",
+            "includes": "other"
+          }
+        },
+        {
           "key": "faith_alignment_importance",
           "label": "Faith Alignment Importance",
           "type": "single_select",
@@ -2052,7 +2152,8 @@
       "type": "compound",
       "answer_schema": {
         "values_ranked": [],
-        "notes": ""
+        "notes": "",
+        "values_ranked_other": ""
       },
       "examples": [
         "Values ranked: 1) Honesty / transparency, 2) Emotional safety, 3) Respect, 4) Integrity, 5) Growth mindset.",
@@ -2122,6 +2223,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "values_ranked_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "values_ranked",
+            "includes": "other"
+          }
         },
         {
           "key": "notes",
@@ -2805,7 +2915,8 @@
       "type": "compound",
       "answer_schema": {
         "growth_areas_ranked": [],
-        "notes": ""
+        "notes": "",
+        "growth_areas_ranked_other": ""
       },
       "examples": [
         "Growth areas ranked: 1) Communication skills, 2) Emotional regulation, 3) Setting/holding boundaries.",
@@ -2880,6 +2991,15 @@
           ]
         },
         {
+          "key": "growth_areas_ranked_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "growth_areas_ranked",
+            "includes": "other"
+          }
+        },
+        {
           "key": "notes",
           "label": "What does growth look like for you right now?",
           "type": "free_text",
@@ -2897,7 +3017,8 @@
       "answer_schema": {
         "primary_need": "",
         "explanation": "",
-        "what_doesnt_work": ""
+        "what_doesnt_work": "",
+        "primary_need_other": ""
       },
       "examples": [
         "Primary need: I need direct communication—I don't pick up hints. (Example: tell me plainly what's wrong and what you want.)",
@@ -2952,6 +3073,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "primary_need_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "primary_need",
+            "includes": "other"
+          }
         },
         {
           "key": "explanation",

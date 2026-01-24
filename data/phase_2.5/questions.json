@@ -1248,7 +1248,8 @@
         "balance_feels": "",
         "where_load_shows": "",
         "resentment_level": "",
-        "notes": ""
+        "notes": "",
+        "where_load_shows_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -1325,6 +1326,15 @@
               "label": "Other"
             }
           ]
+        },
+        {
+          "key": "where_load_shows_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "where_load_shows",
+            "includes": "other"
+          }
         },
         {
           "key": "resentment_level",
@@ -1993,7 +2003,8 @@
         "what_i_need_from_them": [],
         "what_i_will_do": "",
         "repair_phrase": "",
-        "notes": ""
+        "notes": "",
+        "what_i_need_from_them_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2039,6 +2050,15 @@
               "label": "Other"
             }
           ]
+        },
+        {
+          "key": "what_i_need_from_them_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "what_i_need_from_them",
+            "includes": "other"
+          }
         },
         {
           "key": "what_i_will_do",
@@ -2650,7 +2670,8 @@
         "topics": [],
         "impact_on_trust": "",
         "want_help_talking": "",
-        "notes": ""
+        "notes": "",
+        "topics_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2723,6 +2744,15 @@
               "label": "Other"
             }
           ]
+        },
+        {
+          "key": "topics_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "topics",
+            "includes": "other"
+          }
         },
         {
           "key": "impact_on_trust",
@@ -2887,7 +2917,8 @@
         "time_enough": "",
         "distractions": "",
         "what_i_want": "",
-        "notes": ""
+        "notes": "",
+        "distractions_other": ""
       },
       "tags": {
         "included_in_manifests": [
@@ -2964,6 +2995,15 @@
               "label": "Other"
             }
           ]
+        },
+        {
+          "key": "distractions_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "distractions",
+            "includes": "other"
+          }
         },
         {
           "key": "what_i_want",

@@ -1319,6 +1319,15 @@
           ]
         },
         {
+          "key": "hope_type_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "hope_type",
+            "includes": "other"
+          }
+        },
+        {
           "key": "other_text",
           "label": "If 'Other', describe",
           "type": "short_text",
@@ -1337,7 +1346,8 @@
       "answer_schema": {
         "hope_type": "",
         "other_text": "",
-        "notes": ""
+        "notes": "",
+        "hope_type_other": ""
       },
       "examples": [
         "Marriage / Life Partner. Notes: I thought this was 'the one' and we were planning a wedding.",
@@ -1394,6 +1404,15 @@
           ]
         },
         {
+          "key": "fear_type_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "fear_type",
+            "includes": "other"
+          }
+        },
+        {
           "key": "other_text",
           "label": "If 'Other', describe",
           "type": "short_text",
@@ -1412,7 +1431,8 @@
       "answer_schema": {
         "fear_type": "",
         "other_text": "",
-        "notes": ""
+        "notes": "",
+        "fear_type_other": ""
       },
       "examples": [
         "Abandonment / They would leave. Notes: I was constantly afraid they would find someone better.",
@@ -1911,6 +1931,15 @@
           ]
         },
         {
+          "key": "logistics_type_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "logistics_type",
+            "includes": "other"
+          }
+        },
+        {
           "key": "other_text",
           "label": "If 'Other', describe",
           "type": "short_text",
@@ -1929,7 +1958,8 @@
       "answer_schema": {
         "logistics_type": "",
         "other_text": "",
-        "notes": ""
+        "notes": "",
+        "logistics_type_other": ""
       },
       "examples": [
         "Housing / Living arrangements. Notes: I need to find a new apartment by the end of the month.",
@@ -2316,6 +2346,15 @@
           ]
         },
         {
+          "key": "trigger_type_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "trigger_type",
+            "includes": "other"
+          }
+        },
+        {
           "key": "other_text",
           "label": "If 'Other', describe",
           "type": "short_text",
@@ -2334,7 +2373,8 @@
       "answer_schema": {
         "trigger_type": "",
         "other_text": "",
-        "notes": ""
+        "notes": "",
+        "trigger_type_other": ""
       },
       "examples": [
         "Seeing them (person/pics). Notes: Saw a photo of them happy on Instagram and spiraled.",
@@ -3194,6 +3234,15 @@
           }
         },
         {
+          "key": "support_people_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "support_people",
+            "includes": "other"
+          }
+        },
+        {
           "key": "one_person_label",
           "label": "Optional: name one person or relationship label (kept private on your device)",
           "type": "short_text",
@@ -3273,6 +3322,15 @@
           }
         },
         {
+          "key": "next_step_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "next_step",
+            "includes": "other"
+          }
+        },
+        {
           "key": "notes",
           "label": "Notes (optional)",
           "type": "short_text",
@@ -3285,7 +3343,9 @@
         "one_person_label": "",
         "safe_place": "",
         "next_step": "",
-        "notes": ""
+        "notes": "",
+        "support_people_other": "",
+        "next_step_other": ""
       },
       "examples": [
         "Support status: Yes. Support people: Friend + Family. Safe place: Yes, my home feels safe.",
@@ -3346,6 +3406,15 @@
           }
         },
         {
+          "key": "support_types_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "support_types",
+            "includes": "other"
+          }
+        },
+        {
           "key": "frequency",
           "label": "If applicable, how often?",
           "type": "single_select",
@@ -3381,6 +3450,15 @@
           ]
         },
         {
+          "key": "frequency_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "frequency",
+            "includes": "other"
+          }
+        },
+        {
           "key": "notes",
           "label": "Notes (optional)",
           "type": "short_text",
@@ -3390,7 +3468,9 @@
       "answer_schema": {
         "support_types": [],
         "frequency": "",
-        "notes": ""
+        "notes": "",
+        "support_types_other": "",
+        "frequency_other": ""
       },
       "examples": [
         "Support: Therapist (licensed). Frequency: Weekly. Notes: CBT, helpful with thought spirals.",
@@ -3535,6 +3615,15 @@
           }
         },
         {
+          "key": "helps_now_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "helps_now",
+            "includes": "other"
+          }
+        },
+        {
           "key": "journaling_style",
           "label": "If you journal, what style fits you best?",
           "type": "single_select",
@@ -3578,6 +3667,15 @@
           ]
         },
         {
+          "key": "journaling_style_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "journaling_style",
+            "includes": "other"
+          }
+        },
+        {
           "key": "tracking_tools",
           "label": "Do you use any tracking tools?",
           "type": "multi_select",
@@ -3616,6 +3714,15 @@
           }
         },
         {
+          "key": "tracking_tools_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "tracking_tools",
+            "includes": "other"
+          }
+        },
+        {
           "key": "resources",
           "label": "Name any specific book, podcast, therapist style, or creator you are leaning on (optional)",
           "type": "short_text",
@@ -3633,7 +3740,10 @@
         "journaling_style": "",
         "tracking_tools": [],
         "resources": "",
-        "notes": ""
+        "notes": "",
+        "helps_now_other": "",
+        "journaling_style_other": "",
+        "tracking_tools_other": ""
       },
       "examples": [
         "Helps: Walking / movement + Talking with a friend + Journaling. Journaling: Reality log. Tracking: Mood tracker. Resources: 'Attached'.",
@@ -4153,6 +4263,15 @@
           ]
         },
         {
+          "key": "openness_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "openness",
+            "includes": "other"
+          }
+        },
+        {
           "key": "would_require",
           "label": "If reconciliation were ever on the table, what would it require?",
           "type": "multi_select",
@@ -4203,6 +4322,15 @@
           }
         },
         {
+          "key": "would_require_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "would_require",
+            "includes": "other"
+          }
+        },
+        {
           "key": "notes",
           "label": "Notes (optional)",
           "type": "free_text",
@@ -4212,7 +4340,9 @@
       "answer_schema": {
         "openness": "",
         "would_require": [],
-        "notes": ""
+        "notes": "",
+        "openness_other": "",
+        "would_require_other": ""
       },
       "examples": [
         "Open: Maybe, with major change. Require: Consistent actions over time + Therapy + Clear boundaries honored.",
@@ -4265,6 +4395,15 @@
           ]
         },
         {
+          "key": "spiritual_baseline_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "spiritual_baseline",
+            "includes": "other"
+          }
+        },
+        {
           "key": "faith_impact",
           "label": "How is this experience affecting your faith/spiritual view?",
           "type": "single_select",
@@ -4308,6 +4447,15 @@
           ]
         },
         {
+          "key": "faith_impact_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "faith_impact",
+            "includes": "other"
+          }
+        },
+        {
           "key": "notes",
           "label": "Notes (optional)",
           "type": "short_text",
@@ -4317,7 +4465,9 @@
       "answer_schema": {
         "spiritual_baseline": "",
         "faith_impact": "",
-        "notes": ""
+        "notes": "",
+        "spiritual_baseline_other": "",
+        "faith_impact_other": ""
       },
       "examples": [
         "Baseline: Religious (community-based). Impact: It is an anchor for me right now. Notes: Prayer calms my body.",
@@ -4398,6 +4548,15 @@
           }
         },
         {
+          "key": "actions_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "actions",
+            "includes": "other"
+          }
+        },
+        {
           "key": "when",
           "label": "When do you plan to do the first one?",
           "type": "short_text",
@@ -4413,7 +4572,8 @@
       "answer_schema": {
         "actions": [],
         "when": "",
-        "notes": ""
+        "notes": "",
+        "actions_other": ""
       },
       "examples": [
         "Actions: Remove or reduce triggers + Start or reset no-contact. When: Tonight before bed.",
@@ -4517,6 +4677,15 @@
           }
         },
         {
+          "key": "goals_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "goals",
+            "includes": "other"
+          }
+        },
+        {
           "key": "one_sign",
           "label": "One clear sign I am healing is...",
           "type": "short_text",
@@ -4532,7 +4701,8 @@
       "answer_schema": {
         "goals": [],
         "one_sign": "",
-        "notes": ""
+        "notes": "",
+        "goals_other": ""
       },
       "examples": [
         "Goals: Sleep is steadier + Rumination is reduced + I kept my boundary/no-contact plan. Sign: I stop checking their profile.",

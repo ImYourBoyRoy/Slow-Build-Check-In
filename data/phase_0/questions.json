@@ -1002,6 +1002,15 @@
           ]
         },
         {
+          "key": "boundary_quality_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "boundary_quality",
+            "includes": "other"
+          }
+        },
+        {
           "key": "explanation",
           "label": "If not 'very clean', what would need to change before you date seriously?",
           "type": "free_text",
@@ -1010,7 +1019,8 @@
       ],
       "answer_schema": {
         "boundary_quality": "",
-        "explanation": ""
+        "explanation": "",
+        "boundary_quality_other": ""
       },
       "examples": [
         "Very clean (clear purpose, no emotional leakage): boundaries are clear and respected.",
@@ -2091,7 +2101,11 @@
         "tradition": "",
         "community_participation": "",
         "lds_temple_recommend": "",
-        "notes": ""
+        "notes": "",
+        "spirituality_importance_other": "",
+        "tradition_other": "",
+        "community_participation_other": "",
+        "lds_temple_recommend_other": ""
       },
       "examples": [
         "Importance: Central. Tradition: Christian. Community: Active.",
@@ -2145,6 +2159,15 @@
           ]
         },
         {
+          "key": "spirituality_importance_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "spirituality_importance",
+            "includes": "other"
+          }
+        },
+        {
           "key": "tradition",
           "label": "My current spiritual tradition/background is closest to",
           "type": "single_select",
@@ -2196,6 +2219,15 @@
           ]
         },
         {
+          "key": "tradition_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "tradition",
+            "includes": "other"
+          }
+        },
+        {
           "key": "community_participation",
           "label": "Participation in a faith/spiritual community is currently",
           "type": "single_select",
@@ -2229,6 +2261,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "community_participation_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "community_participation",
+            "includes": "other"
+          }
         },
         {
           "key": "lds_temple_recommend",
@@ -2266,6 +2307,15 @@
           }
         },
         {
+          "key": "lds_temple_recommend_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "lds_temple_recommend",
+            "includes": "other"
+          }
+        },
+        {
           "key": "notes",
           "label": "Anything you want noted (optional)",
           "type": "free_text",
@@ -2283,7 +2333,8 @@
       "answer_schema": {
         "clarity": "",
         "commitments": "",
-        "support": ""
+        "support": "",
+        "clarity_other": ""
       },
       "examples": [
         "Clarity: Aligned (e.g., reliable follow-through).",
@@ -2329,6 +2380,15 @@
           ]
         },
         {
+          "key": "clarity_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "clarity",
+            "includes": "other"
+          }
+        },
+        {
           "key": "commitments",
           "label": "If you want, name 1-3 commitments you hope to keep (optional)",
           "type": "short_text",
@@ -2352,7 +2412,10 @@
       "answer_schema": {
         "goal": "",
         "covenant_commitment": "",
-        "timeline": ""
+        "timeline": "",
+        "goal_other": "",
+        "covenant_commitment_other": "",
+        "timeline_other": ""
       },
       "examples": [
         "Goal: Marriage. Timeline: 1-2 years.",
@@ -2406,6 +2469,15 @@
           ]
         },
         {
+          "key": "goal_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "goal",
+            "includes": "other"
+          }
+        },
+        {
           "key": "covenant_commitment",
           "label": "If your faith includes covenant/sacred marriage (e.g., temple sealing), it is",
           "type": "single_select",
@@ -2441,6 +2513,15 @@
           ]
         },
         {
+          "key": "covenant_commitment_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "covenant_commitment",
+            "includes": "other"
+          }
+        },
+        {
           "key": "timeline",
           "label": "My preferred pace/timeline (roughly)",
           "type": "single_select",
@@ -2474,6 +2555,15 @@
               "label": "Other (write in)"
             }
           ]
+        },
+        {
+          "key": "timeline_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "timeline",
+            "includes": "other"
+          }
         }
       ]
     },
@@ -2720,6 +2810,15 @@
           ]
         },
         {
+          "key": "early_stage_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "early_stage",
+            "includes": "other"
+          }
+        },
+        {
           "key": "max_simultaneous",
           "label": "If dating multiple, what's your comfortable max at once?",
           "type": "number",
@@ -2773,6 +2872,15 @@
           ]
         },
         {
+          "key": "exclusivity_trigger_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "exclusivity_trigger",
+            "includes": "other"
+          }
+        },
+        {
           "key": "notes",
           "label": "Notes (optional)",
           "type": "free_text",
@@ -2783,7 +2891,9 @@
         "early_stage": "",
         "max_simultaneous": 0,
         "exclusivity_trigger": "",
-        "notes": ""
+        "notes": "",
+        "early_stage_other": "",
+        "exclusivity_trigger_other": ""
       },
       "examples": [
         "Early: Date one person. Max: 1.",
@@ -2984,6 +3094,15 @@
           ]
         },
         {
+          "key": "risk_level_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "risk_level",
+            "includes": "other"
+          }
+        },
+        {
           "key": "supports",
           "label": "Supports I will use (select all that apply)",
           "type": "multi_select",
@@ -3023,6 +3142,15 @@
           ]
         },
         {
+          "key": "supports_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "supports",
+            "includes": "other"
+          }
+        },
+        {
           "key": "one_change",
           "label": "One change I commit to (specific)",
           "type": "short_text",
@@ -3032,7 +3160,9 @@
       "answer_schema": {
         "risk_level": "",
         "supports": [],
-        "one_change": ""
+        "one_change": "",
+        "risk_level_other": "",
+        "supports_other": ""
       },
       "examples": [
         "Risk: Medium. Support: Date structure.",
@@ -3193,6 +3323,15 @@
           ]
         },
         {
+          "key": "coparent_state_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "coparent_state",
+            "includes": "other"
+          }
+        },
+        {
           "key": "impact",
           "label": "Impact on dating (optional)",
           "type": "free_text",
@@ -3201,7 +3340,8 @@
       ],
       "answer_schema": {
         "coparent_state": "",
-        "impact": ""
+        "impact": "",
+        "coparent_state_other": ""
       },
       "examples": [
         "State: Healthy. Impact: minimal.",
@@ -3500,6 +3640,15 @@
           ]
         },
         {
+          "key": "best_style_other",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "best_style",
+            "includes": "other"
+          }
+        },
+        {
           "key": "triggers",
           "label": "What makes feedback hard for you? (optional)",
           "type": "free_text",
@@ -3508,7 +3657,8 @@
       ],
       "answer_schema": {
         "best_style": "",
-        "triggers": ""
+        "triggers": "",
+        "best_style_other": ""
       },
       "examples": [
         "Style: Direct. Trigger: condescension.",
