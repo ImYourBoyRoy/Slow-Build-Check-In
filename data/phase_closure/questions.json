@@ -331,7 +331,7 @@
       },
       "examples": [
         "Days ago. End date: Jan 20, 2026. Length: 6 to 12 months.",
-        "Weeks ago. End date: early December. Length: 2 to 6 months.",
+        "It ended 3 days ago. We were together for 2 years.",
         "It is complicated or unclear. End date: (blank). Length: 3 to 7 years."
       ],
       "tags": {
@@ -533,9 +533,9 @@
         "notes": ""
       },
       "examples": [
-        "Lived together + Shared finances or debt + Pets together",
-        "Children together or co-parenting + Legal process involved (divorce, restraining order, custody)",
-        "None of these"
+        "Lived together + shared finances + pets together (We built a whole life).",
+        "Children together + legal process involved (It's messy).",
+        "None of these (Clean break logistically, but emotionally hard)."
       ],
       "tags": {
         "included_in_manifests": [
@@ -672,73 +672,94 @@
       "section_id": "s1",
       "order": 7,
       "title": "What You Need Most Right Now",
-      "prompt": "If this could help you with just one thing today, what would you choose? (Select up to 3.)",
-      "type": "multi_select",
-      "options": [
+      "prompt": "If this could help you with just one thing today, what would you choose? (Select and rank your top 3 needs.)",
+      "type": "compound",
+      "fields": [
         {
-          "value": "calm_body",
-          "label": "Calm my body (less panic, less tightness)"
+          "key": "needs_ranked",
+          "label": "Select and rank your top 3 needs",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "calm_body",
+              "label": "Calm my body (less panic, less tightness)"
+            },
+            {
+              "value": "stop_ruminating",
+              "label": "Stop the rumination loop"
+            },
+            {
+              "value": "sleep",
+              "label": "Sleep or rest better"
+            },
+            {
+              "value": "clarity",
+              "label": "Clarity about what happened"
+            },
+            {
+              "value": "closure",
+              "label": "Closure so I can let go"
+            },
+            {
+              "value": "boundaries",
+              "label": "A boundary plan (no contact, social media, etc.)"
+            },
+            {
+              "value": "self_worth",
+              "label": "Stabilize my self-worth"
+            },
+            {
+              "value": "coping_tools",
+              "label": "Better coping tools for waves"
+            },
+            {
+              "value": "faith_support",
+              "label": "Spiritual support (if that fits me)"
+            },
+            {
+              "value": "move_forward",
+              "label": "A simple plan to move forward"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 3
+          }
         },
         {
-          "value": "stop_ruminating",
-          "label": "Stop the rumination loop"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "needs_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "sleep",
-          "label": "Sleep or rest better"
-        },
-        {
-          "value": "clarity",
-          "label": "Clarity about what happened"
-        },
-        {
-          "value": "closure",
-          "label": "Closure so I can let go"
-        },
-        {
-          "value": "boundaries",
-          "label": "A boundary plan (no contact, social media, etc.)"
-        },
-        {
-          "value": "self_worth",
-          "label": "Stabilize my self-worth"
-        },
-        {
-          "value": "coping_tools",
-          "label": "Better coping tools for waves"
-        },
-        {
-          "value": "faith_support",
-          "label": "Spiritual support (if that fits me)"
-        },
-        {
-          "value": "move_forward",
-          "label": "A simple plan to move forward"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Any notes on this?",
+          "type": "free_text",
+          "placeholder": "Optional..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "needs_ranked": [],
         "other_text": "",
-        "ranking": [],
         "notes": ""
       },
       "examples": [
-        "Calm my body (less panic, less tightness) + Sleep or rest better",
-        "Stop the rumination loop + A boundary plan (no contact, social media, etc.) + Stabilize my self-worth",
-        "Closure so I can let go"
+        "Calm my body, Stop ruminating, Sleep better (Focus: Survival)",
+        "Closure so I can let go, A boundary plan, Move forward (Focus: Next Steps)",
+        "Clarify what happened, Stabilize my self-worth (Focus: Understanding)"
       ],
       "tags": {
         "included_in_manifests": [
           "lite",
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 3
       }
     },
     "q08": {
@@ -747,17 +768,31 @@
       "order": 8,
       "title": "Overall Emotional Intensity",
       "prompt": "On a 0 to 10 scale, how emotionally intense has this been for you overall? (0 = barely, 10 = consuming)",
-      "type": "number",
-      "min": 0,
-      "max": 10,
+      "type": "compound",
+      "fields": [
+        {
+          "key": "intensity",
+          "label": "Intensity (0-10)",
+          "type": "number",
+          "min": 0,
+          "max": 10
+        },
+        {
+          "key": "notes",
+          "label": "Notes (optional)",
+          "type": "free_text",
+          "placeholder": "Optional..."
+        }
+      ],
       "answer_schema": {
-        "value": null,
+        "intensity": null,
         "notes": ""
       },
       "examples": [
-        "8",
-        "5",
-        "10"
+        "10 - It felt life-altering and completely consuming.",
+        "8 - Highly intense, occupied most of my thoughts.",
+        "4 - Painful but manageable, I could still function.",
+        "2 - It was sad, but I felt mostly steady."
       ],
       "tags": {
         "included_in_manifests": [
@@ -926,78 +961,100 @@
       "order": 11,
       "title": "What Was Hard About It (Ranked)",
       "prompt": "What were the biggest pain points? Select the ones that fit and drag to rank the top ones.",
-      "type": "ranked_select",
-      "options": [
+      "type": "compound",
+      "fields": [
         {
-          "value": "communication",
-          "label": "Communication breakdown"
+          "key": "pain_points_ranked",
+          "label": "Select and rank your top pain points",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "communication",
+              "label": "Communication breakdown"
+            },
+            {
+              "value": "conflict",
+              "label": "Conflict cycles"
+            },
+            {
+              "value": "trust",
+              "label": "Trust issues or betrayal"
+            },
+            {
+              "value": "avoidance",
+              "label": "Avoidance or emotional shutdown"
+            },
+            {
+              "value": "jealousy",
+              "label": "Jealousy or insecurity"
+            },
+            {
+              "value": "values",
+              "label": "Values or life direction mismatch"
+            },
+            {
+              "value": "pressure",
+              "label": "Pressure around pace, intimacy, or commitment"
+            },
+            {
+              "value": "mental_health",
+              "label": "Mental health strain"
+            },
+            {
+              "value": "substance",
+              "label": "Substance use"
+            },
+            {
+              "value": "family",
+              "label": "Family/community interference"
+            },
+            {
+              "value": "finances",
+              "label": "Financial stress"
+            },
+            {
+              "value": "distance",
+              "label": "Distance/logistics"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 6
+          }
         },
         {
-          "value": "conflict",
-          "label": "Conflict cycles"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "pain_points_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "trust",
-          "label": "Trust issues or betrayal"
-        },
-        {
-          "value": "avoidance",
-          "label": "Avoidance or emotional shutdown"
-        },
-        {
-          "value": "jealousy",
-          "label": "Jealousy or insecurity"
-        },
-        {
-          "value": "values",
-          "label": "Values or life direction mismatch"
-        },
-        {
-          "value": "pressure",
-          "label": "Pressure around pace, intimacy, or commitment"
-        },
-        {
-          "value": "mental_health",
-          "label": "Mental health strain"
-        },
-        {
-          "value": "substance",
-          "label": "Substance use"
-        },
-        {
-          "value": "family",
-          "label": "Family/community interference"
-        },
-        {
-          "value": "finances",
-          "label": "Financial stress"
-        },
-        {
-          "value": "distance",
-          "label": "Distance/logistics"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Any context?",
+          "type": "free_text",
+          "placeholder": "Optional..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "pain_points_ranked": [],
         "other_text": "",
         "notes": ""
       },
       "examples": [
-        "Conflict cycles, Communication breakdown, Avoidance or emotional shutdown",
-        "Trust issues or betrayal, Pressure around pace, intimacy, or commitment",
-        "Values or life direction mismatch, Distance/logistics"
+        "Constant conflict cycles, Communication breakdown, Feeling unseen",
+        "Trust issues, Betrayal, Lying",
+        "Values mismatch, Different life directions, Distance"
       ],
       "tags": {
         "included_in_manifests": [
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 6
       }
     },
     "q12": {
@@ -1210,16 +1267,64 @@
       "order": 15,
       "title": "What You Were Hoping For",
       "prompt": "In your most honest words, what were you hoping this would become?",
-      "type": "free_text",
-      "placeholder": "A few sentences is enough.",
+      "type": "compound",
+      "fields": [
+        {
+          "key": "hope_type",
+          "label": "What was the hope?",
+          "type": "single_select",
+          "options": [
+            {
+              "value": "marriage",
+              "label": "Marriage / Life Partner"
+            },
+            {
+              "value": "long_term",
+              "label": "Long-term partnership"
+            },
+            {
+              "value": "see_where_it_goes",
+              "label": "Just seeing where it went"
+            },
+            {
+              "value": "casual",
+              "label": "Casual fun"
+            },
+            {
+              "value": "unsure",
+              "label": "Unsure / Mixed"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ]
+        },
+        {
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "hope_type",
+            "equals": "other"
+          }
+        },
+        {
+          "key": "notes",
+          "label": "Say more (optional)",
+          "type": "free_text",
+          "placeholder": "A few sentences about your hope..."
+        }
+      ],
       "answer_schema": {
-        "text": "",
+        "hope_type": "",
+        "other_text": "",
         "notes": ""
       },
       "examples": [
-        "I wanted a calm, committed partnership where we build a life together.",
-        "I hoped we would keep dating and see if the foundation was real.",
-        "I thought this might become marriage, and I was letting myself believe it."
+        "Marriage / Life Partner. Notes: I thought this was 'the one' and we were planning a wedding.",
+        "Long-term partnership. Notes: We were building a home and a life together.",
+        "Just seeing where it went. Notes: I hoped it would deepen, but I wasn't sure yet."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1233,16 +1338,68 @@
       "order": 16,
       "title": "What You Were Afraid Of",
       "prompt": "What were you afraid might happen, even if you did not say it out loud?",
-      "type": "free_text",
-      "placeholder": "If this feels tender, go gentle. A few lines is enough.",
+      "type": "compound",
+      "fields": [
+        {
+          "key": "fear_type",
+          "label": "What was the core fear?",
+          "type": "single_select",
+          "options": [
+            {
+              "value": "abandonment",
+              "label": "Abandonment / They would leave"
+            },
+            {
+              "value": "trapped",
+              "label": "Being trapped or controlled"
+            },
+            {
+              "value": "losing_self",
+              "label": "Losing myself"
+            },
+            {
+              "value": "betrayal",
+              "label": "Being betrayed again"
+            },
+            {
+              "value": "wasting_time",
+              "label": "Wasting time"
+            },
+            {
+              "value": "being_alone",
+              "label": "Being alone forever"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ]
+        },
+        {
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "fear_type",
+            "equals": "other"
+          }
+        },
+        {
+          "key": "notes",
+          "label": "Say more (optional)",
+          "type": "free_text",
+          "placeholder": "A few sentences about the fear..."
+        }
+      ],
       "answer_schema": {
-        "text": "",
+        "fear_type": "",
+        "other_text": "",
         "notes": ""
       },
       "examples": [
-        "That I would get attached and they would leave anyway.",
-        "That I would lose myself trying to make it work.",
-        "That the red flags were real and I was ignoring them."
+        "Abandonment / They would leave. Notes: I was constantly afraid they would find someone better.",
+        "Losing myself. Notes: I felt like I was shrinking to fit their needs.",
+        "Being betrayed again. Notes: After my last relationship, I was terrified of being lied to."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1418,83 +1575,105 @@
       "order": 20,
       "title": "Primary Reasons (Ranked)",
       "prompt": "What do you believe were the main reasons it ended? Select what fits and rank the top ones.",
-      "type": "ranked_select",
-      "options": [
+      "type": "compound",
+      "fields": [
         {
-          "value": "values_incompatibility",
-          "label": "Values or life direction mismatch"
+          "key": "reasons_ranked",
+          "label": "Select and rank the main reasons",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "values_incompatibility",
+              "label": "Values or life direction mismatch"
+            },
+            {
+              "value": "trust_betrayal",
+              "label": "Trust rupture or betrayal"
+            },
+            {
+              "value": "communication_breakdown",
+              "label": "Communication breakdown"
+            },
+            {
+              "value": "conflict_cycle",
+              "label": "Conflict cycle that would not repair"
+            },
+            {
+              "value": "emotional_unavailability",
+              "label": "Emotional unavailability or distancing"
+            },
+            {
+              "value": "boundary_violations",
+              "label": "Boundary violations or pressure"
+            },
+            {
+              "value": "intimacy_mismatch",
+              "label": "Affection or intimacy mismatch"
+            },
+            {
+              "value": "commitment_timing",
+              "label": "Commitment timing mismatch"
+            },
+            {
+              "value": "mental_health_strain",
+              "label": "Mental health strain (either person)"
+            },
+            {
+              "value": "substance_use",
+              "label": "Substance use or relapse"
+            },
+            {
+              "value": "finances",
+              "label": "Financial incompatibility or stress"
+            },
+            {
+              "value": "logistics_distance",
+              "label": "Distance or logistics"
+            },
+            {
+              "value": "family_pressure",
+              "label": "Family or community pressure"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 6
+          }
         },
         {
-          "value": "trust_betrayal",
-          "label": "Trust rupture or betrayal"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "reasons_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "communication_breakdown",
-          "label": "Communication breakdown"
-        },
-        {
-          "value": "conflict_cycle",
-          "label": "Conflict cycle that would not repair"
-        },
-        {
-          "value": "emotional_unavailability",
-          "label": "Emotional unavailability or distancing"
-        },
-        {
-          "value": "boundary_violations",
-          "label": "Boundary violations or pressure"
-        },
-        {
-          "value": "intimacy_mismatch",
-          "label": "Affection or intimacy mismatch"
-        },
-        {
-          "value": "commitment_timing",
-          "label": "Commitment timing mismatch"
-        },
-        {
-          "value": "mental_health_strain",
-          "label": "Mental health strain (either person)"
-        },
-        {
-          "value": "substance_use",
-          "label": "Substance use or relapse"
-        },
-        {
-          "value": "finances",
-          "label": "Financial incompatibility or stress"
-        },
-        {
-          "value": "logistics_distance",
-          "label": "Distance or logistics"
-        },
-        {
-          "value": "family_pressure",
-          "label": "Family or community pressure"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Any extra context?",
+          "type": "free_text",
+          "placeholder": "Optional..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "reasons_ranked": [],
         "other_text": "",
         "notes": ""
       },
       "examples": [
-        "Values or life direction mismatch, Emotional unavailability or distancing, Communication breakdown",
-        "Trust rupture or betrayal, Conflict cycle that would not repair",
-        "Commitment timing mismatch, Distance or logistics"
+        "Values incompatibility, They didn't want the same future, Distance",
+        "Trust betrayal, Lying, Emotional cheating",
+        "Communication breakdown, Constant fighting, Resentment"
       ],
       "tags": {
         "included_in_manifests": [
           "lite",
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 6
       }
     },
     "q21": {
@@ -1671,17 +1850,73 @@
       "section_id": "s3",
       "order": 25,
       "title": "Logistics Details (Optional)",
-      "prompt": "If there are unresolved logistics, what are they? (Short version is fine.)",
-      "type": "free_text",
-      "placeholder": "Example: 'I need to pick up my things next week and I am anxious about seeing them.'",
+      "prompt": "If there are unresolved logistics, what are they?",
+      "type": "compound",
+      "fields": [
+        {
+          "key": "logistics_type",
+          "label": "What kind of logistics?",
+          "type": "single_select",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "housing",
+              "label": "Housing / Living arrangements"
+            },
+            {
+              "value": "financial",
+              "label": "Financial separation"
+            },
+            {
+              "value": "belongings",
+              "label": "Belongings"
+            },
+            {
+              "value": "children",
+              "label": "Child custody / care"
+            },
+            {
+              "value": "pets",
+              "label": "Pet custody"
+            },
+            {
+              "value": "legal",
+              "label": "Legal steps (divorce/separation)"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ]
+        },
+        {
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "logistics_type",
+            "equals": "other"
+          }
+        },
+        {
+          "key": "notes",
+          "label": "Details (optional)",
+          "type": "free_text",
+          "placeholder": "What needs to happen..."
+        }
+      ],
       "answer_schema": {
-        "text": "",
+        "logistics_type": "",
+        "other_text": "",
         "notes": ""
       },
       "examples": [
-        "We are separating finances and I do not know who is paying what this month.",
-        "I have to see them weekly for kid handoffs and it spikes my anxiety.",
-        "I still have items at their place and I am avoiding the pickup."
+        "Housing / Living arrangements. Notes: I need to find a new apartment by the end of the month.",
+        "Financial separation. Notes: We still have a joint bank account to close.",
+        "Belongings. Notes: I still have winter clothes at their place."
       ],
       "tags": {
         "included_in_manifests": [
@@ -1901,89 +2136,110 @@
       "section_id": "s4",
       "order": 29,
       "title": "What You Are Feeling Most",
-      "prompt": "What emotions are most present lately? (Select up to 6.)",
-      "type": "multi_select",
-      "options": [
+      "prompt": "What emotions are most present lately? (Select and rank the top ones.)",
+      "type": "compound",
+      "fields": [
         {
-          "value": "sadness",
-          "label": "Sadness"
+          "key": "emotions_ranked",
+          "label": "Select and rank your top emotions",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "sadness",
+              "label": "Sadness"
+            },
+            {
+              "value": "grief",
+              "label": "Grief"
+            },
+            {
+              "value": "anger",
+              "label": "Anger"
+            },
+            {
+              "value": "relief",
+              "label": "Relief"
+            },
+            {
+              "value": "shame",
+              "label": "Shame"
+            },
+            {
+              "value": "guilt",
+              "label": "Guilt"
+            },
+            {
+              "value": "loneliness",
+              "label": "Loneliness"
+            },
+            {
+              "value": "anxiety",
+              "label": "Anxiety"
+            },
+            {
+              "value": "panic",
+              "label": "Panic"
+            },
+            {
+              "value": "numb",
+              "label": "Numbness"
+            },
+            {
+              "value": "confusion",
+              "label": "Confusion"
+            },
+            {
+              "value": "hope",
+              "label": "Hope"
+            },
+            {
+              "value": "yearning",
+              "label": "Yearning"
+            },
+            {
+              "value": "jealousy",
+              "label": "Jealousy"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 6
+          }
         },
         {
-          "value": "grief",
-          "label": "Grief"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "emotions_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "anger",
-          "label": "Anger"
-        },
-        {
-          "value": "relief",
-          "label": "Relief"
-        },
-        {
-          "value": "shame",
-          "label": "Shame"
-        },
-        {
-          "value": "guilt",
-          "label": "Guilt"
-        },
-        {
-          "value": "loneliness",
-          "label": "Loneliness"
-        },
-        {
-          "value": "anxiety",
-          "label": "Anxiety"
-        },
-        {
-          "value": "panic",
-          "label": "Panic"
-        },
-        {
-          "value": "numb",
-          "label": "Numbness"
-        },
-        {
-          "value": "confusion",
-          "label": "Confusion"
-        },
-        {
-          "value": "hope",
-          "label": "Hope"
-        },
-        {
-          "value": "yearning",
-          "label": "Yearning"
-        },
-        {
-          "value": "jealousy",
-          "label": "Jealousy"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Notes (optional)",
+          "type": "free_text",
+          "placeholder": "Optional..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "emotions_ranked": [],
         "other_text": "",
-        "ranking": [],
         "notes": ""
       },
       "examples": [
-        "Grief + Loneliness + Yearning",
-        "Anger + Confusion + Anxiety",
-        "Relief + Sadness"
+        "Grief, Loneliness, Yearning (Heartbreak)",
+        "Anger, Confusion, Anxiety (Turbulence)",
+        "Relief, Sadness, Hope (Acceptance)"
       ],
       "tags": {
         "included_in_manifests": [
           "lite",
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 6
       }
     },
     "q30": {
@@ -1992,17 +2248,30 @@
       "order": 30,
       "title": "Intensity Right Now",
       "prompt": "Right now in this moment, how intense is it? (0 to 10)",
-      "type": "number",
-      "min": 0,
-      "max": 10,
+      "type": "compound",
+      "fields": [
+        {
+          "key": "current_intensity",
+          "label": "Intensity (0-10)",
+          "type": "number",
+          "min": 0,
+          "max": 10
+        },
+        {
+          "key": "notes",
+          "label": "Notes (optional)",
+          "type": "free_text",
+          "placeholder": "Optional..."
+        }
+      ],
       "answer_schema": {
-        "value": null,
+        "current_intensity": null,
         "notes": ""
       },
       "examples": [
-        "7",
-        "3",
-        "9"
+        "9 - I feel flooded and need to stop everything.",
+        "6 - I feel tight and anxious, but I can stay present.",
+        "3 - I feel sad, but my body is relatively calm."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2091,16 +2360,64 @@
       "order": 32,
       "title": "Recent Triggers",
       "prompt": "What has triggered the hardest waves recently?",
-      "type": "free_text",
-      "placeholder": "Examples: seeing their name, certain places, nights, social media, anniversaries, loneliness.",
+      "type": "compound",
+      "fields": [
+        {
+          "key": "trigger_type",
+          "label": "Primary trigger type",
+          "type": "single_select",
+          "options": [
+            {
+              "value": "seeing_them",
+              "label": "Seeing them (person/pics)"
+            },
+            {
+              "value": "places",
+              "label": "Specific places"
+            },
+            {
+              "value": "loneliness",
+              "label": "Lonely times (nights/weekends)"
+            },
+            {
+              "value": "dates",
+              "label": "Dates / Anniversaries"
+            },
+            {
+              "value": "news",
+              "label": "Hearing news about them"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ]
+        },
+        {
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "trigger_type",
+            "equals": "other"
+          }
+        },
+        {
+          "key": "notes",
+          "label": "Details (optional)",
+          "type": "free_text",
+          "placeholder": "What happened?"
+        }
+      ],
       "answer_schema": {
-        "text": "",
+        "trigger_type": "",
+        "other_text": "",
         "notes": ""
       },
       "examples": [
-        "Seeing their social media and imagining them happy without me.",
-        "Driving past a place we used to go together.",
-        "Night time and weekends when I am alone."
+        "Seeing them (person/pics). Notes: Saw a photo of them happy on Instagram and spiraled.",
+        "Specific places. Notes: Drove past the coffee shop we used to go to every Sunday.",
+        "Lonely times (nights/weekends). Notes: Waking up alone on Saturday morning hurts the most."
       ],
       "tags": {
         "included_in_manifests": [
@@ -2113,76 +2430,93 @@
       "section_id": "s4",
       "order": 33,
       "title": "What Your Mind Keeps Replaying",
-      "prompt": "What does your mind keep replaying or looping on? (Select up to 5.)",
-      "type": "multi_select",
-      "options": [
+      "prompt": "What does your mind keep replaying or looping on? (Select the loudest ones and rank them.)",
+      "type": "compound",
+      "fields": [
         {
-          "value": "what_if",
-          "label": "What if I did something different"
+          "key": "loops_ranked",
+          "label": "Select and rank your top mental loops",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "what_if",
+              "label": "What if I did something different"
+            },
+            {
+              "value": "why_not_enough",
+              "label": "Why I was not enough"
+            },
+            {
+              "value": "they_moved_on",
+              "label": "Imagining them moving on"
+            },
+            {
+              "value": "good_memories",
+              "label": "Only the good memories"
+            },
+            {
+              "value": "the_breakup_scene",
+              "label": "The breakup conversation"
+            },
+            {
+              "value": "betrayal_details",
+              "label": "Details of betrayal or lies"
+            },
+            {
+              "value": "comparison",
+              "label": "Comparing myself to others"
+            },
+            {
+              "value": "future_without_them",
+              "label": "Future without them"
+            },
+            {
+              "value": "justice",
+              "label": "Wanting justice or closure"
+            },
+            {
+              "value": "self_criticism",
+              "label": "Self-criticism"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 5
+          }
         },
         {
-          "value": "why_not_enough",
-          "label": "Why I was not enough"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "loops_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "they_moved_on",
-          "label": "Imagining them moving on"
-        },
-        {
-          "value": "good_memories",
-          "label": "Only the good memories"
-        },
-        {
-          "value": "the_breakup_scene",
-          "label": "The breakup conversation"
-        },
-        {
-          "value": "betrayal_details",
-          "label": "Details of betrayal or lies"
-        },
-        {
-          "value": "comparison",
-          "label": "Comparing myself to others"
-        },
-        {
-          "value": "future_without_them",
-          "label": "Future without them"
-        },
-        {
-          "value": "justice",
-          "label": "Wanting justice or closure"
-        },
-        {
-          "value": "self_criticism",
-          "label": "Self-criticism"
-        },
-        {
-          "value": "none",
-          "label": "None of these"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Notes (optional)",
+          "type": "free_text",
+          "placeholder": "Optional..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "loops_ranked": [],
         "other_text": "",
-        "ranking": [],
         "notes": ""
       },
       "examples": [
-        "Only the good memories + Imagining them moving on",
-        "The breakup conversation + Self-criticism",
-        "What if I did something different + Why I was not enough"
+        "Why wasn't I enough?, What if I hadn't said that?, Replaying the breakup",
+        "Imagining them with someone else, Checking their social media mentally",
+        "Anger at how they treated me, Wanting justice"
       ],
       "tags": {
         "included_in_manifests": [
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 5
       }
     },
     "q34": {
@@ -2191,70 +2525,88 @@
       "order": 34,
       "title": "What You Miss (Ranked)",
       "prompt": "What do you miss most? Select what fits and rank the top ones.",
-      "type": "ranked_select",
-      "options": [
+      "type": "compound",
+      "fields": [
         {
-          "value": "companionship",
-          "label": "Companionship / having a person"
+          "key": "miss_ranked",
+          "label": "Select and rank what you miss most",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "companionship",
+              "label": "Companionship / having a person"
+            },
+            {
+              "value": "touch",
+              "label": "Physical affection"
+            },
+            {
+              "value": "routines",
+              "label": "Shared routines"
+            },
+            {
+              "value": "future_story",
+              "label": "The future story I had in my head"
+            },
+            {
+              "value": "their_traits",
+              "label": "Specific traits (humor, warmth, etc.)"
+            },
+            {
+              "value": "sex",
+              "label": "Sex"
+            },
+            {
+              "value": "validation",
+              "label": "Feeling chosen/validated"
+            },
+            {
+              "value": "family",
+              "label": "Their family or community"
+            },
+            {
+              "value": "security",
+              "label": "Security or stability"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 5
+          }
         },
         {
-          "value": "touch",
-          "label": "Physical affection"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "miss_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "routines",
-          "label": "Shared routines"
-        },
-        {
-          "value": "future_story",
-          "label": "The future story I had in my head"
-        },
-        {
-          "value": "their_traits",
-          "label": "Specific traits (humor, warmth, etc.)"
-        },
-        {
-          "value": "sex",
-          "label": "Sex"
-        },
-        {
-          "value": "validation",
-          "label": "Feeling chosen/validated"
-        },
-        {
-          "value": "family",
-          "label": "Their family or community"
-        },
-        {
-          "value": "security",
-          "label": "Security or stability"
-        },
-        {
-          "value": "unknown",
-          "label": "I do not know, it is just pain"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Notes (optional)",
+          "type": "free_text",
+          "placeholder": "Optional..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "miss_ranked": [],
         "other_text": "",
         "notes": ""
       },
       "examples": [
-        "The future story I had in my head, Companionship / having a person",
-        "Physical affection, Feeling chosen/validated",
-        "Shared routines, Specific traits (humor, warmth, etc.)"
+        "The future story I had in my head, Having a partner to come home to",
+        "Physical affection, Feeling chosen and special",
+        "Shared routines, Their sense of humor, Sunday mornings"
       ],
       "tags": {
         "included_in_manifests": [
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 5
       }
     },
     "q35": {
@@ -2263,66 +2615,88 @@
       "order": 35,
       "title": "What Hurt the Most (Ranked)",
       "prompt": "What part hurt the most? Select what fits and rank the top ones.",
-      "type": "ranked_select",
-      "options": [
+      "type": "compound",
+      "fields": [
         {
-          "value": "rejection",
-          "label": "Rejection or feeling replaced"
+          "key": "hurt_ranked",
+          "label": "Select and rank the most painful parts",
+          "type": "ranked_select",
+          "options": [
+            {
+              "value": "rejection",
+              "label": "Rejection or feeling replaced"
+            },
+            {
+              "value": "betrayal",
+              "label": "Betrayal or lies"
+            },
+            {
+              "value": "abandonment",
+              "label": "Abandonment (especially sudden)"
+            },
+            {
+              "value": "disrespect",
+              "label": "Disrespect or being dismissed"
+            },
+            {
+              "value": "loss_future",
+              "label": "Loss of the future we planned"
+            },
+            {
+              "value": "self_betrayal",
+              "label": "Feeling like I betrayed myself"
+            },
+            {
+              "value": "public_loss",
+              "label": "Public loss or embarrassment"
+            },
+            {
+              "value": "faith_conflict",
+              "label": "Faith or values conflict"
+            },
+            {
+              "value": "logistics",
+              "label": "Logistics and disruption"
+            },
+            {
+              "value": "other",
+              "label": "Other (write in)"
+            }
+          ],
+          "validation": {
+            "max_selected": 5
+          }
         },
         {
-          "value": "betrayal",
-          "label": "Betrayal or lies"
+          "key": "other_text",
+          "label": "If 'Other', describe",
+          "type": "short_text",
+          "showWhen": {
+            "field": "hurt_ranked",
+            "includes": "other"
+          }
         },
         {
-          "value": "abandonment",
-          "label": "Abandonment (especially sudden)"
-        },
-        {
-          "value": "disrespect",
-          "label": "Disrespect or being dismissed"
-        },
-        {
-          "value": "loss_future",
-          "label": "Loss of the future we planned"
-        },
-        {
-          "value": "self_betrayal",
-          "label": "Feeling like I betrayed myself"
-        },
-        {
-          "value": "public_loss",
-          "label": "Public loss or embarrassment"
-        },
-        {
-          "value": "faith_conflict",
-          "label": "Faith or values conflict"
-        },
-        {
-          "value": "logistics",
-          "label": "Logistics and disruption"
-        },
-        {
-          "value": "other",
-          "label": "Other (write in)"
+          "key": "notes",
+          "label": "Notes (optional)",
+          "type": "free_text",
+          "placeholder": "Optional..."
         }
       ],
       "answer_schema": {
-        "selected_values": [],
+        "hurt_ranked": [],
         "other_text": "",
         "notes": ""
       },
       "examples": [
-        "Loss of the future we planned, Rejection or feeling replaced",
-        "Betrayal or lies, Disrespect or being dismissed",
-        "Feeling like I betrayed myself, Abandonment (especially sudden)"
+        "Being replaced so quickly, feeling easily discarded",
+        "The lies and betrayal, feeling like a fool",
+        "Losing the future family I wanted, grieving the dream"
       ],
       "tags": {
         "included_in_manifests": [
           "full"
         ]
-      },
-      "validation": {
-        "max_selected": 5
       }
     },
     "q36": {
@@ -3517,9 +3891,9 @@
         "notes": ""
       },
       "examples": [
-        "I keep blaming myself and I am exhausted from it.",
+        "I am so angry that they didn't even fight for us. It feels like I meant nothing.",
         "I feel replaced and it is humiliating, even though I know it is not logical.",
-        "I miss them, but I also know I was shrinking to make it work."
+        "I miss them, but I also know I was shrinking to make it work. Both can be true."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3561,9 +3935,9 @@
         "anchor": ""
       },
       "examples": [
-        "Miss: their warmth at night. Cost: constant anxiety and mixed signals. Anchor: Missing them does not mean this was safe.",
-        "Miss: the future story. Cost: I kept abandoning my needs. Anchor: I can grieve and still choose myself.",
-        "Miss: the friendship. Cost: disrespect in conflict. Anchor: Love without respect is not love I want."
+        "Miss: Their warmth at night. Cost: Constant anxiety and mixed signals. Anchor: Missing them does not mean this was safe.",
+        "Miss: The future story. Cost: I kept abandoning my needs. Anchor: I can grieve and still choose myself.",
+        "Miss: The friendship. Cost: Disrespect in conflict. Anchor: Love without respect is not love I want."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3682,9 +4056,9 @@
         "next_time": ""
       },
       "examples": [
-        "Own: I stayed when I felt small. Release: their mixed signals. Next time: I will ask for clarity early.",
-        "Own: I avoided hard talks. Release: their choices. Next time: I will speak up sooner.",
-        "Own: I chased reassurance. Release: their inability to commit. Next time: I will pace myself."
+        "Own: I stayed when I felt small. Release: Their mixed signals. Next time: I will ask for clarity early.",
+        "Own: I avoided hard talks. Release: Their choice to leave. Next time: I will speak up sooner.",
+        "Own: I chased reassurance. Release: Their inability to commit. Next time: I will pace myself."
       ],
       "tags": {
         "included_in_manifests": [
@@ -3795,7 +4169,7 @@
       },
       "examples": [
         "Open: Maybe, with major change. Require: Consistent actions over time + Therapy + Clear boundaries honored.",
-        "Open: No, I would not go back. Require: Not applicable.",
+        "Open: No, I would not go back. Require: Not applicable. Notes: I am done.",
         "Open: Not sure. Require: Full truth and transparency + A real apology and ownership."
       ],
       "tags": {
@@ -3995,7 +4369,7 @@
         "notes": ""
       },
       "examples": [
-        "Actions: Remove or reduce triggers + Start or reset no-contact. When: Tonight.",
+        "Actions: Remove or reduce triggers + Start or reset no-contact. When: Tonight before bed.",
         "Actions: Write an unsent letter + Talk with a friend. When: Saturday afternoon.",
         "Actions: Move my body + Set a simple sleep plan. When: Tomorrow morning."
       ],
